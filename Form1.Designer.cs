@@ -28,6 +28,7 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
 			this.cbxde = new System.Windows.Forms.ComboBox();
 			this.label1 = new System.Windows.Forms.Label();
 			this.cbxa = new System.Windows.Forms.ComboBox();
@@ -42,7 +43,7 @@
 			// 
 			// cbxde
 			// 
-			this.cbxde.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+			this.cbxde.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
 			this.cbxde.FormattingEnabled = true;
 			this.cbxde.Location = new System.Drawing.Point(135, 239);
 			this.cbxde.Name = "cbxde";
@@ -62,7 +63,7 @@
 			// 
 			// cbxa
 			// 
-			this.cbxa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+			this.cbxa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
 			this.cbxa.FormattingEnabled = true;
 			this.cbxa.Location = new System.Drawing.Point(352, 239);
 			this.cbxa.Name = "cbxa";
@@ -94,7 +95,7 @@
 			// 
 			// txtconvertir
 			// 
-			this.txtconvertir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+			this.txtconvertir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
 			this.txtconvertir.Location = new System.Drawing.Point(227, 169);
 			this.txtconvertir.Name = "txtconvertir";
 			this.txtconvertir.Size = new System.Drawing.Size(101, 24);
@@ -112,7 +113,7 @@
 			// 
 			// cbxtipo
 			// 
-			this.cbxtipo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+			this.cbxtipo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
 			this.cbxtipo.FormattingEnabled = true;
 			this.cbxtipo.Location = new System.Drawing.Point(305, 91);
 			this.cbxtipo.Name = "cbxtipo";
@@ -145,7 +146,9 @@
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+			this.BackColor = System.Drawing.Color.White;
+			this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+			this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
 			this.ClientSize = new System.Drawing.Size(596, 434);
 			this.Controls.Add(this.lblresultado);
 			this.Controls.Add(this.btnaconvertir);
