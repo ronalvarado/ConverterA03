@@ -115,7 +115,7 @@
 			// 
 			this.cbxtipo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
 			this.cbxtipo.FormattingEnabled = true;
-			this.cbxtipo.Location = new System.Drawing.Point(305, 91);
+			this.cbxtipo.Location = new System.Drawing.Point(338, 76);
 			this.cbxtipo.Name = "cbxtipo";
 			this.cbxtipo.Size = new System.Drawing.Size(140, 24);
 			this.cbxtipo.TabIndex = 7;
