@@ -19,7 +19,7 @@ namespace Conversor_A
 
 		private void Mantenimiento_de__Alumnos_Load(object sender, EventArgs e)
 		{
-
+			//pijk
 		}
 
 		private void label1_Click(object sender, EventArgs e)
