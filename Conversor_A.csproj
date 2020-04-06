@@ -61,6 +61,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Buscar_Responsables.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Buscar_Responsables.Designer.cs">
+      <DependentUpon>Buscar_Responsables.cs</DependentUpon>
+    </Compile>
     <Compile Include="Busqueda_Alumnos .cs">
       <SubType>Form</SubType>
     </Compile>
@@ -74,13 +80,25 @@
     <Compile Include="Mantenimiento de  Alumnos.Designer.cs">
       <DependentUpon>Mantenimiento de  Alumnos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Mantenimiento de Responsables.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimiento de Responsables.Designer.cs">
+      <DependentUpon>Mantenimiento de Responsables.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Buscar_Responsables.resx">
+      <DependentUpon>Buscar_Responsables.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Busqueda_Alumnos .resx">
       <DependentUpon>Busqueda_Alumnos .cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Mantenimiento de  Alumnos.resx">
       <DependentUpon>Mantenimiento de  Alumnos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimiento de Responsables.resx">
+      <DependentUpon>Mantenimiento de Responsables.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

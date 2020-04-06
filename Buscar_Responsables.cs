@@ -10,40 +10,40 @@ using System.Windows.Forms;
 
 namespace Conversor_A
 {
-	public partial class Busqueda_Alumnos : Form
+	public partial class Buscar_Responsables : Form
 	{
 		Conexion_BD objConexion = new Conexion_BD();
-		public int _IdAlumno;
-		public Busqueda_Alumnos()
+		public int _IdResponsable;
+		public Buscar_Responsables()
 		{
 			InitializeComponent();
 		}
 
-		private void Busqueda_Alumnos_Load(object sender, EventArgs e)
+		private void Busqueda_Responsables_Load(object sender, EventArgs e)
 		{
-			grdBusquedaAlumnos.DataSource =
-			 objConexion.obtener_datos().Tables["Alumnos"].DefaultView;
+			grdBusquedaResponsables.DataSource =
+			 objConexion.obtener_datos().Tables["Responsables"].DefaultView;
 		}
 
 		private void btnSeleccionar_Click(object sender, EventArgs e)
 		{
-			if (grdBusquedaAlumnos.RowCount > 0)
+			if (grdBusquedaResponsables.RowCount > 0)
 			{
-				_IdAlumno = int.Parse(grdBusquedaAlumnos.CurrentRow.Cells[0].Value.ToString());
+				_IdResponsable = int.Parse(grdBusquedaResponsables.CurrentRow.Cells[0].Value.ToString());
 				Close();
 			}
 			else
 			{
-				MessageBox.Show("NO hay datos que seleccionar", "Busqueda de Alumnos",
+				MessageBox.Show("NO hay datos que seleccionar", "Busqueda de Responsables",
 					MessageBoxButtons.OK, MessageBoxIcon.Information);
 			}
 		}
 		void filtrar_datos(String valor)
 		{
 			BindingSource bs = new BindingSource();
-			bs.DataSource = grdBusquedaAlumnos.DataSource;
-			bs.Filter = "Datos de Alumno like '%" + valor + "%'";
-			grdBusquedaAlumnos.DataSource = bs;
+			bs.DataSource = grdBusquedaResponsables.DataSource;
+			bs.Filter = "Datos de Responsable like '%" + valor + "%'";
+			grdBusquedaResponsables.DataSource = bs;
 		}
 
 		private void txtbuscar_TextChanged(object sender, EventArgs e)
@@ -55,15 +55,6 @@ namespace Conversor_A
 		{
 			Close();
 		}
-
-		private void lblBuscar_Click(object sender, EventArgs e)
-		{
-
-		}
-
-		private void grdBusquedaAlumnos_CellContentClick(object sender, DataGridViewCellEventArgs e)
-		{
-
-		}
+	
 	}
 }

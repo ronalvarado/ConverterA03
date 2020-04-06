@@ -10,14 +10,14 @@ using System.Windows.Forms;
 
 namespace Conversor_A
 {
-	public partial class Mantenimiento_de__Alumnos : Form
+	public partial class Mantenimiento_de__Responsables : Form
 	{
 		Conexion_BD objConexion = new Conexion_BD();
 		int posicion = 0;
 		string accion = "nuevo";
 		DataTable tbl = new DataTable();
 
-		public Mantenimiento_de__Alumnos()
+		public Mantenimiento_de__Responsables()
 		{
 			InitializeComponent();
 		}
@@ -36,7 +36,7 @@ namespace Conversor_A
 		{
 			try
 			{
-				lblIdAlumno.Text = tbl.Rows[posicion].ItemArray[0].ToString();
+				lblIdResponsable.Text = tbl.Rows[posicion].ItemArray[0].ToString();
 				txtCodigo.Text = tbl.Rows[posicion].ItemArray[1].ToString();
 				txtDatos.Text = tbl.Rows[posicion].ItemArray[2].ToString();
 
@@ -54,14 +54,14 @@ namespace Conversor_A
 		{
 			txtCodigo.Text = "";
 			txtDatos.Text = "";
-		
+
 		}
 		void controles(Boolean valor)
 		{
 			grbNavegacion.Enabled = valor;
 			btnEliminar.Enabled = valor;
 			btnBuscar.Enabled = valor;
-			grbEdiciondealumnos.Enabled = !valor;
+			grbEdicionderesponsables.Enabled = !valor;
 		}
 		private void btnPrimero_Click(object sender, EventArgs e)
 		{
@@ -104,16 +104,19 @@ namespace Conversor_A
 
 		private void btnNuevo_Click(object sender, EventArgs e)
 		{
-			if (btnNuevo.Text == "Nuevo"){//boton de nuevo
+			if (btnNuevo.Text == "Nuevo")
+			{//boton de nuevo
 				btnNuevo.Text = "Guardar";
 				btnModificar.Text = "Cancelar";
 				accion = "nuevo";
 
 				limpiar_cajas();
 				controles(false);
-			}else{ //boton de guardar
+			}
+			else
+			{ //boton de guardar
 				String[] valores = {
-					lblIdAlumno.Text,
+					lblIdResponsable.Text,
 					txtCodigo.Text,
 					txtDatos.Text,
 				};
@@ -131,7 +134,8 @@ namespace Conversor_A
 
 		private void btnModificar_Click(object sender, EventArgs e)
 		{
-			if (btnModificar.Text == "Modificar"){//boton de modificar
+			if (btnModificar.Text == "Modificar")
+			{//boton de modificar
 				btnNuevo.Text = "Guardar";
 				btnModificar.Text = "Cancelar";
 				accion = "modificar";
@@ -141,7 +145,9 @@ namespace Conversor_A
 				btnNuevo.Text = "Guardar";
 				btnModificar.Text = "Cancelar";
 
-			}else{ //boton de cancelar
+			}
+			else
+			{ //boton de cancelar
 				controles(true);
 				mostrarDatos();
 
@@ -155,7 +161,7 @@ namespace Conversor_A
 			if (MessageBox.Show("Esta seguro de elimina a " + txtDatos.Text, "Registro de Alumnos",
 			  MessageBoxButtons.YesNo, MessageBoxIcon.Error) == DialogResult.Yes)
 			{
-				String[] valores = { lblIdAlumno.Text };
+				String[] valores = { lblIdResponsable.Text };
 				objConexion.mantenimiento_datos(valores, "eliminar");
 
 				actualizarDs();
@@ -181,4 +187,5 @@ namespace Conversor_A
 
 		}
 	}
+
 }

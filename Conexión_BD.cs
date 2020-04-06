@@ -35,28 +35,33 @@ namespace Conversor_A
 			miAdaptadorDatos.SelectCommand = comandosSQL;
 			miAdaptadorDatos.Fill(ds, "Responsables");
 
+			comandosSQL.CommandText = "select * from Docentes";
+			miAdaptadorDatos.SelectCommand = comandosSQL;
+			miAdaptadorDatos.Fill(ds, "Docentes");
+
 			return ds;
 		}
 		public void mantenimiento_datos(String[] datos, String accion)
 		{
             String sql = "";
             if (accion == "nuevo") {
-                sql = "INSERT INTO Alumnos (codigo,Datos del Alumno) VALUES(" +
+                sql = "INSERT INTO Alumnos (Código,Datos del Alumno) VALUES(" +
                     "'" + datos[1] + "'," +
-                    "'" + datos[2] + "'," +
+                    "'" + datos[2] + "'" +
                     ")";
 
 			} else if (accion == "modificar")
 				{
-					sql = "UPDATE clientes SET " +
-						"codigo         = '" + datos[1] + "'," +
-						"Datos del Alumno         = '" + datos[2] + "'," +
-						"WHERE IdAlumno = '" + datos[0] + "'";
+					sql = "UPDATE Alumnos SET " +
+						"codigo                   = '" + datos[1] + "'," +
+						"Datos del Alumno         = '" + datos[2] + "'" +
+						"WHERE IdAlumno           = '" + datos[0] + "'";
 				}
 				else if (accion == "eliminar")
 				{
-					sql = "DELETE clientes FROM Alumnos WHERE IdAlumno='" + datos[0] + "'";
+					sql = "DELETE Alumnos FROM Alumnos WHERE IdAlumno='" + datos[0] + "'";
 				}
+			procesarSQL(sql);
 		}
 		void procesarSQL(String sql)
 		{
