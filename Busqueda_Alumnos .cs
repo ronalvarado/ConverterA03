@@ -42,7 +42,7 @@ namespace Conversor_A
 		{
 			BindingSource bs = new BindingSource();
 			bs.DataSource = grdBusquedaAlumnos.DataSource;
-			bs.Filter = "Datos de Alumno like '%" + valor + "%'";
+			qbs.Filter = "Nombre like '%" + valor + "%'";
 			grdBusquedaAlumnos.DataSource = bs;
 		}
 
@@ -54,16 +54,6 @@ namespace Conversor_A
 		private void btnCancelar_Click(object sender, EventArgs e)
 		{
 			Close();
-		}
-
-		private void lblBuscar_Click(object sender, EventArgs e)
-		{
-
-		}
-
-		private void grdBusquedaAlumnos_CellContentClick(object sender, DataGridViewCellEventArgs e)
-		{
-
 		}
 	}
 }

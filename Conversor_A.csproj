@@ -74,17 +74,23 @@
       <DependentUpon>Busqueda_Alumnos .cs</DependentUpon>
     </Compile>
     <Compile Include="Conexión_BD.cs" />
-    <Compile Include="Mantenimiento de  Alumnos.cs">
+    <Compile Include="Mantenimiento_de _Alumnos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Mantenimiento de  Alumnos.Designer.cs">
-      <DependentUpon>Mantenimiento de  Alumnos.cs</DependentUpon>
+    <Compile Include="Mantenimiento_de _Alumnos.Designer.cs">
+      <DependentUpon>Mantenimiento_de _Alumnos.cs</DependentUpon>
     </Compile>
     <Compile Include="Mantenimiento de Responsables.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Mantenimiento de Responsables.Designer.cs">
       <DependentUpon>Mantenimiento de Responsables.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimiento_Docentes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimiento_Docentes.Designer.cs">
+      <DependentUpon>Mantenimiento_Docentes.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -94,11 +100,14 @@
     <EmbeddedResource Include="Busqueda_Alumnos .resx">
       <DependentUpon>Busqueda_Alumnos .cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Mantenimiento de  Alumnos.resx">
-      <DependentUpon>Mantenimiento de  Alumnos.cs</DependentUpon>
+    <EmbeddedResource Include="Mantenimiento_de _Alumnos.resx">
+      <DependentUpon>Mantenimiento_de _Alumnos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Mantenimiento de Responsables.resx">
       <DependentUpon>Mantenimiento de Responsables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimiento_Docentes.resx">
+      <DependentUpon>Mantenimiento_Docentes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

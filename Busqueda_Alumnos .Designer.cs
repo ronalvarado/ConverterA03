@@ -45,7 +45,7 @@
 			this.lblBuscar.Size = new System.Drawing.Size(54, 13);
 			this.lblBuscar.TabIndex = 0;
 			this.lblBuscar.Text = "BUSCAR:";
-			this.lblBuscar.Click += new System.EventHandler(this.lblBuscar_Click);
+			
 			// 
 			// txtbuscar
 			// 
@@ -90,7 +90,7 @@
 			this.grdBusquedaAlumnos.RowTemplate.Height = 40;
 			this.grdBusquedaAlumnos.Size = new System.Drawing.Size(537, 346);
 			this.grdBusquedaAlumnos.TabIndex = 10;
-			this.grdBusquedaAlumnos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdBusquedaAlumnos_CellContentClick);
+			
 			// 
 			// IdAlumno
 			// 
