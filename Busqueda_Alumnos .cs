@@ -22,7 +22,7 @@ namespace Conversor_A
 		private void Busqueda_Alumnos_Load(object sender, EventArgs e)
 		{
 			grdBusquedaAlumnos.DataSource =
-			 objConexion.obtener_datos().Tables["Alumnos"].DefaultView;
+			   objConexion.obtener_datos().Tables["Alumnos"].DefaultView;
 		}
 
 		private void btnSeleccionar_Click(object sender, EventArgs e)
@@ -42,7 +42,7 @@ namespace Conversor_A
 		{
 			BindingSource bs = new BindingSource();
 			bs.DataSource = grdBusquedaAlumnos.DataSource;
-			qbs.Filter = "Nombre like '%" + valor + "%'";
+			bs.Filter = "Nombre_Alumno like '%" + valor + "%'";
 			grdBusquedaAlumnos.DataSource = bs;
 		}
 

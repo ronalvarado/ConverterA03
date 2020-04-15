@@ -44,10 +44,9 @@ namespace Conversor_A
 				txtTelefono.Text = tbl.Rows[posicion].ItemArray[5].ToString();
 				txtGrado.Text = tbl.Rows[posicion].ItemArray[6].ToString();
 				txtSeccion.Text = tbl.Rows[posicion].ItemArray[7].ToString();
+
 				lblnregistros.Text = (posicion + 1) + " de " + tbl.Rows.Count;
-			}
-			catch (Exception ex)
-			{
+			}catch (Exception ex){
 				MessageBox.Show("No hay Datos que mostrar", "Registros de Alumnos",
 					MessageBoxButtons.OK, MessageBoxIcon.Information);
 				limpiar_cajas();
@@ -69,7 +68,7 @@ namespace Conversor_A
 			grbNavegacion.Enabled = valor;
 			btnEliminar.Enabled = valor;
 			btnBuscar.Enabled = valor;
-			grbEdiciondealumnos.Enabled = !valor;
+			grbAlumnos.Enabled = !valor;
 		}
 		private void btnPrimero_Click(object sender, EventArgs e)
 		{

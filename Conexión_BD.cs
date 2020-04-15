@@ -44,23 +44,30 @@ namespace Conversor_A
 		public void mantenimiento_datos(String[] datos, String accion)
 		{
             String sql = "";
-            if (accion == "nuevo") {
-                sql = "INSERT INTO Alumnos (Código,Datos del Alumno) VALUES(" +
-                    "'" + datos[1] + "'," +
-                    "'" + datos[2] + "'" +
-                    ")";
+			if (accion == "nuevo") {
+				sql = "INSERT INTO Alumnos (Codigo,Nombre_Alumno,Edad,Direccion,Telefono,Grado,Seccion) VALUES(" +
+					"'" + datos[1] + "'," +
+					"'" + datos[2] + "'," +
+					"'" + datos[3] + "'," +
+					"'" + datos[4] + "'," +
+					"'" + datos[5] + "'," +
+					"'" + datos[6] + "'," +
+					"'" + datos[7] + "'" +
+					")";
 
-			} else if (accion == "modificar")
-				{
-					sql = "UPDATE Alumnos SET " +
-						"codigo                   = '" + datos[1] + "'," +
-						"Datos del Alumno         = '" + datos[2] + "'" +
-						"WHERE IdAlumno           = '" + datos[0] + "'";
-				}
-				else if (accion == "eliminar")
-				{
-					sql = "DELETE Alumnos FROM Alumnos WHERE IdAlumno='" + datos[0] + "'";
-				}
+			} else if (accion == "modificar"){
+				sql = "UPDATE Alumnos SET " +
+					"Codigo                   = '" + datos[1] + "'," +
+					"Nombre_Alumno            = '" + datos[2] + "'," +
+					"Edad                     = '" + datos[3] +"',"  +
+					"Direccion                = '" + datos[4] + "'," +
+					"Telefono                 = '" + datos[5] + "'," +
+					"Grado                    = '" + datos[6] + "'," +
+					"Seccion                  = '" + datos[7] + "'" +
+				    "WHERE IdAlumno           = '" + datos[0] + "'";
+			}else if (accion == "eliminar"){
+				sql = "DELETE Alumnos FROM Alumnos WHERE IdAlumno='" + datos[0] + "'";
+			}
 			procesarSQL(sql);
 		}
 		void procesarSQL(String sql)
