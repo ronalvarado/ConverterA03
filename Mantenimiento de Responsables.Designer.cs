@@ -40,11 +40,21 @@
 			this.btnAnterior = new System.Windows.Forms.Button();
 			this.btnPrimero = new System.Windows.Forms.Button();
 			this.grbResponsables = new System.Windows.Forms.GroupBox();
-			this.txtDatos = new System.Windows.Forms.TextBox();
-			this.lblResponsables = new System.Windows.Forms.Label();
 			this.txtCodigo = new System.Windows.Forms.TextBox();
-			this.lblCódigo = new System.Windows.Forms.Label();
 			this.lblIdResponsable = new System.Windows.Forms.Label();
+			this.lblCódigo = new System.Windows.Forms.Label();
+			this.txtNombre = new System.Windows.Forms.TextBox();
+			this.lblNombre = new System.Windows.Forms.Label();
+			this.txtEdad = new System.Windows.Forms.TextBox();
+			this.lblEdad = new System.Windows.Forms.Label();
+			this.txtDireccion = new System.Windows.Forms.TextBox();
+			this.lblDireccion = new System.Windows.Forms.Label();
+			this.txtDui = new System.Windows.Forms.TextBox();
+			this.lblDui = new System.Windows.Forms.Label();
+			this.txtNit = new System.Windows.Forms.TextBox();
+			this.lblNit = new System.Windows.Forms.Label();
+			this.txtTelefono = new System.Windows.Forms.TextBox();
+			this.lblTelefono = new System.Windows.Forms.Label();
 			this.grbEdicionderesponsables.SuspendLayout();
 			this.grbNavegacion.SuspendLayout();
 			this.grbResponsables.SuspendLayout();
@@ -56,12 +66,12 @@
 			this.grbEdicionderesponsables.Controls.Add(this.btnEliminar);
 			this.grbEdicionderesponsables.Controls.Add(this.btnModificar);
 			this.grbEdicionderesponsables.Controls.Add(this.btnNuevo);
-			this.grbEdicionderesponsables.Location = new System.Drawing.Point(306, 215);
+			this.grbEdicionderesponsables.Location = new System.Drawing.Point(306, 252);
 			this.grbEdicionderesponsables.Name = "grbEdicionderesponsables";
 			this.grbEdicionderesponsables.Size = new System.Drawing.Size(259, 82);
 			this.grbEdicionderesponsables.TabIndex = 5;
 			this.grbEdicionderesponsables.TabStop = false;
-			this.grbEdicionderesponsables.Text = "Edición de Alumnos";
+			this.grbEdicionderesponsables.Text = "Edición de Resposables";
 			// 
 			// btnBuscar
 			// 
@@ -110,7 +120,7 @@
 			this.grbNavegacion.Controls.Add(this.btnSiguiente);
 			this.grbNavegacion.Controls.Add(this.btnAnterior);
 			this.grbNavegacion.Controls.Add(this.btnPrimero);
-			this.grbNavegacion.Location = new System.Drawing.Point(12, 215);
+			this.grbNavegacion.Location = new System.Drawing.Point(12, 252);
 			this.grbNavegacion.Name = "grbNavegacion";
 			this.grbNavegacion.Size = new System.Drawing.Size(259, 53);
 			this.grbNavegacion.TabIndex = 4;
@@ -167,41 +177,44 @@
 			// 
 			// grbResponsables
 			// 
-			this.grbResponsables.Controls.Add(this.txtDatos);
-			this.grbResponsables.Controls.Add(this.lblResponsables);
+			this.grbResponsables.Controls.Add(this.txtTelefono);
+			this.grbResponsables.Controls.Add(this.lblTelefono);
+			this.grbResponsables.Controls.Add(this.txtNit);
+			this.grbResponsables.Controls.Add(this.lblNit);
+			this.grbResponsables.Controls.Add(this.txtDui);
+			this.grbResponsables.Controls.Add(this.lblDui);
+			this.grbResponsables.Controls.Add(this.txtDireccion);
+			this.grbResponsables.Controls.Add(this.lblDireccion);
+			this.grbResponsables.Controls.Add(this.txtEdad);
+			this.grbResponsables.Controls.Add(this.lblEdad);
+			this.grbResponsables.Controls.Add(this.txtNombre);
+			this.grbResponsables.Controls.Add(this.lblNombre);
 			this.grbResponsables.Controls.Add(this.txtCodigo);
 			this.grbResponsables.Controls.Add(this.lblIdResponsable);
 			this.grbResponsables.Controls.Add(this.lblCódigo);
 			this.grbResponsables.Location = new System.Drawing.Point(12, 12);
 			this.grbResponsables.Name = "grbResponsables";
-			this.grbResponsables.Size = new System.Drawing.Size(553, 197);
+			this.grbResponsables.Size = new System.Drawing.Size(553, 234);
 			this.grbResponsables.TabIndex = 3;
 			this.grbResponsables.TabStop = false;
-			this.grbResponsables.Text = "Mantenimiento Alumnos ";
-			// 
-			// txtDatos
-			// 
-			this.txtDatos.Location = new System.Drawing.Point(143, 96);
-			this.txtDatos.Multiline = true;
-			this.txtDatos.Name = "txtDatos";
-			this.txtDatos.Size = new System.Drawing.Size(375, 77);
-			this.txtDatos.TabIndex = 4;
-			// 
-			// lblResponsables
-			// 
-			this.lblResponsables.AutoSize = true;
-			this.lblResponsables.Location = new System.Drawing.Point(20, 96);
-			this.lblResponsables.Name = "lblResponsables";
-			this.lblResponsables.Size = new System.Drawing.Size(117, 13);
-			this.lblResponsables.TabIndex = 3;
-			this.lblResponsables.Text = "Datos del Responsable";
+			this.grbResponsables.Text = "Mantenimiento Responsables";
+			
 			// 
 			// txtCodigo
 			// 
-			this.txtCodigo.Location = new System.Drawing.Point(66, 45);
+			this.txtCodigo.Location = new System.Drawing.Point(81, 45);
 			this.txtCodigo.Name = "txtCodigo";
 			this.txtCodigo.Size = new System.Drawing.Size(100, 20);
 			this.txtCodigo.TabIndex = 2;
+			// 
+			// lblIdResponsable
+			// 
+			this.lblIdResponsable.AutoSize = true;
+			this.lblIdResponsable.Location = new System.Drawing.Point(210, 48);
+			this.lblIdResponsable.Name = "lblIdResponsable";
+			this.lblIdResponsable.Size = new System.Drawing.Size(21, 13);
+			this.lblIdResponsable.TabIndex = 1;
+			this.lblIdResponsable.Text = "ID:";
 			// 
 			// lblCódigo
 			// 
@@ -212,21 +225,108 @@
 			this.lblCódigo.TabIndex = 0;
 			this.lblCódigo.Text = "Código";
 			// 
-			// lblIdResponsable
+			// txtNombre
 			// 
-			this.lblIdResponsable.AutoSize = true;
-			this.lblIdResponsable.Location = new System.Drawing.Point(172, 48);
-			this.lblIdResponsable.Name = "lblIdResponsable";
-			this.lblIdResponsable.Size = new System.Drawing.Size(21, 13);
-			this.lblIdResponsable.TabIndex = 1;
-			this.lblIdResponsable.Text = "ID:";
+			this.txtNombre.Location = new System.Drawing.Point(81, 71);
+			this.txtNombre.Name = "txtNombre";
+			this.txtNombre.Size = new System.Drawing.Size(260, 20);
+			this.txtNombre.TabIndex = 4;
+			// 
+			// lblNombre
+			// 
+			this.lblNombre.AutoSize = true;
+			this.lblNombre.Location = new System.Drawing.Point(20, 74);
+			this.lblNombre.Name = "lblNombre";
+			this.lblNombre.Size = new System.Drawing.Size(47, 13);
+			this.lblNombre.TabIndex = 3;
+			this.lblNombre.Text = "Nombre:";
+			// 
+			// txtEdad
+			// 
+			this.txtEdad.Location = new System.Drawing.Point(81, 97);
+			this.txtEdad.Name = "txtEdad";
+			this.txtEdad.Size = new System.Drawing.Size(100, 20);
+			this.txtEdad.TabIndex = 6;
+			// 
+			// lblEdad
+			// 
+			this.lblEdad.AutoSize = true;
+			this.lblEdad.Location = new System.Drawing.Point(20, 99);
+			this.lblEdad.Name = "lblEdad";
+			this.lblEdad.Size = new System.Drawing.Size(35, 13);
+			this.lblEdad.TabIndex = 5;
+			this.lblEdad.Text = "Edad:";
+			// 
+			// txtDireccion
+			// 
+			this.txtDireccion.Location = new System.Drawing.Point(81, 123);
+			this.txtDireccion.Name = "txtDireccion";
+			this.txtDireccion.Size = new System.Drawing.Size(260, 20);
+			this.txtDireccion.TabIndex = 8;
+			// 
+			// lblDireccion
+			// 
+			this.lblDireccion.AutoSize = true;
+			this.lblDireccion.Location = new System.Drawing.Point(20, 122);
+			this.lblDireccion.Name = "lblDireccion";
+			this.lblDireccion.Size = new System.Drawing.Size(55, 13);
+			this.lblDireccion.TabIndex = 7;
+			this.lblDireccion.Text = "Dirección:";
+			// 
+			// txtDui
+			// 
+			this.txtDui.Location = new System.Drawing.Point(81, 149);
+			this.txtDui.Name = "txtDui";
+			this.txtDui.Size = new System.Drawing.Size(126, 20);
+			this.txtDui.TabIndex = 10;
+			// 
+			// lblDui
+			// 
+			this.lblDui.AutoSize = true;
+			this.lblDui.Location = new System.Drawing.Point(20, 148);
+			this.lblDui.Name = "lblDui";
+			this.lblDui.Size = new System.Drawing.Size(29, 13);
+			this.lblDui.TabIndex = 9;
+			this.lblDui.Text = "DUI:";
+			// 
+			// txtNit
+			// 
+			this.txtNit.Location = new System.Drawing.Point(81, 175);
+			this.txtNit.Name = "txtNit";
+			this.txtNit.Size = new System.Drawing.Size(126, 20);
+			this.txtNit.TabIndex = 12;
+			// 
+			// lblNit
+			// 
+			this.lblNit.AutoSize = true;
+			this.lblNit.Location = new System.Drawing.Point(20, 174);
+			this.lblNit.Name = "lblNit";
+			this.lblNit.Size = new System.Drawing.Size(28, 13);
+			this.lblNit.TabIndex = 11;
+			this.lblNit.Text = "NIT:";
+			// 
+			// txtTelefono
+			// 
+			this.txtTelefono.Location = new System.Drawing.Point(81, 201);
+			this.txtTelefono.Name = "txtTelefono";
+			this.txtTelefono.Size = new System.Drawing.Size(100, 20);
+			this.txtTelefono.TabIndex = 14;
+			// 
+			// lblTelefono
+			// 
+			this.lblTelefono.AutoSize = true;
+			this.lblTelefono.Location = new System.Drawing.Point(20, 200);
+			this.lblTelefono.Name = "lblTelefono";
+			this.lblTelefono.Size = new System.Drawing.Size(52, 13);
+			this.lblTelefono.TabIndex = 13;
+			this.lblTelefono.Text = "Teléfono:";
 			// 
 			// Mantenimiento_de__Responsables
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-			this.ClientSize = new System.Drawing.Size(577, 315);
+			this.ClientSize = new System.Drawing.Size(581, 351);
 			this.Controls.Add(this.grbEdicionderesponsables);
 			this.Controls.Add(this.grbNavegacion);
 			this.Controls.Add(this.grbResponsables);
@@ -255,10 +355,20 @@
 		private System.Windows.Forms.Button btnAnterior;
 		private System.Windows.Forms.Button btnPrimero;
 		private System.Windows.Forms.GroupBox grbResponsables;
-		private System.Windows.Forms.TextBox txtDatos;
-		private System.Windows.Forms.Label lblResponsables;
 		private System.Windows.Forms.TextBox txtCodigo;
 		private System.Windows.Forms.Label lblCódigo;
 		private System.Windows.Forms.Label lblIdResponsable;
+		private System.Windows.Forms.TextBox txtNit;
+		private System.Windows.Forms.Label lblNit;
+		private System.Windows.Forms.TextBox txtDui;
+		private System.Windows.Forms.Label lblDui;
+		private System.Windows.Forms.TextBox txtDireccion;
+		private System.Windows.Forms.Label lblDireccion;
+		private System.Windows.Forms.TextBox txtEdad;
+		private System.Windows.Forms.Label lblEdad;
+		private System.Windows.Forms.TextBox txtNombre;
+		private System.Windows.Forms.Label lblNombre;
+		private System.Windows.Forms.TextBox txtTelefono;
+		private System.Windows.Forms.Label lblTelefono;
 	}
 }

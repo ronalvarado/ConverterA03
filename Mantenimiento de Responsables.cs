@@ -21,16 +21,16 @@ namespace Conversor_A
 		{
 			InitializeComponent();
 		}
-
-		private void Mantenimiento_de__Alumnos_Load(object sender, EventArgs e)
+		private void Mantenimiento_de__Responsables_Load(object sender, EventArgs e)
 		{
 			actualizarDs();
 			mostrarDatos();
+
 		}
 		void actualizarDs()
 		{
-			tbl = objConexion.obtener_datos().Tables["Alumnos"];
-			tbl.PrimaryKey = new DataColumn[] { tbl.Columns["IdAlumno"] };
+			tbl = objConexion.obtener_datos().Tables["Responsables"];
+			tbl.PrimaryKey = new DataColumn[] { tbl.Columns["IdResponsable"] };
 		}
 		void mostrarDatos()
 		{
@@ -38,14 +38,18 @@ namespace Conversor_A
 			{
 				lblIdResponsable.Text = tbl.Rows[posicion].ItemArray[0].ToString();
 				txtCodigo.Text = tbl.Rows[posicion].ItemArray[1].ToString();
-				txtDatos.Text = tbl.Rows[posicion].ItemArray[2].ToString();
-
+				txtNombre.Text = tbl.Rows[posicion].ItemArray[2].ToString();
+				txtEdad.Text = tbl.Rows[posicion].ItemArray[3].ToString();
+				txtDireccion.Text = tbl.Rows[posicion].ItemArray[4].ToString();
+				txtDui.Text = tbl.Rows[posicion].ItemArray[5].ToString();
+				txtNit.Text = tbl.Rows[posicion].ItemArray[6].ToString();
+				txtTelefono.Text = tbl.Rows[posicion].ItemArray[7].ToString();
 
 				lblnregistros.Text = (posicion + 1) + " de " + tbl.Rows.Count;
 			}
 			catch (Exception ex)
 			{
-				MessageBox.Show("No hay Datos que mostrar", "Registros de Alumnos",
+				MessageBox.Show("No hay Datos que mostrar", "Registros de Responsables",
 					MessageBoxButtons.OK, MessageBoxIcon.Information);
 				limpiar_cajas();
 			}
@@ -53,7 +57,12 @@ namespace Conversor_A
 		void limpiar_cajas()
 		{
 			txtCodigo.Text = "";
-			txtDatos.Text = "";
+			txtNombre.Text = "";
+			txtEdad.Text = "";
+			txtDireccion.Text = "";
+			txtDui.Text = "";
+			txtNit.Text = "";
+			txtTelefono.Text = "";
 
 		}
 		void controles(Boolean valor)
@@ -61,7 +70,7 @@ namespace Conversor_A
 			grbNavegacion.Enabled = valor;
 			btnEliminar.Enabled = valor;
 			btnBuscar.Enabled = valor;
-			grbEdicionderesponsables.Enabled = !valor;
+			grbResponsables.Enabled = !valor;
 		}
 		private void btnPrimero_Click(object sender, EventArgs e)
 		{
@@ -78,7 +87,7 @@ namespace Conversor_A
 			}
 			else
 			{
-				MessageBox.Show("Primer Registro...", "Registros de Alumnos",
+				MessageBox.Show("Primer Registro...", "Registros de Responsables",
 					MessageBoxButtons.OK, MessageBoxIcon.Information);
 			}
 		}
@@ -97,7 +106,7 @@ namespace Conversor_A
 			}
 			else
 			{
-				MessageBox.Show("Ultimo Registro...", "Registros de Alumnos",
+				MessageBox.Show("Ultimo Registro...", "Registros de Responsables",
 					MessageBoxButtons.OK, MessageBoxIcon.Information);
 			}
 		}
@@ -118,7 +127,12 @@ namespace Conversor_A
 				String[] valores = {
 					lblIdResponsable.Text,
 					txtCodigo.Text,
-					txtDatos.Text,
+					txtNombre.Text,
+					txtEdad.Text,
+					txtDireccion.Text,
+					txtDui.Text,
+					txtNit.Text,
+					txtTelefono.Text,
 				};
 				objConexion.mantenimiento_datos(valores, accion);
 				actualizarDs();
@@ -158,7 +172,7 @@ namespace Conversor_A
 
 		private void btnEliminar_Click(object sender, EventArgs e)
 		{
-			if (MessageBox.Show("Esta seguro de elimina a " + txtDatos.Text, "Registro de Alumnos",
+			if (MessageBox.Show("Esta seguro de elimina a " + txtNombre.Text, "Registro de Responsales",
 			  MessageBoxButtons.YesNo, MessageBoxIcon.Error) == DialogResult.Yes)
 			{
 				String[] valores = { lblIdResponsable.Text };
@@ -172,20 +186,15 @@ namespace Conversor_A
 
 		private void btnBuscar_Click(object sender, EventArgs e)
 		{
-			Busqueda_Alumnos frmBusquedaAlumnos = new Busqueda_Alumnos();
-			frmBusquedaAlumnos.ShowDialog();
+			Buscar_Responsables frmBuscarResponsables = new Buscar_Responsables();
+			frmBuscarResponsables.ShowDialog();
 
-			if (frmBusquedaAlumnos._IdAlumno > 0)
+			if (frmBuscarResponsables._IdResponsable > 0)
 			{
-				posicion = tbl.Rows.IndexOf(tbl.Rows.Find(frmBusquedaAlumnos._IdAlumno));
+				posicion = tbl.Rows.IndexOf(tbl.Rows.Find(frmBuscarResponsables._IdResponsable));
 				mostrarDatos();
 			}
 		}
 
-		private void grbAlumnos_Enter(object sender, EventArgs e)
-		{
-
-		}
 	}
-
 }

@@ -26,6 +26,7 @@ namespace Conversor_A
 		{
 			actualizarDs();
 			mostrarDatos();
+			
 		}
 		void actualizarDs()
 		{

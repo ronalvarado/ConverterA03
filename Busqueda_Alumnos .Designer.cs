@@ -88,6 +88,7 @@
 			// 
 			// grdBusquedaAlumnos
 			// 
+			this.grdBusquedaAlumnos.AllowUserToAddRows = false;
 			this.grdBusquedaAlumnos.AllowUserToDeleteRows = false;
 			this.grdBusquedaAlumnos.AutoGenerateColumns = false;
 			this.grdBusquedaAlumnos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;

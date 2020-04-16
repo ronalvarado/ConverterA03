@@ -76,5 +76,45 @@ namespace Conversor_A
 			comandosSQL.CommandText = sql;
 			comandosSQL.ExecuteNonQuery();
 		}
+		public void mantenimiento_datos_Responsables(String[] datos, String accion)
+		{
+			String sql = "";
+			if (accion == "nuevo")
+			{
+				sql = "INSERT INTO Responsables (Codigo,Nombre_Responsable,Edad,Direccion,Telefono,DUI,NIT) VALUES(" +
+					"'" + datos[1] + "'," +
+					"'" + datos[2] + "'," +
+					"'" + datos[3] + "'," +
+					"'" + datos[4] + "'," +
+					"'" + datos[5] + "'," +
+					"'" + datos[6] + "'," +
+					"'" + datos[7] + "'" +
+					")";
+
+			}
+			else if (accion == "modificar")
+			{
+				sql = "UPDATE Responsables SET " +
+					"Codigo                        = '" + datos[1] + "'," +
+					"Nombre_Responsable            = '" + datos[2] + "'," +
+					"Edad                          = '" + datos[3] + "'," +
+					"Direccion                     = '" + datos[4] + "'," +
+					"Telefono                      = '" + datos[5] + "'," +
+					"DUI                           = '" + datos[6] + "'," +
+					"NIT                           = '" + datos[7] + "'" +
+					"WHERE IdResponsable           = '" + datos[0] + "'";
+			}
+			else if (accion == "eliminar")
+			{
+				sql = "DELETE Responsables FROM Alumnos WHERE IdResponsable='" + datos[0] + "'";
+			}
+			procesaSQL(sql);
+		}
+		void procesaSQL(String sql)
+		{
+			comandosSQL.Connection = miConexion;
+			comandosSQL.CommandText = sql;
+			comandosSQL.ExecuteNonQuery();
+		}
 	}
 }

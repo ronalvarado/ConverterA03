@@ -19,7 +19,7 @@ namespace Conversor_A
 			InitializeComponent();
 		}
 
-		private void Busqueda_Responsables_Load(object sender, EventArgs e)
+		private void Buscar_Responsables_Load(object sender, EventArgs e)
 		{
 			grdBusquedaResponsables.DataSource =
 			 objConexion.obtener_datos().Tables["Responsables"].DefaultView;
@@ -42,7 +42,7 @@ namespace Conversor_A
 		{
 			BindingSource bs = new BindingSource();
 			bs.DataSource = grdBusquedaResponsables.DataSource;
-			bs.Filter = "Datos de Responsable like '%" + valor + "%'";
+			bs.Filter = "Nombre_Responsable like '%" + valor + "%'";
 			grdBusquedaResponsables.DataSource = bs;
 		}
 
@@ -55,6 +55,7 @@ namespace Conversor_A
 		{
 			Close();
 		}
-	
+
+		
 	}
 }
