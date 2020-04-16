@@ -16,7 +16,7 @@ namespace Conversor_A
 		{
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
-			Application.Run(new Mantenimiento_de__Responsables());
+			Application.Run(new Menu());
 		}
 	}
 }

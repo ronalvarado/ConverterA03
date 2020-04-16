@@ -13,7 +13,7 @@ namespace Conversor_A
 	public partial class Buscar_Responsables : Form
 	{
 		Conexion_BD objConexion = new Conexion_BD();
-		public int _IdResponsable;
+		public int _IdResponsables;
 		public Buscar_Responsables()
 		{
 			InitializeComponent();
@@ -29,7 +29,7 @@ namespace Conversor_A
 		{
 			if (grdBusquedaResponsables.RowCount > 0)
 			{
-				_IdResponsable = int.Parse(grdBusquedaResponsables.CurrentRow.Cells[0].Value.ToString());
+				_IdResponsables = int.Parse(grdBusquedaResponsables.CurrentRow.Cells[0].Value.ToString());
 				Close();
 			}
 			else
@@ -42,20 +42,41 @@ namespace Conversor_A
 		{
 			BindingSource bs = new BindingSource();
 			bs.DataSource = grdBusquedaResponsables.DataSource;
-			bs.Filter = "Nombre_Responsable like '%" + valor + "%'";
+			bs.Filter = "Nombre_Responsables like '%" + valor + "%'";
 			grdBusquedaResponsables.DataSource = bs;
 		}
 
-		private void txtbuscar_TextChanged(object sender, EventArgs e)
-		{
-			filtrar_datos(txtbuscar.Text);
-		}
+		
 
 		private void btnCancelar_Click(object sender, EventArgs e)
 		{
 			Close();
 		}
 
-		
-	}
-}
+        private void btnSeleccionar_Click_1(object sender, EventArgs e)
+        {
+            if (grdBusquedaResponsables.RowCount > 0)
+            {
+                _IdResponsables = int.Parse(grdBusquedaResponsables.CurrentRow.Cells[0].Value.ToString());
+                Close();
+            }
+            else
+            {
+                MessageBox.Show("NO hay datos que seleccionar", "Busqueda de Responsables",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+    }
+
+        private void btnCancelar_Click_1(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void txtbuscarresponsable_TextChanged(object sender, EventArgs e)
+        {
+            filtrar_datos(txtbuscarresponsable.Text);
+
+        }
+    }
+    }
+

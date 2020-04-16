@@ -21,180 +21,185 @@ namespace Conversor_A
 		{
 			InitializeComponent();
 		}
-		private void Mantenimiento_de__Responsables_Load(object sender, EventArgs e)
-		{
-			actualizarDs();
-			mostrarDatos();
+		
+        private void btnUltimo_Click_1(object sender, EventArgs e)
+        {
+            posicion = tbl.Rows.Count - 1;
+            mostrarDatos();
+        }
 
-		}
-		void actualizarDs()
-		{
-			tbl = objConexion.obtener_datos().Tables["Responsables"];
-			tbl.PrimaryKey = new DataColumn[] { tbl.Columns["IdResponsable"] };
-		}
-		void mostrarDatos()
-		{
-			try
-			{
-				lblIdResponsable.Text = tbl.Rows[posicion].ItemArray[0].ToString();
-				txtCodigo.Text = tbl.Rows[posicion].ItemArray[1].ToString();
-				txtNombre.Text = tbl.Rows[posicion].ItemArray[2].ToString();
-				txtEdad.Text = tbl.Rows[posicion].ItemArray[3].ToString();
-				txtDireccion.Text = tbl.Rows[posicion].ItemArray[4].ToString();
-				txtDui.Text = tbl.Rows[posicion].ItemArray[5].ToString();
-				txtNit.Text = tbl.Rows[posicion].ItemArray[6].ToString();
-				txtTelefono.Text = tbl.Rows[posicion].ItemArray[7].ToString();
+        private void Mantenimiento_de__Responsables_Load(object sender, EventArgs e)
+        {
+            actualizarDs();
+            mostrarDatos();
 
-				lblnregistros.Text = (posicion + 1) + " de " + tbl.Rows.Count;
-			}
-			catch (Exception ex)
-			{
-				MessageBox.Show("No hay Datos que mostrar", "Registros de Responsables",
-					MessageBoxButtons.OK, MessageBoxIcon.Information);
-				limpiar_cajas();
-			}
-		}
-		void limpiar_cajas()
-		{
-			txtCodigo.Text = "";
-			txtNombre.Text = "";
-			txtEdad.Text = "";
-			txtDireccion.Text = "";
-			txtDui.Text = "";
-			txtNit.Text = "";
-			txtTelefono.Text = "";
+        }
+        void actualizarDs()
+        {
+            tbl = objConexion.obtener_datos().Tables["Responsables"];
+            tbl.PrimaryKey = new DataColumn[] { tbl.Columns["IdResponsables"] };
+        }
+        void mostrarDatos()
+        {
+            try
+            {
+                lblIdResponsable.Text = tbl.Rows[posicion].ItemArray[0].ToString();
+                txtCodigo.Text = tbl.Rows[posicion].ItemArray[1].ToString();
+                txtNombre.Text = tbl.Rows[posicion].ItemArray[2].ToString();
+                txtEdad.Text = tbl.Rows[posicion].ItemArray[3].ToString();
+                txtDireccion.Text = tbl.Rows[posicion].ItemArray[4].ToString();
+                txtDui.Text = tbl.Rows[posicion].ItemArray[5].ToString();
+                txtNit.Text = tbl.Rows[posicion].ItemArray[6].ToString();
+                txtTelefono.Text = tbl.Rows[posicion].ItemArray[7].ToString();
 
-		}
-		void controles(Boolean valor)
-		{
-			grbNavegacion.Enabled = valor;
-			btnEliminar.Enabled = valor;
-			btnBuscar.Enabled = valor;
-			grbResponsables.Enabled = !valor;
-		}
-		private void btnPrimero_Click(object sender, EventArgs e)
-		{
-			posicion = 0;
-			mostrarDatos();
-		}
+                lblnregistros.Text = (posicion + 1) + " de " + tbl.Rows.Count;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("No hay Datos que mostrar", "Registros de Responsables",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                limpiar_cajas();
+            }
+        }
+        void limpiar_cajas()
+        {
+            txtCodigo.Text = "";
+            txtNombre.Text = "";
+            txtEdad.Text = "";
+            txtDireccion.Text = "";
+            txtDui.Text = "";
+            txtNit.Text = "";
+            txtTelefono.Text = "";
 
-		private void btnAnterior_Click(object sender, EventArgs e)
-		{
-			if (posicion > 0)
-			{
-				posicion--;
-				mostrarDatos();
-			}
-			else
-			{
-				MessageBox.Show("Primer Registro...", "Registros de Responsables",
-					MessageBoxButtons.OK, MessageBoxIcon.Information);
-			}
-		}
-		private void btnUltimo_Click(object sender, EventArgs e)
-		{
-			posicion = tbl.Rows.Count - 1;
-			mostrarDatos();
-		}
+        }
+        void controles(Boolean valor)
+        {
+            grbNavegacion.Enabled = valor;
+            btnEliminar.Enabled = valor;
+            btnBuscar.Enabled = valor;
+            grbResponsables.Enabled = !valor;
+        }
 
-		private void btnSiguiente_Click(object sender, EventArgs e)
-		{
-			if (posicion < tbl.Rows.Count - 1)
-			{
-				posicion++;
-				mostrarDatos();
-			}
-			else
-			{
-				MessageBox.Show("Ultimo Registro...", "Registros de Responsables",
-					MessageBoxButtons.OK, MessageBoxIcon.Information);
-			}
-		}
+        private void btnNuevo_Click_1(object sender, EventArgs e)
+        {
+            if (btnNuevo.Text == "Nuevo")
+            {//boton de nuevo
+                btnNuevo.Text = "Guardar";
+                btnModificar.Text = "Cancelar";
+                accion = "nuevo";
 
-		private void btnNuevo_Click(object sender, EventArgs e)
-		{
-			if (btnNuevo.Text == "Nuevo")
-			{//boton de nuevo
-				btnNuevo.Text = "Guardar";
-				btnModificar.Text = "Cancelar";
-				accion = "nuevo";
+                limpiar_cajas();
+                controles(false);
+            }
+            else
+            { //boton de guardar
+                String[] valores = {
+                    lblIdResponsable.Text,
+                    txtCodigo.Text,
+                    txtNombre.Text,
+                    txtEdad.Text,
+                    txtDireccion.Text,
+                    txtDui.Text,
+                    txtNit.Text,
+                    txtTelefono.Text,
+                };
+                objConexion.mantenimiento_datos_Responsables(valores, accion);
+                actualizarDs();
+                posicion = tbl.Rows.Count - 1;
+                mostrarDatos();
 
-				limpiar_cajas();
-				controles(false);
-			}
-			else
-			{ //boton de guardar
-				String[] valores = {
-					lblIdResponsable.Text,
-					txtCodigo.Text,
-					txtNombre.Text,
-					txtEdad.Text,
-					txtDireccion.Text,
-					txtDui.Text,
-					txtNit.Text,
-					txtTelefono.Text,
-				};
-				objConexion.mantenimiento_datos(valores, accion);
-				actualizarDs();
-				posicion = tbl.Rows.Count - 1;
-				mostrarDatos();
+                controles(true);
 
-				controles(true);
+                btnNuevo.Text = "Nuevo";
+                btnModificar.Text = "Modificar";
+            }
 
-				btnNuevo.Text = "Nuevo";
-				btnModificar.Text = "Modificar";
-			}
-		}
+        }
 
-		private void btnModificar_Click(object sender, EventArgs e)
-		{
-			if (btnModificar.Text == "Modificar")
-			{//boton de modificar
-				btnNuevo.Text = "Guardar";
-				btnModificar.Text = "Cancelar";
-				accion = "modificar";
+        private void btnAnterior_Click(object sender, EventArgs e)
+        {
+            if (posicion > 0)
+            {
+                posicion--;
+                mostrarDatos();
+            }
+            else
+            {
+                MessageBox.Show("Primer Registro...", "Registros de Responsables",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+    }
 
-				controles(false);
+        private void btnPrimero_Click(object sender, EventArgs e)
+        {
+            posicion = 0;
+            mostrarDatos();
+        }
 
-				btnNuevo.Text = "Guardar";
-				btnModificar.Text = "Cancelar";
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Esta seguro de elimina a " + txtNombre.Text, "Registro de Responsables",
+              MessageBoxButtons.YesNo, MessageBoxIcon.Error) == DialogResult.Yes)
+            {
+                String[] valores = { lblIdResponsable.Text };
+                objConexion.mantenimiento_datos_Responsables(valores, "eliminar");
 
-			}
-			else
-			{ //boton de cancelar
-				controles(true);
-				mostrarDatos();
+                actualizarDs();
+                posicion = posicion > 0 ? posicion - 1 : 0;
+                mostrarDatos();
+            }
+    }
 
-				btnNuevo.Text = "Nuevo";
-				btnModificar.Text = "Modificar";
-			}
-		}
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            Buscar_Responsables frmBuscarResponsables = new Buscar_Responsables();
+            frmBuscarResponsables.ShowDialog();
 
-		private void btnEliminar_Click(object sender, EventArgs e)
-		{
-			if (MessageBox.Show("Esta seguro de elimina a " + txtNombre.Text, "Registro de Responsales",
-			  MessageBoxButtons.YesNo, MessageBoxIcon.Error) == DialogResult.Yes)
-			{
-				String[] valores = { lblIdResponsable.Text };
-				objConexion.mantenimiento_datos(valores, "eliminar");
+            if (frmBuscarResponsables._IdResponsables > 0)
+            {
+                posicion = tbl.Rows.IndexOf(tbl.Rows.Find(frmBuscarResponsables._IdResponsables));
+                mostrarDatos();
+            }
+        }
 
-				actualizarDs();
-				posicion = posicion > 0 ? posicion - 1 : 0;
-				mostrarDatos();
-			}
-		}
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            if (btnModificar.Text == "Modificar")
+            {//boton de modificar
+                btnNuevo.Text = "Guardar";
+                btnModificar.Text = "Cancelar";
+                accion = "modificar";
 
-		private void btnBuscar_Click(object sender, EventArgs e)
-		{
-			Buscar_Responsables frmBuscarResponsables = new Buscar_Responsables();
-			frmBuscarResponsables.ShowDialog();
+                controles(false);
 
-			if (frmBuscarResponsables._IdResponsable > 0)
-			{
-				posicion = tbl.Rows.IndexOf(tbl.Rows.Find(frmBuscarResponsables._IdResponsable));
-				mostrarDatos();
-			}
-		}
+                btnNuevo.Text = "Guardar";
+                btnModificar.Text = "Cancelar";
 
-	}
+            }
+            else
+            { //boton de cancelar
+                controles(true);
+                mostrarDatos();
+
+                btnNuevo.Text = "Nuevo";
+                btnModificar.Text = "Modificar";
+            }
+        }
+
+        private void btnSiguiente_Click_1(object sender, EventArgs e)
+        {
+            if (posicion < tbl.Rows.Count - 1)
+            {
+                posicion++;
+                mostrarDatos();
+            }
+            else
+            {
+                MessageBox.Show("Ultimo Registro...", "Registros de Responsables",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+    }
 }
+
+

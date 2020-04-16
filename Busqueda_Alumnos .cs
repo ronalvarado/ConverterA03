@@ -55,5 +55,10 @@ namespace Conversor_A
 		{
 			Close();
 		}
-	}
+
+        private void lblBuscar_Click(object sender, EventArgs e)
+        {
+
+        }
+    }
 }

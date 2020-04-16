@@ -47,7 +47,7 @@ namespace Conversor_A
 				txtSeccion.Text = tbl.Rows[posicion].ItemArray[7].ToString();
 
 				lblnregistros.Text = (posicion + 1) + " de " + tbl.Rows.Count;
-			}catch (Exception ex){
+			}catch (Exception ){
 				MessageBox.Show("No hay Datos que mostrar", "Registros de Alumnos",
 					MessageBoxButtons.OK, MessageBoxIcon.Information);
 				limpiar_cajas();
@@ -188,5 +188,10 @@ namespace Conversor_A
 				mostrarDatos();
 			}
 		}
-	}
+
+        private void grbAlumnos_Enter(object sender, EventArgs e)
+        {
+
+        }
+    }
 }
