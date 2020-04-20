@@ -39,11 +39,19 @@ namespace Conversor_A
 			miAdaptadorDatos.SelectCommand = comandosSQL;
 			miAdaptadorDatos.Fill(ds, "Docentes");
 
+			comandosSQL.CommandText = "select * from Matriculas";
+			miAdaptadorDatos.SelectCommand = comandosSQL;
+			miAdaptadorDatos.Fill(ds, "Matriculas");
+
+			comandosSQL.CommandText = "select * from TutordAula";
+			miAdaptadorDatos.SelectCommand = comandosSQL;
+			miAdaptadorDatos.Fill(ds, "TutordAula");
+
 			return ds;
 		}
 		public void mantenimiento_datos(String[] datos, String accion)
 		{
-            String sql = "";
+			String sql = "";
 			if (accion == "nuevo") {
 				sql = "INSERT INTO Alumnos (Codigo,Nombre_Alumno,Edad,Direccion,Telefono,Grado,Seccion) VALUES(" +
 					"'" + datos[1] + "'," +
@@ -55,17 +63,17 @@ namespace Conversor_A
 					"'" + datos[7] + "'" +
 					")";
 
-			} else if (accion == "modificar"){
+			} else if (accion == "modificar") {
 				sql = "UPDATE Alumnos SET " +
 					"Codigo                   = '" + datos[1] + "'," +
 					"Nombre_Alumno            = '" + datos[2] + "'," +
-					"Edad                     = '" + datos[3] +"',"  +
+					"Edad                     = '" + datos[3] + "'," +
 					"Direccion                = '" + datos[4] + "'," +
 					"Telefono                 = '" + datos[5] + "'," +
 					"Grado                    = '" + datos[6] + "'," +
 					"Seccion                  = '" + datos[7] + "'" +
-				    "WHERE IdAlumno           = '" + datos[0] + "'";
-			}else if (accion == "eliminar"){
+					"WHERE IdAlumno           = '" + datos[0] + "'";
+			} else if (accion == "eliminar") {
 				sql = "DELETE Alumnos FROM Alumnos WHERE IdAlumno='" + datos[0] + "'";
 			}
 			procesarSQL(sql);
@@ -146,7 +154,40 @@ namespace Conversor_A
 			}
 			else if (accion == "eliminar")
 			{
-				sql = "DELETE Docentes FROM Responsables WHERE IdDocente='" + datos[0] + "'";
+				sql = "DELETE Docentes FROM Docentes WHERE IdDocente='" + datos[0] + "'";
+			}
+			procesiSQL(sql);
+		}
+		void procesiSQL(String sql)
+		{
+			comandosSQL.Connection = miConexion;
+			comandosSQL.CommandText = sql;
+			comandosSQL.ExecuteNonQuery();
+
+		}
+		public void mantenimiento_Matriculas(String[] datos, String accion)
+		{
+			String sql = "";
+			if (accion == "nuevo")
+			{
+				sql = "INSERT INTO Matriculas (IdAlumno,IdResponsable,Fecha_de_Matricula) VALUES(" +
+					"'" + datos[1] + "'," +
+					"'" + datos[2] + "'," +
+					"'" + datos[3] + "'" +
+					")";
+
+			}
+			else if (accion == "modificar")
+			{
+				sql = "UPDATE Matriculas SET " +
+					"IdAlumno                     = '" + datos[1] + "'," +
+					"IdResponsable                = '" + datos[2] + "'," +
+					"Fecha_de_Matricula           = '" + datos[3] + "'"  +
+					"WHERE IdMatricula            = '" + datos[0] + "'";
+			}
+			else if (accion == "eliminar")
+			{
+				sql = "DELETE Matriculas FROM Matriculas WHERE IdMatricula='" + datos[0] + "'";
 			}
 			procesaSQL(sql);
 		}
@@ -155,7 +196,41 @@ namespace Conversor_A
 			comandosSQL.Connection = miConexion;
 			comandosSQL.CommandText = sql;
 			comandosSQL.ExecuteNonQuery();
-			
+
+		}
+		public void mantenimiento_TutordAula(String[] datos, String accion)
+		{
+			String sql = "";
+			if (accion == "nuevo")
+			{
+				sql = "INSERT INTO TutordAula (IdDocente,Codigo,Grado,Seccion) VALUES(" +
+					"'" + datos[1] + "'," +
+					"'" + datos[2] + "'," +
+					"'" + datos[3] + "'," +
+					"'" + datos[4] + "'" +
+					")";
+
+			}
+			else if (accion == "modificar")
+			{
+				sql = "UPDATE TutordAula SET " +
+					"IdDocente                        = '" + datos[1] + "'," +
+					"Codigo                           = '" + datos[2] + "'," +
+					"Grado                            = '" + datos[3] + "'," +
+					"Seccion                          = '" + datos[4] + "'" +
+					"WHERE IdAula                     = '" + datos[0] + "'";
+			}
+			else if (accion == "eliminar")
+			{
+				sql = "DELETE TutordAula FROM TutordAula WHERE IdAula='" + datos[0] + "'";
+			}
+			procsSQL(sql);
+		}
+		void procsSQL(String sql)
+		{
+			comandosSQL.Connection = miConexion;
+			comandosSQL.CommandText = sql;
+			comandosSQL.ExecuteNonQuery();
 		}
 	}
 }

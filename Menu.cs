@@ -37,5 +37,19 @@ namespace Conversor_A
 
             Mantenimiento_Docentes.Show();
         }
+
+        private void btnMatriculas_Click(object sender, EventArgs e)
+        {
+            Matriculas Matriculas = new Matriculas();
+
+            Matriculas.Show();
+        }
+
+        private void btnTutor_Click(object sender, EventArgs e)
+        {
+            TutorAula TutorAula = new TutorAula();
+
+            TutorAula.Show();
+        }
     }
 }

@@ -148,7 +148,7 @@ namespace Conversor_A
                 posicion = posicion > 0 ? posicion - 1 : 0;
                 mostrarDatos();
             }
-    }
+        }
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {

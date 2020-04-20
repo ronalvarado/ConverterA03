@@ -98,6 +98,12 @@
     <Compile Include="Mantenimiento_Docentes.Designer.cs">
       <DependentUpon>Mantenimiento_Docentes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Matriculas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Matriculas.Designer.cs">
+      <DependentUpon>Matriculas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Menu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -115,6 +121,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ProyectoEscuela_DataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="TutorAula.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TutorAula.Designer.cs">
+      <DependentUpon>TutorAula.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Buscar_Docentes.resx">
       <DependentUpon>Buscar_Docentes.cs</DependentUpon>
@@ -134,6 +146,9 @@
     <EmbeddedResource Include="Mantenimiento_Docentes.resx">
       <DependentUpon>Mantenimiento_Docentes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Matriculas.resx">
+      <DependentUpon>Matriculas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
     </EmbeddedResource>
@@ -146,6 +161,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="TutorAula.resx">
+      <DependentUpon>TutorAula.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
