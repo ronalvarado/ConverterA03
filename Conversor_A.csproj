@@ -61,6 +61,30 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Asistencias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Asistencias.Designer.cs">
+      <DependentUpon>Asistencias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BuscarMaterias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BuscarMaterias.Designer.cs">
+      <DependentUpon>BuscarMaterias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BuscarMatricula.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BuscarMatricula.Designer.cs">
+      <DependentUpon>BuscarMatricula.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BuscarTutor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BuscarTutor.Designer.cs">
+      <DependentUpon>BuscarTutor.cs</DependentUpon>
+    </Compile>
     <Compile Include="Buscar_Docentes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -98,6 +122,12 @@
     <Compile Include="Mantenimiento_Docentes.Designer.cs">
       <DependentUpon>Mantenimiento_Docentes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Materias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Materias.Designer.cs">
+      <DependentUpon>Materias.cs</DependentUpon>
+    </Compile>
     <Compile Include="Matriculas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -109,6 +139,18 @@
     </Compile>
     <Compile Include="Menu.Designer.cs">
       <DependentUpon>Menu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Meses.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Meses.Designer.cs">
+      <DependentUpon>Meses.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Notas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Notas.Designer.cs">
+      <DependentUpon>Notas.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -128,6 +170,18 @@
     <Compile Include="TutorAula.Designer.cs">
       <DependentUpon>TutorAula.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Asistencias.resx">
+      <DependentUpon>Asistencias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BuscarMaterias.resx">
+      <DependentUpon>BuscarMaterias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BuscarMatricula.resx">
+      <DependentUpon>BuscarMatricula.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BuscarTutor.resx">
+      <DependentUpon>BuscarTutor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Buscar_Docentes.resx">
       <DependentUpon>Buscar_Docentes.cs</DependentUpon>
     </EmbeddedResource>
@@ -146,11 +200,20 @@
     <EmbeddedResource Include="Mantenimiento_Docentes.resx">
       <DependentUpon>Mantenimiento_Docentes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Materias.resx">
+      <DependentUpon>Materias.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Matriculas.resx">
       <DependentUpon>Matriculas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Meses.resx">
+      <DependentUpon>Meses.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Notas.resx">
+      <DependentUpon>Notas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -160,6 +223,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="TutorAula.resx">
       <DependentUpon>TutorAula.cs</DependentUpon>
@@ -212,6 +276,7 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <None Include="bin\Debug\tema-azul-clasico-abstracto-fondo-pantalla_23-2148410363.jpg" />
     <Content Include="ProyectoEscuela_.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

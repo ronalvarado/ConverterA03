@@ -32,18 +32,23 @@ namespace Conversor_A
 		{
 			tbl = objConexion.obtener_datos().Tables["Matriculas"];
 			tbl.PrimaryKey = new DataColumn[] { tbl.Columns["IdMatricula"] };
+
+			cboIdAlumno.DataSource = objConexion.obtener_datos().Tables["Alumnos"];
+			cboIdAlumno.DisplayMember = "Nombre_Alumno";
+			cboIdAlumno.ValueMember = "Alumnos.IdAlumno";
+
+			cboIdResponsables.DataSource = objConexion.obtener_datos().Tables["Responsables"];
+			cboIdResponsables.DisplayMember = "Nombre_Responsables";
+			cboIdResponsables.ValueMember = "Responsables.IdResponsables";
+
 		}
 		void mostrarDatos()
 		{
 			try
 			{
-				cboIdAlumno.DataSource = objConexion.obtener_datos().Tables["Alumnos"];
-				cboIdAlumno.DisplayMember = "Nombre_Alumno";
-				cboIdAlumno.ValueMember = "Alumnos.IdAlumno";
+				
 				cboIdAlumno.SelectedValue = tbl.Rows[posicion].ItemArray[1].ToString();
-				cboIdResponsables.DataSource = objConexion.obtener_datos().Tables["Responsables"];
-				cboIdResponsables.DisplayMember = "Nombre_Responsables";
-				cboIdResponsables.ValueMember = "Responsables.IdResponsables";
+		
 				cboIdResponsables.SelectedValue = tbl.Rows[posicion].ItemArray[2].ToString();
 
 				lblIdMatricula.Text = tbl.Rows[posicion].ItemArray[0].ToString();
@@ -127,7 +132,7 @@ namespace Conversor_A
 					lblIdMatricula.Text,
 					txtFecha.Text,
 				};
-				objConexion.mantenimiento_datos(valores, accion);
+				objConexion.mantenimiento_Matriculas(valores, accion);
 				actualizarDs();
 				posicion = tbl.Rows.Count - 1;
 				mostrarDatos();
@@ -179,7 +184,14 @@ namespace Conversor_A
 
 		private void btnBuscar_Click(object sender, EventArgs e)
 		{
+			BuscarMatricula frmBusquedaMatriculas = new BuscarMatricula();
+			frmBusquedaMatriculas.ShowDialog();
 
+			if (frmBusquedaMatriculas._IdMatricula > 0)
+			{
+				posicion = tbl.Rows.IndexOf(tbl.Rows.Find(frmBusquedaMatriculas._IdMatricula));
+				mostrarDatos();
+			}
 		}
 	}
 }

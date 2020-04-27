@@ -47,6 +47,22 @@ namespace Conversor_A
 			miAdaptadorDatos.SelectCommand = comandosSQL;
 			miAdaptadorDatos.Fill(ds, "TutordAula");
 
+			comandosSQL.CommandText = "select * from Asistencias";
+			miAdaptadorDatos.SelectCommand = comandosSQL;
+			miAdaptadorDatos.Fill(ds, "Asistencias");
+
+			comandosSQL.CommandText = "select * from Meses";
+			miAdaptadorDatos.SelectCommand = comandosSQL;
+			miAdaptadorDatos.Fill(ds, "Meses");
+
+			comandosSQL.CommandText = "select * from Materias";
+			miAdaptadorDatos.SelectCommand = comandosSQL;
+			miAdaptadorDatos.Fill(ds, "Materias");
+
+			comandosSQL.CommandText = "select * from Notas";
+			miAdaptadorDatos.SelectCommand = comandosSQL;
+			miAdaptadorDatos.Fill(ds, "Notas");
+
 			return ds;
 		}
 		public void mantenimiento_datos(String[] datos, String accion)
@@ -73,16 +89,21 @@ namespace Conversor_A
 					"Grado                    = '" + datos[6] + "'," +
 					"Seccion                  = '" + datos[7] + "'" +
 					"WHERE IdAlumno           = '" + datos[0] + "'";
-			} else if (accion == "eliminar") {
+			} //else if (accion == "eliminar") {
+			  //sql = "DELETE Alumnos FROM Alumnos WHERE IdAlumno='" + datos[0] + "'";
+			  //}
+			else if (accion == "eliminar")
+			{
 				sql = "DELETE Alumnos FROM Alumnos WHERE IdAlumno='" + datos[0] + "'";
 			}
-			procesarSQL(sql);
+			procesiaSQL(sql);
 		}
-		void procesarSQL(String sql)
+		void procesiaSQL(String sql)
 		{
 			comandosSQL.Connection = miConexion;
 			comandosSQL.CommandText = sql;
 			comandosSQL.ExecuteNonQuery();
+
 		}
 		public void mantenimiento_datos_Responsables(String[] datos, String accion)
 		{
@@ -116,13 +137,14 @@ namespace Conversor_A
 			{
 				sql = "DELETE Responsables FROM Responsables WHERE IdResponsables='" + datos[0] + "'";
 			}
-			procesSQL(sql);
+			prrocesaSQL(sql);
 		}
-		void procesSQL(String sql)
+		void prrocesaSQL(String sql)
 		{
 			comandosSQL.Connection = miConexion;
 			comandosSQL.CommandText = sql;
 			comandosSQL.ExecuteNonQuery();
+
 		}
 		public void mantenimiento_datos_Docentes(String[] datos, String accion)
 		{
@@ -144,7 +166,7 @@ namespace Conversor_A
 			{
 				sql = "UPDATE Docentes SET " +
 					"Codigo                          = '" + datos[1] + "'," +
-					"Docente                 = '" + datos[2] + "'," +
+					"Docente                         = '" + datos[2] + "'," +
 					"DUI                             = '" + datos[3] + "'," +
 					"NIT                             = '" + datos[4] + "'," +
 					"Especializacion                 = '" + datos[5] + "'," +
@@ -156,9 +178,43 @@ namespace Conversor_A
 			{
 				sql = "DELETE Docentes FROM Docentes WHERE IdDocente='" + datos[0] + "'";
 			}
-			procesiSQL(sql);
+			pocesaSQL(sql);
 		}
-		void procesiSQL(String sql)
+		void pocesaSQL(String sql)
+		{
+			comandosSQL.Connection = miConexion;
+			comandosSQL.CommandText = sql;
+			comandosSQL.ExecuteNonQuery();
+
+		}
+		public void mantenimiento_datos_TutordAula(String[] datos, String accion)
+		{
+			String sql = "";
+			if (accion == "nuevo")
+			{
+				sql = "INSERT INTO TutordAula (IdDocente,Codigo,Grado,Seccion) VALUES(" +
+					"'" + datos[1] + "'," +
+					"'" + datos[2] + "'," +
+					"'" + datos[3] + "'," +
+					"'" + datos[4] + "'" +
+					")";
+			}
+			else if (accion == "modificar")
+			{
+				sql = "UPDATE TutordAula SET " +
+					"IdDocente           = '" + datos[1] + "'," +
+					"codigo		         = '" + datos[2] + "'," +
+					"Grado			     = '" + datos[3] + "'," +
+					"Seccion		     = '" + datos[4] + "'" +
+					"WHERE IdAula = '" + datos[0] + "'";
+			}
+			else if (accion == "eliminar")
+			{
+				sql = "DELETE TutordAula FROM TutordAula WHERE IdAula='" + datos[0] + "'";
+			}
+			proceaSQL(sql);
+		}
+		void proceaSQL(String sql)
 		{
 			comandosSQL.Connection = miConexion;
 			comandosSQL.CommandText = sql;
@@ -170,7 +226,7 @@ namespace Conversor_A
 			String sql = "";
 			if (accion == "nuevo")
 			{
-				sql = "INSERT INTO Matriculas (IdAlumno,IdResponsable,Fecha_de_Matricula) VALUES(" +
+				sql = "INSERT INTO Matriculas (IdAlumno,IdResponsable,FechadeMatricula) VALUES(" +
 					"'" + datos[1] + "'," +
 					"'" + datos[2] + "'," +
 					"'" + datos[3] + "'" +
@@ -182,14 +238,141 @@ namespace Conversor_A
 				sql = "UPDATE Matriculas SET " +
 					"IdAlumno                     = '" + datos[1] + "'," +
 					"IdResponsable                = '" + datos[2] + "'," +
-					"Fecha_de_Matricula           = '" + datos[3] + "'"  +
+					"FechadeMatricula			  = '" + datos[3] + "'" +
 					"WHERE IdMatricula            = '" + datos[0] + "'";
 			}
 			else if (accion == "eliminar")
 			{
 				sql = "DELETE Matriculas FROM Matriculas WHERE IdMatricula='" + datos[0] + "'";
 			}
-			procesaSQL(sql);
+			procsaSQL(sql);
+		}
+		void procsaSQL(String sql)
+		{
+			comandosSQL.Connection = miConexion;
+			comandosSQL.CommandText = sql;
+			comandosSQL.ExecuteNonQuery();
+
+		}
+		public void mantenimiento_Asistencias(String[] datos, String accion)
+		{
+			String sql = "";
+			if (accion == "nuevo") {
+				sql = "INSERT INTO Asistencias (IdAlumno,IdMes,Dia,Si,No,) VALUES(" +
+					"'" + datos[1] + "'," +
+					"'" + datos[2] + "'," +
+					"'" + datos[3] + "'," +
+					"'" + datos[4] + "'," +
+					"'" + datos[5] + "'" +
+					")";
+			}
+			else if (accion == "modificar") {
+				sql = "UPDATE Asistencias SET " +
+					"IdAlumno                   = '" + datos[1] + "'," +
+					"IdMes                      = '" + datos[2] + "'," +
+					"Dia                        = '" + datos[3] + "'," +
+					"Si                         = '" + datos[4] + "'," +
+					"No                         = '" + datos[5] + "'" +
+					"WHERE IdAsistencia         = '" + datos[0] + "'";
+			}
+			else if (accion == "eliminar") {
+				sql = "DELETE Asistencias FROM Asistencias WHERE IdAsistencia='" + datos[0] + "'";
+			}
+			procesaisSQL(sql);
+		}
+		void procesaisSQL(String sql)
+		{
+			comandosSQL.Connection = miConexion;
+			comandosSQL.CommandText = sql;
+			comandosSQL.ExecuteNonQuery();
+
+		}
+		public void mantenimiento_datos_Meses(String[] datos, String accion)
+		{
+			String sql = "";
+			if (accion == "nuevo")
+			{
+				sql = "INSERT INTO Meses (Mes) VALUES(" +
+					"'" + datos[1] + "'" +
+					")";
+			}
+			else if (accion == "modificar")
+			{
+				sql = "UPDATE categorias SET " +
+					"Mes            = '" + datos[1] + "'" +
+					"WHERE IdMes    = '" + datos[0] + "'";
+			}
+			else if (accion == "eliminar")
+			{
+				sql = "DELETE Meses FROM Meses WHERE IdMes='" + datos[0] + "'";
+			}
+			procesasSQL(sql);
+		}
+		void procesasSQL(String sql)
+		{
+			comandosSQL.Connection = miConexion;
+			comandosSQL.CommandText = sql;
+			comandosSQL.ExecuteNonQuery();
+
+		}
+		public void mantenimiento_Materias(String[] datos, String accion)
+		{
+			String sql = "";
+			if (accion == "nuevo")
+			{
+				sql = "INSERT INTO Materias (Codigo,Nombre_Materia) VALUES(" +
+					"'" + datos[1] + "'," +
+					"'" + datos[2] + "'" +
+					")";
+
+			}
+			else if (accion == "modificar")
+			{
+				sql = "UPDATE Materias SET " +
+					"Codigo                   = '" + datos[1] + "'," +
+					"Nombre_Materia          = '" + datos[2] + "'" +
+					"WHERE IdMateria           = '" + datos[0] + "'";
+			}
+			else if (accion == "eliminar")
+			{
+				sql = "DELETE Materias FROM Materias WHERE IdMateria='" + datos[0] + "'";
+			}
+			procesaeSQL(sql);
+		}
+		void procesaeSQL(String sql)
+		{
+			comandosSQL.Connection = miConexion;
+			comandosSQL.CommandText = sql;
+			comandosSQL.ExecuteNonQuery();
+
+		}
+		public void mantenimiento_datos_Notas(String[] datos, String accion)
+		{
+			string sql = "";
+			if (accion == "nuevo") {
+				sql = "INSERT INTO Notas (IdAlumno,IdMateria,Examen,Actividad1,Actividad2,Nota) VALUES(" +
+					"'" + datos[1] + "'," +
+					"'" + datos[2] + "'," +
+					"'" + datos[3] + "'," +
+					"'" + datos[4] + "'," +
+					"'" + datos[5] + "'," +
+					"'" + datos[6] + "'" +
+					")";
+			}
+			else if (accion == "modificar"){
+				sql = "UPDATE Notas SET" +
+					"IdAlumno				='" + datos[1] + "'," +
+					"IdMateria				='" + datos[2] + "'," +
+					"Examen					='" + datos[3] + "'," +
+					"Actividad1				='" + datos[4] + "'," +
+					"Actividad2				='" + datos[5] + "'," +
+					"Nota					='" + datos[6] + "'"  +
+					"WHERE IdNota			='" + datos[0] + "'" ;
+			}
+			else if (accion == "eliminar")
+			{
+				sql = "DELETE Notas FROM Notas WHERE IdNota='" + datos[0] + "'" ;
+			}
 		}
 		void procesaSQL(String sql)
 		{
@@ -197,40 +380,6 @@ namespace Conversor_A
 			comandosSQL.CommandText = sql;
 			comandosSQL.ExecuteNonQuery();
 
-		}
-		public void mantenimiento_TutordAula(String[] datos, String accion)
-		{
-			String sql = "";
-			if (accion == "nuevo")
-			{
-				sql = "INSERT INTO TutordAula (IdDocente,Codigo,Grado,Seccion) VALUES(" +
-					"'" + datos[1] + "'," +
-					"'" + datos[2] + "'," +
-					"'" + datos[3] + "'," +
-					"'" + datos[4] + "'" +
-					")";
-
-			}
-			else if (accion == "modificar")
-			{
-				sql = "UPDATE TutordAula SET " +
-					"IdDocente                        = '" + datos[1] + "'," +
-					"Codigo                           = '" + datos[2] + "'," +
-					"Grado                            = '" + datos[3] + "'," +
-					"Seccion                          = '" + datos[4] + "'" +
-					"WHERE IdAula                     = '" + datos[0] + "'";
-			}
-			else if (accion == "eliminar")
-			{
-				sql = "DELETE TutordAula FROM TutordAula WHERE IdAula='" + datos[0] + "'";
-			}
-			procsSQL(sql);
-		}
-		void procsSQL(String sql)
-		{
-			comandosSQL.Connection = miConexion;
-			comandosSQL.CommandText = sql;
-			comandosSQL.ExecuteNonQuery();
 		}
 	}
 }

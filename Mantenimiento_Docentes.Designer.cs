@@ -62,21 +62,23 @@
 			// 
 			// grbEdicionderesponsables
 			// 
+			this.grbEdicionderesponsables.BackColor = System.Drawing.Color.Transparent;
 			this.grbEdicionderesponsables.Controls.Add(this.btnBuscar);
 			this.grbEdicionderesponsables.Controls.Add(this.btnEliminar);
 			this.grbEdicionderesponsables.Controls.Add(this.btnModificar);
 			this.grbEdicionderesponsables.Controls.Add(this.btnNuevo);
-			this.grbEdicionderesponsables.Location = new System.Drawing.Point(307, 252);
+			this.grbEdicionderesponsables.ForeColor = System.Drawing.Color.White;
+			this.grbEdicionderesponsables.Location = new System.Drawing.Point(445, 12);
 			this.grbEdicionderesponsables.Name = "grbEdicionderesponsables";
-			this.grbEdicionderesponsables.Size = new System.Drawing.Size(259, 82);
+			this.grbEdicionderesponsables.Size = new System.Drawing.Size(86, 293);
 			this.grbEdicionderesponsables.TabIndex = 8;
 			this.grbEdicionderesponsables.TabStop = false;
 			this.grbEdicionderesponsables.Text = "Edición de Alumnos";
 			// 
 			// btnBuscar
 			// 
-			this.btnBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-			this.btnBuscar.Location = new System.Drawing.Point(87, 48);
+			this.btnBuscar.BackColor = System.Drawing.Color.Teal;
+			this.btnBuscar.Location = new System.Drawing.Point(6, 173);
 			this.btnBuscar.Name = "btnBuscar";
 			this.btnBuscar.Size = new System.Drawing.Size(75, 23);
 			this.btnBuscar.TabIndex = 4;
@@ -86,8 +88,8 @@
 			// 
 			// btnEliminar
 			// 
-			this.btnEliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-			this.btnEliminar.Location = new System.Drawing.Point(168, 19);
+			this.btnEliminar.BackColor = System.Drawing.Color.Teal;
+			this.btnEliminar.Location = new System.Drawing.Point(6, 240);
 			this.btnEliminar.Name = "btnEliminar";
 			this.btnEliminar.Size = new System.Drawing.Size(75, 23);
 			this.btnEliminar.TabIndex = 3;
@@ -97,8 +99,8 @@
 			// 
 			// btnModificar
 			// 
-			this.btnModificar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-			this.btnModificar.Location = new System.Drawing.Point(87, 19);
+			this.btnModificar.BackColor = System.Drawing.Color.Teal;
+			this.btnModificar.Location = new System.Drawing.Point(6, 116);
 			this.btnModificar.Name = "btnModificar";
 			this.btnModificar.Size = new System.Drawing.Size(75, 23);
 			this.btnModificar.TabIndex = 1;
@@ -108,8 +110,8 @@
 			// 
 			// btnNuevo
 			// 
-			this.btnNuevo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-			this.btnNuevo.Location = new System.Drawing.Point(6, 19);
+			this.btnNuevo.BackColor = System.Drawing.Color.Teal;
+			this.btnNuevo.Location = new System.Drawing.Point(6, 48);
 			this.btnNuevo.Name = "btnNuevo";
 			this.btnNuevo.Size = new System.Drawing.Size(75, 23);
 			this.btnNuevo.TabIndex = 0;
@@ -119,14 +121,16 @@
 			// 
 			// grbNavegacion
 			// 
+			this.grbNavegacion.BackColor = System.Drawing.Color.Transparent;
 			this.grbNavegacion.Controls.Add(this.lblnregistros);
 			this.grbNavegacion.Controls.Add(this.btnUltimo);
 			this.grbNavegacion.Controls.Add(this.btnSiguiente);
 			this.grbNavegacion.Controls.Add(this.btnAnterior);
 			this.grbNavegacion.Controls.Add(this.btnPrimero);
+			this.grbNavegacion.ForeColor = System.Drawing.Color.White;
 			this.grbNavegacion.Location = new System.Drawing.Point(12, 252);
 			this.grbNavegacion.Name = "grbNavegacion";
-			this.grbNavegacion.Size = new System.Drawing.Size(259, 53);
+			this.grbNavegacion.Size = new System.Drawing.Size(427, 53);
 			this.grbNavegacion.TabIndex = 7;
 			this.grbNavegacion.TabStop = false;
 			this.grbNavegacion.Text = "Navegación";
@@ -134,15 +138,15 @@
 			// lblnregistros
 			// 
 			this.lblnregistros.AutoSize = true;
-			this.lblnregistros.Location = new System.Drawing.Point(110, 24);
+			this.lblnregistros.Location = new System.Drawing.Point(196, 24);
 			this.lblnregistros.Name = "lblnregistros";
 			this.lblnregistros.Size = new System.Drawing.Size(0, 13);
 			this.lblnregistros.TabIndex = 7;
 			// 
 			// btnUltimo
 			// 
-			this.btnUltimo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-			this.btnUltimo.Location = new System.Drawing.Point(213, 19);
+			this.btnUltimo.BackColor = System.Drawing.Color.Maroon;
+			this.btnUltimo.Location = new System.Drawing.Point(335, 19);
 			this.btnUltimo.Name = "btnUltimo";
 			this.btnUltimo.Size = new System.Drawing.Size(40, 23);
 			this.btnUltimo.TabIndex = 6;
@@ -152,8 +156,8 @@
 			// 
 			// btnSiguiente
 			// 
-			this.btnSiguiente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-			this.btnSiguiente.Location = new System.Drawing.Point(167, 19);
+			this.btnSiguiente.BackColor = System.Drawing.Color.Maroon;
+			this.btnSiguiente.Location = new System.Drawing.Point(274, 19);
 			this.btnSiguiente.Name = "btnSiguiente";
 			this.btnSiguiente.Size = new System.Drawing.Size(40, 23);
 			this.btnSiguiente.TabIndex = 5;
@@ -163,8 +167,8 @@
 			// 
 			// btnAnterior
 			// 
-			this.btnAnterior.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-			this.btnAnterior.Location = new System.Drawing.Point(52, 19);
+			this.btnAnterior.BackColor = System.Drawing.Color.Maroon;
+			this.btnAnterior.Location = new System.Drawing.Point(102, 19);
 			this.btnAnterior.Name = "btnAnterior";
 			this.btnAnterior.Size = new System.Drawing.Size(40, 23);
 			this.btnAnterior.TabIndex = 4;
@@ -174,8 +178,8 @@
 			// 
 			// btnPrimero
 			// 
-			this.btnPrimero.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-			this.btnPrimero.Location = new System.Drawing.Point(6, 19);
+			this.btnPrimero.BackColor = System.Drawing.Color.Maroon;
+			this.btnPrimero.Location = new System.Drawing.Point(32, 19);
 			this.btnPrimero.Name = "btnPrimero";
 			this.btnPrimero.Size = new System.Drawing.Size(40, 23);
 			this.btnPrimero.TabIndex = 3;
@@ -185,6 +189,7 @@
 			// 
 			// grbDocentes
 			// 
+			this.grbDocentes.BackColor = System.Drawing.Color.Transparent;
 			this.grbDocentes.Controls.Add(this.txtTelefono);
 			this.grbDocentes.Controls.Add(this.lblTelefono);
 			this.grbDocentes.Controls.Add(this.txtNit);
@@ -201,9 +206,10 @@
 			this.grbDocentes.Controls.Add(this.lblIdDocente);
 			this.grbDocentes.Controls.Add(this.lblCódigo);
 			this.grbDocentes.Enabled = false;
+			this.grbDocentes.ForeColor = System.Drawing.Color.White;
 			this.grbDocentes.Location = new System.Drawing.Point(12, 12);
 			this.grbDocentes.Name = "grbDocentes";
-			this.grbDocentes.Size = new System.Drawing.Size(554, 234);
+			this.grbDocentes.Size = new System.Drawing.Size(427, 234);
 			this.grbDocentes.TabIndex = 9;
 			this.grbDocentes.TabStop = false;
 			this.grbDocentes.Text = "Mantenimiento Docentes";
@@ -334,7 +340,9 @@
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-			this.ClientSize = new System.Drawing.Size(578, 346);
+			this.BackgroundImage = global::Conversor_A.Properties.Resources.tema_azul_clasico_abstracto_fondo_pantalla_23_2148410363;
+			this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+			this.ClientSize = new System.Drawing.Size(543, 313);
 			this.Controls.Add(this.grbDocentes);
 			this.Controls.Add(this.grbEdicionderesponsables);
 			this.Controls.Add(this.grbNavegacion);

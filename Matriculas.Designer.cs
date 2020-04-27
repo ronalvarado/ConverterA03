@@ -40,13 +40,13 @@
 			this.btnAnterior = new System.Windows.Forms.Button();
 			this.btnPrimero = new System.Windows.Forms.Button();
 			this.grbMatriculas = new System.Windows.Forms.GroupBox();
+			this.cboIdResponsables = new System.Windows.Forms.ComboBox();
+			this.cboIdAlumno = new System.Windows.Forms.ComboBox();
 			this.txtFecha = new System.Windows.Forms.TextBox();
 			this.lblFecha = new System.Windows.Forms.Label();
 			this.lblIdResponsables = new System.Windows.Forms.Label();
 			this.lblIdMatricula = new System.Windows.Forms.Label();
 			this.lblIdAlumno = new System.Windows.Forms.Label();
-			this.cboIdAlumno = new System.Windows.Forms.ComboBox();
-			this.cboIdResponsables = new System.Windows.Forms.ComboBox();
 			this.grbEdiciondeMatriculas.SuspendLayout();
 			this.grbNavegacion.SuspendLayout();
 			this.grbMatriculas.SuspendLayout();
@@ -54,21 +54,23 @@
 			// 
 			// grbEdiciondeMatriculas
 			// 
+			this.grbEdiciondeMatriculas.BackColor = System.Drawing.Color.Transparent;
 			this.grbEdiciondeMatriculas.Controls.Add(this.btnBuscar);
 			this.grbEdiciondeMatriculas.Controls.Add(this.btnEliminar);
 			this.grbEdiciondeMatriculas.Controls.Add(this.btnModificar);
 			this.grbEdiciondeMatriculas.Controls.Add(this.btnNuevo);
-			this.grbEdiciondeMatriculas.Location = new System.Drawing.Point(310, 147);
+			this.grbEdiciondeMatriculas.ForeColor = System.Drawing.Color.White;
+			this.grbEdiciondeMatriculas.Location = new System.Drawing.Point(575, 12);
 			this.grbEdiciondeMatriculas.Name = "grbEdiciondeMatriculas";
-			this.grbEdiciondeMatriculas.Size = new System.Drawing.Size(259, 82);
+			this.grbEdiciondeMatriculas.Size = new System.Drawing.Size(86, 188);
 			this.grbEdiciondeMatriculas.TabIndex = 8;
 			this.grbEdiciondeMatriculas.TabStop = false;
 			this.grbEdiciondeMatriculas.Text = "Edición de Matrículas";
 			// 
 			// btnBuscar
 			// 
-			this.btnBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-			this.btnBuscar.Location = new System.Drawing.Point(87, 48);
+			this.btnBuscar.BackColor = System.Drawing.Color.LightSeaGreen;
+			this.btnBuscar.Location = new System.Drawing.Point(6, 117);
 			this.btnBuscar.Name = "btnBuscar";
 			this.btnBuscar.Size = new System.Drawing.Size(75, 23);
 			this.btnBuscar.TabIndex = 4;
@@ -78,8 +80,8 @@
 			// 
 			// btnEliminar
 			// 
-			this.btnEliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-			this.btnEliminar.Location = new System.Drawing.Point(168, 19);
+			this.btnEliminar.BackColor = System.Drawing.Color.LightSeaGreen;
+			this.btnEliminar.Location = new System.Drawing.Point(6, 159);
 			this.btnEliminar.Name = "btnEliminar";
 			this.btnEliminar.Size = new System.Drawing.Size(75, 23);
 			this.btnEliminar.TabIndex = 3;
@@ -89,8 +91,8 @@
 			// 
 			// btnModificar
 			// 
-			this.btnModificar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-			this.btnModificar.Location = new System.Drawing.Point(87, 19);
+			this.btnModificar.BackColor = System.Drawing.Color.LightSeaGreen;
+			this.btnModificar.Location = new System.Drawing.Point(6, 76);
 			this.btnModificar.Name = "btnModificar";
 			this.btnModificar.Size = new System.Drawing.Size(75, 23);
 			this.btnModificar.TabIndex = 1;
@@ -100,8 +102,9 @@
 			// 
 			// btnNuevo
 			// 
-			this.btnNuevo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-			this.btnNuevo.Location = new System.Drawing.Point(6, 19);
+			this.btnNuevo.BackColor = System.Drawing.Color.LightSeaGreen;
+			this.btnNuevo.ForeColor = System.Drawing.Color.White;
+			this.btnNuevo.Location = new System.Drawing.Point(5, 33);
 			this.btnNuevo.Name = "btnNuevo";
 			this.btnNuevo.Size = new System.Drawing.Size(75, 23);
 			this.btnNuevo.TabIndex = 0;
@@ -111,14 +114,16 @@
 			// 
 			// grbNavegacion
 			// 
+			this.grbNavegacion.BackColor = System.Drawing.Color.Transparent;
 			this.grbNavegacion.Controls.Add(this.lblnregistros);
 			this.grbNavegacion.Controls.Add(this.btnUltimo);
 			this.grbNavegacion.Controls.Add(this.btnSiguiente);
 			this.grbNavegacion.Controls.Add(this.btnAnterior);
 			this.grbNavegacion.Controls.Add(this.btnPrimero);
+			this.grbNavegacion.ForeColor = System.Drawing.Color.White;
 			this.grbNavegacion.Location = new System.Drawing.Point(12, 147);
 			this.grbNavegacion.Name = "grbNavegacion";
-			this.grbNavegacion.Size = new System.Drawing.Size(259, 53);
+			this.grbNavegacion.Size = new System.Drawing.Size(557, 53);
 			this.grbNavegacion.TabIndex = 7;
 			this.grbNavegacion.TabStop = false;
 			this.grbNavegacion.Text = "Navegación";
@@ -126,15 +131,15 @@
 			// lblnregistros
 			// 
 			this.lblnregistros.AutoSize = true;
-			this.lblnregistros.Location = new System.Drawing.Point(110, 24);
+			this.lblnregistros.Location = new System.Drawing.Point(277, 24);
 			this.lblnregistros.Name = "lblnregistros";
 			this.lblnregistros.Size = new System.Drawing.Size(0, 13);
 			this.lblnregistros.TabIndex = 7;
 			// 
 			// btnUltimo
 			// 
-			this.btnUltimo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-			this.btnUltimo.Location = new System.Drawing.Point(213, 19);
+			this.btnUltimo.BackColor = System.Drawing.Color.Brown;
+			this.btnUltimo.Location = new System.Drawing.Point(468, 19);
 			this.btnUltimo.Name = "btnUltimo";
 			this.btnUltimo.Size = new System.Drawing.Size(40, 23);
 			this.btnUltimo.TabIndex = 6;
@@ -144,8 +149,8 @@
 			// 
 			// btnSiguiente
 			// 
-			this.btnSiguiente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-			this.btnSiguiente.Location = new System.Drawing.Point(167, 19);
+			this.btnSiguiente.BackColor = System.Drawing.Color.Brown;
+			this.btnSiguiente.Location = new System.Drawing.Point(380, 19);
 			this.btnSiguiente.Name = "btnSiguiente";
 			this.btnSiguiente.Size = new System.Drawing.Size(40, 23);
 			this.btnSiguiente.TabIndex = 5;
@@ -155,8 +160,8 @@
 			// 
 			// btnAnterior
 			// 
-			this.btnAnterior.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-			this.btnAnterior.Location = new System.Drawing.Point(52, 19);
+			this.btnAnterior.BackColor = System.Drawing.Color.Brown;
+			this.btnAnterior.Location = new System.Drawing.Point(145, 19);
 			this.btnAnterior.Name = "btnAnterior";
 			this.btnAnterior.Size = new System.Drawing.Size(40, 23);
 			this.btnAnterior.TabIndex = 4;
@@ -166,8 +171,8 @@
 			// 
 			// btnPrimero
 			// 
-			this.btnPrimero.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-			this.btnPrimero.Location = new System.Drawing.Point(6, 19);
+			this.btnPrimero.BackColor = System.Drawing.Color.Brown;
+			this.btnPrimero.Location = new System.Drawing.Point(36, 19);
 			this.btnPrimero.Name = "btnPrimero";
 			this.btnPrimero.Size = new System.Drawing.Size(40, 23);
 			this.btnPrimero.TabIndex = 3;
@@ -177,6 +182,7 @@
 			// 
 			// grbMatriculas
 			// 
+			this.grbMatriculas.BackColor = System.Drawing.Color.Transparent;
 			this.grbMatriculas.Controls.Add(this.cboIdResponsables);
 			this.grbMatriculas.Controls.Add(this.cboIdAlumno);
 			this.grbMatriculas.Controls.Add(this.txtFecha);
@@ -185,12 +191,31 @@
 			this.grbMatriculas.Controls.Add(this.lblIdMatricula);
 			this.grbMatriculas.Controls.Add(this.lblIdAlumno);
 			this.grbMatriculas.Enabled = false;
+			this.grbMatriculas.ForeColor = System.Drawing.Color.White;
 			this.grbMatriculas.Location = new System.Drawing.Point(12, 12);
 			this.grbMatriculas.Name = "grbMatriculas";
 			this.grbMatriculas.Size = new System.Drawing.Size(557, 129);
 			this.grbMatriculas.TabIndex = 6;
 			this.grbMatriculas.TabStop = false;
 			this.grbMatriculas.Text = "Mantenimiento Matrículas";
+			// 
+			// cboIdResponsables
+			// 
+			this.cboIdResponsables.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.cboIdResponsables.FormattingEnabled = true;
+			this.cboIdResponsables.Location = new System.Drawing.Point(98, 62);
+			this.cboIdResponsables.Name = "cboIdResponsables";
+			this.cboIdResponsables.Size = new System.Drawing.Size(298, 21);
+			this.cboIdResponsables.TabIndex = 8;
+			// 
+			// cboIdAlumno
+			// 
+			this.cboIdAlumno.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.cboIdAlumno.FormattingEnabled = true;
+			this.cboIdAlumno.Location = new System.Drawing.Point(98, 35);
+			this.cboIdAlumno.Name = "cboIdAlumno";
+			this.cboIdAlumno.Size = new System.Drawing.Size(298, 21);
+			this.cboIdAlumno.TabIndex = 7;
 			// 
 			// txtFecha
 			// 
@@ -235,29 +260,13 @@
 			this.lblIdAlumno.TabIndex = 0;
 			this.lblIdAlumno.Text = "Alumno:";
 			// 
-			// cboIdAlumno
-			// 
-			this.cboIdAlumno.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-			this.cboIdAlumno.FormattingEnabled = true;
-			this.cboIdAlumno.Location = new System.Drawing.Point(98, 35);
-			this.cboIdAlumno.Name = "cboIdAlumno";
-			this.cboIdAlumno.Size = new System.Drawing.Size(298, 21);
-			this.cboIdAlumno.TabIndex = 7;
-			// 
-			// cboIdResponsables
-			// 
-			this.cboIdResponsables.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-			this.cboIdResponsables.FormattingEnabled = true;
-			this.cboIdResponsables.Location = new System.Drawing.Point(98, 62);
-			this.cboIdResponsables.Name = "cboIdResponsables";
-			this.cboIdResponsables.Size = new System.Drawing.Size(298, 21);
-			this.cboIdResponsables.TabIndex = 8;
-			// 
 			// Matriculas
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(581, 242);
+			this.BackgroundImage = global::Conversor_A.Properties.Resources.tema_azul_clasico_abstracto_fondo_pantalla_23_2148410363;
+			this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+			this.ClientSize = new System.Drawing.Size(672, 214);
 			this.Controls.Add(this.grbEdiciondeMatriculas);
 			this.Controls.Add(this.grbNavegacion);
 			this.Controls.Add(this.grbMatriculas);

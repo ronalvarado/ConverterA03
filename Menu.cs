@@ -51,5 +51,32 @@ namespace Conversor_A
 
             TutorAula.Show();
         }
+
+        private void btnMeses_Click(object sender, EventArgs e)
+        {
+            Meses Meses = new Meses();
+
+            Meses.Show();
+        }
+
+        private void btnMaterias_Click(object sender, EventArgs e)
+        {
+            Materias Materias = new Materias();
+            Materias.Show();
+        }
+
+        private void btnAsistencias_Click(object sender, EventArgs e)
+        {
+            Asistencias Asistencias = new Asistencias();
+
+            Asistencias.Show();
+        }
+
+        private void btnNotas_Click(object sender, EventArgs e)
+        {
+            Notas Notas = new Notas();
+
+            Notas.Show();
+        }
     }
 }

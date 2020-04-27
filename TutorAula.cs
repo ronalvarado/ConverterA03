@@ -31,14 +31,15 @@ namespace Conversor_A
 		{
 			tbl = objConexion.obtener_datos().Tables["TutordAula"];
 			tbl.PrimaryKey = new DataColumn[] { tbl.Columns["IdAula"] };
+
+			cboIdDocente.DataSource = objConexion.obtener_datos().Tables["Docentes"];
+			cboIdDocente.DisplayMember = "Docente";
+			cboIdDocente.ValueMember = "Docentes.IdDocente";
 		}
 		void mostrarDatos()
 		{
 			try
 			{
-				cboIdDocente.DataSource = objConexion.obtener_datos().Tables["Docentes"];
-				cboIdDocente.DisplayMember = "Docente";
-				cboIdDocente.ValueMember = "Docentes.IdDocente";
 				cboIdDocente.SelectedValue = tbl.Rows[posicion].ItemArray[1].ToString();
 
 				lblIdAula.Text = tbl.Rows[posicion].ItemArray[0].ToString();
@@ -128,7 +129,7 @@ namespace Conversor_A
 					txtGrado.Text,
 					txtSeccion.Text,
 				};
-				objConexion.mantenimiento_TutordAula (valores, accion);
+				objConexion.mantenimiento_datos_TutordAula (valores, accion);
 				actualizarDs();
 				posicion = tbl.Rows.Count - 1;
 				mostrarDatos();
@@ -166,11 +167,11 @@ namespace Conversor_A
 
 		private void btnEliminar_Click(object sender, EventArgs e)
 		{
-			if (MessageBox.Show("Esta seguro de elimina a " + txtGrado.Text, "Registro de Matriculas",
+			if (MessageBox.Show("Esta seguro de elimina a " + txtGrado.Text, "Registro de Aulas",
 			  MessageBoxButtons.YesNo, MessageBoxIcon.Error) == DialogResult.Yes)
 			{
 				String[] valores = { lblIdAula.Text };
-				objConexion.mantenimiento_datos(valores, "eliminar");
+				objConexion.mantenimiento_datos_TutordAula(valores, "eliminar");
 
 				actualizarDs();
 				posicion = posicion > 0 ? posicion - 1 : 0;
@@ -180,7 +181,25 @@ namespace Conversor_A
 
 		private void btnBuscar_Click(object sender, EventArgs e)
 		{
+			BuscarTutor frmBusquedaAulas = new BuscarTutor();
+			frmBusquedaAulas.ShowDialog();
 
+			if (frmBusquedaAulas._IdAula > 0)
+			{
+				posicion = tbl.Rows.IndexOf(tbl.Rows.Find(frmBusquedaAulas._IdAula));
+				mostrarDatos();
+			}
+		}
+
+		private void btnBuscarDocentes_Click(object sender, EventArgs e)
+		{
+			Buscar_Docentes buscarDocente = new Buscar_Docentes();
+			buscarDocente.ShowDialog();
+
+			if (buscarDocente._IdDocente > 0)
+			{
+				cboIdDocente.SelectedValue = buscarDocente._IdDocente;
+			}
 		}
 	}
 }
