@@ -187,8 +187,9 @@ namespace Conversor_A
 
 				actualizarDs();
 				posicion = posicion > 0 ? posicion - 1 : 0;
-				mostrarDatos();
+				mostrarDatos(); 
 			}
 		}
 	}
 }
+ //001
