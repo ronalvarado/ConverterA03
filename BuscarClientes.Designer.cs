@@ -38,7 +38,7 @@
 			// 
 			// btnCancelar
 			// 
-			this.btnCancelar.Location = new System.Drawing.Point(554, 9);
+			this.btnCancelar.Location = new System.Drawing.Point(572, 9);
 			this.btnCancelar.Margin = new System.Windows.Forms.Padding(1);
 			this.btnCancelar.Name = "btnCancelar";
 			this.btnCancelar.Size = new System.Drawing.Size(77, 31);
