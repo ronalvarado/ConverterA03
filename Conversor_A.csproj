@@ -62,6 +62,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Alquileres.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Alquileres.Designer.cs">
+      <DependentUpon>Alquileres.cs</DependentUpon>
+    </Compile>
     <Compile Include="BuscarClientes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -99,6 +105,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Alquileres.resx">
+      <DependentUpon>Alquileres.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="BuscarClientes.resx">
       <DependentUpon>BuscarClientes.cs</DependentUpon>
     </EmbeddedResource>
