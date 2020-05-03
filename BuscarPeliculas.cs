@@ -22,8 +22,9 @@ namespace Conversor_A
 
 		private void BuscarPeliculas_Load(object sender, EventArgs e)
 		{
-
-		}
+            grdBuscarPeliculas.DataSource =
+              objConexion.obtener_datos().Tables["peliculas"].DefaultView;
+        }
 
 		private void txtbuscarPeliculas_TextChanged(object sender, EventArgs e)
 		{
@@ -39,7 +40,7 @@ namespace Conversor_A
 			}
 			else
 			{
-				MessageBox.Show("NO hay datos que seleccionar", "Busqueda de Peliculas",
+				MessageBox.Show("NO hay datos que seleccionar", "Busquedapelicula",
 					MessageBoxButtons.OK, MessageBoxIcon.Information);
 			}
 		}
@@ -52,14 +53,15 @@ namespace Conversor_A
 		{
 			BindingSource bs = new BindingSource();
 			bs.DataSource = grdBuscarPeliculas.DataSource;
-			bs.Filter = "nombre like '%" + valor + "%'";
-			grdBuscarPeliculas.DataSource = bs;
+            bs.Filter = "nombre like '%" + valor + "%'";
+
+            //  bs.Filter = "nombre like '%" + valor + "%' or descripcion like '%" + valor + "%' or sipnosis like '%" + valor + "%'";
+            grdBuscarPeliculas.DataSource = bs;
 		}
 
-		private void grdBuscarPeliculas_CellContentClick(object sender, DataGridViewCellEventArgs e)
-		{
-			grdBuscarPeliculas.DataSource =
-		 objConexion.obtener_datos().Tables["peliculas"].DefaultView;
-		}
-	}
+        private void grdBuscarPeliculas_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+    }
 }

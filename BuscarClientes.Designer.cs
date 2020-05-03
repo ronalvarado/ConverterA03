@@ -28,104 +28,85 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.components = new System.ComponentModel.Container();
-			this.btnCancelar = new System.Windows.Forms.Button();
-			this.btnSeleccionar = new System.Windows.Forms.Button();
-			this.txtbuscarCliente = new System.Windows.Forms.TextBox();
-			this.lblbuscar = new System.Windows.Forms.Label();
-			this.grdBusquedaClientes = new System.Windows.Forms.DataGridView();
-			this.db_Sistema_PeliculasDataSet1 = new Conversor_A.db_Sistema_PeliculasDataSet1();
-			this.dbSistemaPeliculasDataSet1BindingSource = new System.Windows.Forms.BindingSource(this.components);
-			((System.ComponentModel.ISupportInitialize)(this.grdBusquedaClientes)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.db_Sistema_PeliculasDataSet1)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.dbSistemaPeliculasDataSet1BindingSource)).BeginInit();
-			this.SuspendLayout();
-			// 
-			// btnCancelar
-			// 
-			this.btnCancelar.Location = new System.Drawing.Point(572, 17);
-			this.btnCancelar.Margin = new System.Windows.Forms.Padding(1);
-			this.btnCancelar.Name = "btnCancelar";
-			this.btnCancelar.Size = new System.Drawing.Size(89, 31);
-			this.btnCancelar.TabIndex = 34;
-			this.btnCancelar.Text = "CANCELAR";
-			this.btnCancelar.UseVisualStyleBackColor = true;
-			this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
-			// 
-			// btnSeleccionar
-			// 
-			this.btnSeleccionar.Location = new System.Drawing.Point(458, 17);
-			this.btnSeleccionar.Margin = new System.Windows.Forms.Padding(1);
-			this.btnSeleccionar.Name = "btnSeleccionar";
-			this.btnSeleccionar.Size = new System.Drawing.Size(106, 31);
-			this.btnSeleccionar.TabIndex = 33;
-			this.btnSeleccionar.Text = "SELECCIONAR";
-			this.btnSeleccionar.UseVisualStyleBackColor = true;
-			this.btnSeleccionar.Click += new System.EventHandler(this.btnSeleccionar_Click);
-			// 
-			// txtbuscarCliente
-			// 
-			this.txtbuscarCliente.Location = new System.Drawing.Point(130, 23);
-			this.txtbuscarCliente.Margin = new System.Windows.Forms.Padding(1);
-			this.txtbuscarCliente.Name = "txtbuscarCliente";
-			this.txtbuscarCliente.Size = new System.Drawing.Size(307, 20);
-			this.txtbuscarCliente.TabIndex = 32;
-			this.txtbuscarCliente.TextChanged += new System.EventHandler(this.txtbuscarCliente_TextChanged);
-			// 
-			// lblbuscar
-			// 
-			this.lblbuscar.AutoSize = true;
-			this.lblbuscar.Location = new System.Drawing.Point(65, 26);
-			this.lblbuscar.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
-			this.lblbuscar.Name = "lblbuscar";
-			this.lblbuscar.Size = new System.Drawing.Size(54, 13);
-			this.lblbuscar.TabIndex = 31;
-			this.lblbuscar.Text = "BUSCAR:";
-			// 
-			// grdBusquedaClientes
-			// 
-			this.grdBusquedaClientes.AllowUserToAddRows = false;
-			this.grdBusquedaClientes.AllowUserToDeleteRows = false;
-			this.grdBusquedaClientes.AutoGenerateColumns = false;
-			this.grdBusquedaClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.grdBusquedaClientes.DataSource = this.dbSistemaPeliculasDataSet1BindingSource;
-			this.grdBusquedaClientes.Location = new System.Drawing.Point(10, 72);
-			this.grdBusquedaClientes.Margin = new System.Windows.Forms.Padding(1);
-			this.grdBusquedaClientes.Name = "grdBusquedaClientes";
-			this.grdBusquedaClientes.ReadOnly = true;
-			this.grdBusquedaClientes.RowHeadersWidth = 102;
-			this.grdBusquedaClientes.RowTemplate.Height = 40;
-			this.grdBusquedaClientes.Size = new System.Drawing.Size(780, 348);
-			this.grdBusquedaClientes.TabIndex = 30;
-			this.grdBusquedaClientes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdBusquedaClientes_CellContentClick);
-			// 
-			// db_Sistema_PeliculasDataSet1
-			// 
-			this.db_Sistema_PeliculasDataSet1.DataSetName = "db_Sistema_PeliculasDataSet1";
-			this.db_Sistema_PeliculasDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-			// 
-			// dbSistemaPeliculasDataSet1BindingSource
-			// 
-			this.dbSistemaPeliculasDataSet1BindingSource.DataSource = this.db_Sistema_PeliculasDataSet1;
-			this.dbSistemaPeliculasDataSet1BindingSource.Position = 0;
-			// 
-			// BuscarClientes
-			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(800, 430);
-			this.Controls.Add(this.btnCancelar);
-			this.Controls.Add(this.btnSeleccionar);
-			this.Controls.Add(this.txtbuscarCliente);
-			this.Controls.Add(this.lblbuscar);
-			this.Controls.Add(this.grdBusquedaClientes);
-			this.Name = "BuscarClientes";
-			this.Text = "BuscarClientes";
-			((System.ComponentModel.ISupportInitialize)(this.grdBusquedaClientes)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.db_Sistema_PeliculasDataSet1)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.dbSistemaPeliculasDataSet1BindingSource)).EndInit();
-			this.ResumeLayout(false);
-			this.PerformLayout();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnSeleccionar = new System.Windows.Forms.Button();
+            this.txtbuscarCliente = new System.Windows.Forms.TextBox();
+            this.lblbuscar = new System.Windows.Forms.Label();
+            this.grdBusquedaClientes = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.grdBusquedaClientes)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Location = new System.Drawing.Point(572, 17);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(1);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(89, 31);
+            this.btnCancelar.TabIndex = 34;
+            this.btnCancelar.Text = "CANCELAR";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
+            // btnSeleccionar
+            // 
+            this.btnSeleccionar.Location = new System.Drawing.Point(458, 17);
+            this.btnSeleccionar.Margin = new System.Windows.Forms.Padding(1);
+            this.btnSeleccionar.Name = "btnSeleccionar";
+            this.btnSeleccionar.Size = new System.Drawing.Size(106, 31);
+            this.btnSeleccionar.TabIndex = 33;
+            this.btnSeleccionar.Text = "SELECCIONAR";
+            this.btnSeleccionar.UseVisualStyleBackColor = true;
+            this.btnSeleccionar.Click += new System.EventHandler(this.btnSeleccionar_Click);
+            // 
+            // txtbuscarCliente
+            // 
+            this.txtbuscarCliente.Location = new System.Drawing.Point(130, 23);
+            this.txtbuscarCliente.Margin = new System.Windows.Forms.Padding(1);
+            this.txtbuscarCliente.Name = "txtbuscarCliente";
+            this.txtbuscarCliente.Size = new System.Drawing.Size(307, 20);
+            this.txtbuscarCliente.TabIndex = 32;
+            this.txtbuscarCliente.TextChanged += new System.EventHandler(this.txtbuscarCliente_TextChanged);
+            // 
+            // lblbuscar
+            // 
+            this.lblbuscar.AutoSize = true;
+            this.lblbuscar.Location = new System.Drawing.Point(65, 26);
+            this.lblbuscar.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
+            this.lblbuscar.Name = "lblbuscar";
+            this.lblbuscar.Size = new System.Drawing.Size(54, 13);
+            this.lblbuscar.TabIndex = 31;
+            this.lblbuscar.Text = "BUSCAR:";
+            // 
+            // grdBusquedaClientes
+            // 
+            this.grdBusquedaClientes.AllowUserToAddRows = false;
+            this.grdBusquedaClientes.AllowUserToDeleteRows = false;
+            this.grdBusquedaClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grdBusquedaClientes.Location = new System.Drawing.Point(10, 72);
+            this.grdBusquedaClientes.Margin = new System.Windows.Forms.Padding(1);
+            this.grdBusquedaClientes.Name = "grdBusquedaClientes";
+            this.grdBusquedaClientes.ReadOnly = true;
+            this.grdBusquedaClientes.RowHeadersWidth = 102;
+            this.grdBusquedaClientes.RowTemplate.Height = 40;
+            this.grdBusquedaClientes.Size = new System.Drawing.Size(780, 348);
+            this.grdBusquedaClientes.TabIndex = 30;
+            // 
+            // BuscarClientes
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(800, 430);
+            this.Controls.Add(this.btnCancelar);
+            this.Controls.Add(this.btnSeleccionar);
+            this.Controls.Add(this.txtbuscarCliente);
+            this.Controls.Add(this.lblbuscar);
+            this.Controls.Add(this.grdBusquedaClientes);
+            this.Name = "BuscarClientes";
+            this.Text = "BuscarClientes";
+            this.Load += new System.EventHandler(this.BuscarClientes_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.grdBusquedaClientes)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
 
 		}
 
@@ -136,7 +117,5 @@
 		private System.Windows.Forms.TextBox txtbuscarCliente;
 		private System.Windows.Forms.Label lblbuscar;
 		private System.Windows.Forms.DataGridView grdBusquedaClientes;
-		private System.Windows.Forms.BindingSource dbSistemaPeliculasDataSet1BindingSource;
-		private db_Sistema_PeliculasDataSet1 db_Sistema_PeliculasDataSet1;
 	}
 }

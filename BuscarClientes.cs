@@ -51,10 +51,11 @@ namespace Conversor_A
 			grdBusquedaClientes.DataSource = bs;
 		}
 
-		private void grdBusquedaClientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
-		{
-			grdBusquedaClientes.DataSource =
-		 objConexion.obtener_datos().Tables["clientes"].DefaultView;
-		}
-	}
+	
+        private void BuscarClientes_Load(object sender, EventArgs e)
+        {
+            grdBusquedaClientes.DataSource =
+              objConexion.obtener_datos().Tables["clientes"].DefaultView;
+        }
+    }
 }

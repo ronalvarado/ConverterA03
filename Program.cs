@@ -16,7 +16,7 @@ namespace Conversor_A
 		{
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
-			Application.Run(new Alquileres());
+			Application.Run(new Menu());
 		}
 	}
 }

@@ -33,22 +33,22 @@ namespace Conversor_A
 			tbl = objConexion.obtener_datos().Tables["alquiler"];
 			tbl.PrimaryKey = new DataColumn[] { tbl.Columns["IdAlquiler"] };
 
-			cboIdCliente.DataSource = objConexion.obtener_datos().Tables["clientes"];
-			cboIdCliente.DisplayMember = "nombre";
-			cboIdCliente.ValueMember = "clientes.IdCliente";
+			cboClienteAlquiler.DataSource = objConexion.obtener_datos().Tables["clientes"];
+			cboClienteAlquiler.DisplayMember = "nombre";
+			cboClienteAlquiler.ValueMember = "clientes.IdCliente";
 
-			cboIdPelicula.DataSource = objConexion.obtener_datos().Tables["peliculas"];
-			cboIdPelicula.DisplayMember = "nombre";
-			cboIdPelicula.ValueMember = "peliculas.IdPelicula";
+			cboPeliculaAlquiler.DataSource = objConexion.obtener_datos().Tables["peliculas"];
+			cboPeliculaAlquiler.DisplayMember = "nombre";
+			cboPeliculaAlquiler.ValueMember = "peliculas.IdPelicula";
 		}
 		void mostrarDatos()
 		{
 			try
 			{
 
-				cboIdCliente.SelectedValue = tbl.Rows[posicion].ItemArray[1].ToString();
+				cboClienteAlquiler.SelectedValue = tbl.Rows[posicion].ItemArray[1].ToString();
 
-				cboIdPelicula.SelectedValue = tbl.Rows[posicion].ItemArray[2].ToString();
+				cboPeliculaAlquiler.SelectedValue = tbl.Rows[posicion].ItemArray[2].ToString();
 
 				lblIdAlquiler.Text = tbl.Rows[posicion].ItemArray[0].ToString();
 				txtFPrestamo.Text = tbl.Rows[posicion].ItemArray[3].ToString();
@@ -63,22 +63,7 @@ namespace Conversor_A
 				limpiar_cajas();
 			}
 		}
-		void limpiar_cajas()
-		{
-			cboIdCliente.Text = "";
-			cboIdPelicula.Text = "";
-			txtFPrestamo.Text = "";
-			txtFDevolucion .Text = "";
-			txtValor.Text = "";
-
-		}
-		void controles(Boolean valor)
-		{
-			grbNavegar.Enabled = valor;
-			btnEliminar.Enabled = valor;
-			btnBuscar.Enabled = valor;
-			grbAlquileres.Enabled = !valor;
-		}
+		
 
 		private void btnPrimero_Click(object sender, EventArgs e)
 		{
@@ -119,8 +104,24 @@ namespace Conversor_A
 			posicion = tbl.Rows.Count - 1;
 			mostrarDatos();
 		}
+        void limpiar_cajas()
+        {
+            lblIdAlquiler.Text = "";
+            txtFPrestamo.Text = "";
+            txtFDevolucion.Text = "";
+            txtValor.Text = "";
 
-		private void btnNuevo_Click(object sender, EventArgs e)
+        }
+        void controles(Boolean valor)
+        {
+            grbNavegar.Enabled = valor;
+            btnEliminar.Enabled = valor;
+            btnBuscar.Enabled = valor;
+            grbAlquileres.Enabled = !valor;
+        }
+
+
+        private void btnNuevo_Click(object sender, EventArgs e)
 		{
 			if (btnNuevo.Text == "Nuevo")
 			{//boton de nuevo
@@ -133,14 +134,14 @@ namespace Conversor_A
 			else
 			{ //boton de guardar 
 				String[] valores = {
-
-					cboIdCliente.SelectedValue.ToString(),
-					cboIdPelicula.SelectedValue.ToString(),
+                    lblIdAlquiler.Text,
+                    cboClienteAlquiler.SelectedValue.ToString(),
+					cboPeliculaAlquiler.SelectedValue.ToString(),
 					txtFPrestamo.Text,
 					txtFDevolucion.Text,
 					txtValor.Text,
 				};
-				objConexion.mantenimiento_datos_Alquiler(valores, accion);
+				objConexion.mantenimiento_datos_Al(valores, accion);
 				actualizarDs();
 				posicion = tbl.Rows.Count - 1;
 				mostrarDatos();
@@ -177,16 +178,23 @@ namespace Conversor_A
 
 		private void btnBuscar_Click(object sender, EventArgs e)
 		{
+            BuscarAlquiler frmBusquedaalquiler = new BuscarAlquiler();
+            frmBusquedaalquiler.ShowDialog();
 
-		}
+            if (frmBusquedaalquiler._IdAlquiler > 0)
+            {
+                posicion = tbl.Rows.IndexOf(tbl.Rows.Find(frmBusquedaalquiler._IdAlquiler));
+                mostrarDatos();
+            }
+        }
 
-		private void btnEliminar_Click(object sender, EventArgs e)
+        private void btnEliminar_Click(object sender, EventArgs e)
 		{
-			if (MessageBox.Show("Esta seguro de elimina a " + cboIdCliente.Text, "Registro de Alquiler",
+			if (MessageBox.Show("Esta seguro de elimina a " + cboClienteAlquiler.Text, "Registro de Alquiler",
 			  MessageBoxButtons.YesNo, MessageBoxIcon.Error) == DialogResult.Yes)
 			{
 				String[] valores = { lblIdAlquiler.Text };
-				objConexion.mantenimiento_datos_Alquiler(valores, "eliminar");
+				objConexion.mantenimiento_datos_Al(valores, "eliminar");
 
 				actualizarDs();
 				posicion = posicion > 0 ? posicion - 1 : 0;
@@ -196,13 +204,29 @@ namespace Conversor_A
 
 		private void btnBuscarCliente_Click(object sender, EventArgs e)
 		{
-			BuscarClientes buscarClientes = new BuscarClientes();
-			buscarClientes.ShowDialog();
+			BuscarClientes frmbuscarClientes = new BuscarClientes();
+			frmbuscarClientes.ShowDialog();
 
-			if (buscarClientes._IdCliente > 0)
+			if (frmbuscarClientes._IdCliente > 0)
 			{
-				cboIdCliente.SelectedValue = buscarClientes._IdCliente;
+				cboClienteAlquiler.SelectedValue = frmbuscarClientes._IdCliente;
 			}
 		}
-	}
+
+        private void grbAlquileres_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnBuscarPelicula_Click(object sender, EventArgs e)
+        {
+            BuscarPeliculas frmbuscapreliculas = new BuscarPeliculas();
+            frmbuscapreliculas.ShowDialog();
+
+            if (frmbuscapreliculas._IdPelicula > 0)
+            {
+                cboPeliculaAlquiler.SelectedValue = frmbuscapreliculas._IdPelicula;
+            }
+        }
+    }
 }

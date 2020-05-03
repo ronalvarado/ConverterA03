@@ -16,8 +16,14 @@ namespace Conversor_A
 		SqlDataAdapter miAdaptadorDatos = new SqlDataAdapter();
 
 		DataSet ds = new DataSet();
+        public conexion_db()
+        {
+            String cadena = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\db_Sistema_Peliculas.mdf;Integrated Security=True";
+            miConexion.ConnectionString = cadena;
+            miConexion.Open();
+        }
 
-		public DataSet obtener_datos()
+        public DataSet obtener_datos()
 		{
 			ds.Clear();
 			comandosSQL.Connection = miConexion;
@@ -32,7 +38,17 @@ namespace Conversor_A
 			miAdaptadorDatos.SelectCommand = comandosSQL;
 			miAdaptadorDatos.Fill(ds, "alquiler_clientes");
 
-			comandosSQL.CommandText = "select * from peliculas";
+            comandosSQL.CommandText = "select peliculas.nombre, alquiler.IdAlquiler, alquiler.fechaPrestamo, alquiler.fechaDevolucion, alquiler.valor from alquiler inner join peliculas on(peliculas.IdPelicula=alquiler.IdPelicula)";
+            miAdaptadorDatos.SelectCommand = comandosSQL;
+            miAdaptadorDatos.Fill(ds, "alquiler_peliculas");
+
+            comandosSQL.Connection = miConexion;
+            comandosSQL.CommandText = "select clientes.nombre, alquiler.IdAlquiler, alquiler.fechaPrestamo, alquiler.fechaDevolucion,  alquiler.valor," + " peliculas.nombre " + " from alquiler " + " inner join clientes on(clientes.IdCliente = alquiler.IdCliente)" + " inner join peliculas on(peliculas.IdPelicula = alquiler.IdPelicula)";
+            miAdaptadorDatos.SelectCommand = comandosSQL;
+            miAdaptadorDatos.Fill(ds, "clientes_peliculas_alquiler");
+
+
+            comandosSQL.CommandText = "select * from peliculas";
 			miAdaptadorDatos.SelectCommand = comandosSQL;
 			miAdaptadorDatos.Fill(ds, "peliculas");
 
@@ -43,12 +59,7 @@ namespace Conversor_A
 			return ds;
 
 		}
-		public conexion_db()
-		{
-			String cadena = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\db_Sistema_Peliculas.mdf;Integrated Security=True";
-			miConexion.ConnectionString = cadena;
-			miConexion.Open();
-		}
+		
 		public void mantenimiento_datos_Clientes(String[] datos, String accion)
 		{
 			String sql = "";
@@ -73,7 +84,7 @@ namespace Conversor_A
 			}
 			else if (accion == "eliminar")
 			{
-				sql = "DELETE alquiler FROM clientes WHERE IdCliente='" + datos[0] + "'";
+				sql = "DELETE clientes FROM clientes WHERE IdCliente='" + datos[0] + "'";
 			}
 			procesrSQL(sql);
 		}
@@ -108,7 +119,7 @@ namespace Conversor_A
 			}
 			else if (accion == "eliminar")
 			{
-				sql = "DELETE alquiler FROM peliculas WHERE IdPelicula='" + datos[0] + "'";
+				sql = "DELETE peliculas FROM peliculas WHERE IdPelicula='" + datos[0] + "'";
 			}
 			procesarSQL(sql);
 		}
@@ -119,7 +130,7 @@ namespace Conversor_A
 			comandosSQL.ExecuteNonQuery();
 
 		}
-		public void mantenimiento_datos_Alquiler(String[] datos, String accion)
+		public void mantenimiento_datos_Al(String[] datos, String accion)
 		{
 			String sql = "";
 			if (accion == "nuevo")
@@ -131,9 +142,7 @@ namespace Conversor_A
 					"'" + datos[4] + "'," +
 					"'" + datos[5] + "'" +
 					")";
-			}
-			else if (accion == "modificar")
-			{
+			}else if (accion == "modificar"){
 				sql = "UPDATE alquiler SET " +
 					"IdCliente								 = '" + datos[1] + "'," +
 					"IdPelicula								 = '" + datos[2] + "'," +
@@ -141,14 +150,12 @@ namespace Conversor_A
 					"fechaDevolucion						 = '" + datos[4] + "'," +
 					"valor									 = '" + datos[5] + "'" +
 					"WHERE IdAlquiler						 = '" + datos[0] + "'";
-			}
-			else if (accion == "eliminar")
-			{
+			}else if (accion == "eliminar"){
 				sql = "DELETE alquiler FROM alquiler WHERE IdAlquiler='" + datos[0] + "'";
 			}
-			procerSQL(sql);
+			proceraSQL(sql);
 		}
-		void procerSQL(String sql)
+		void proceraSQL(String sql)
 		{
 			comandosSQL.Connection = miConexion;
 			comandosSQL.CommandText = sql;
