@@ -26,9 +26,19 @@ namespace Conversor_A
 			miAdaptadorDatos.SelectCommand = comandosSQL;
 			miAdaptadorDatos.Fill(ds, "clientes");
 
+		
+
+			comandosSQL.CommandText = "select clientes.nombre, alquiler.IdAlquiler, alquiler.fechaPrestamo, alquiler.fechaDevolucion, alquiler.valor from alquiler inner join clientes on(clientes.IdCliente=alquiler.IdCliente)";
+			miAdaptadorDatos.SelectCommand = comandosSQL;
+			miAdaptadorDatos.Fill(ds, "alquiler_clientes");
+
 			comandosSQL.CommandText = "select * from peliculas";
 			miAdaptadorDatos.SelectCommand = comandosSQL;
 			miAdaptadorDatos.Fill(ds, "peliculas");
+
+			comandosSQL.CommandText = "select * from alquiler";
+			miAdaptadorDatos.SelectCommand = comandosSQL;
+			miAdaptadorDatos.Fill(ds, "alquiler");
 
 			return ds;
 
@@ -63,7 +73,7 @@ namespace Conversor_A
 			}
 			else if (accion == "eliminar")
 			{
-				sql = "DELETE clientes FROM clientes WHERE IdCliente='" + datos[0] + "'";
+				sql = "DELETE alquiler FROM clientes WHERE IdCliente='" + datos[0] + "'";
 			}
 			procesrSQL(sql);
 		}
@@ -72,7 +82,6 @@ namespace Conversor_A
 			comandosSQL.Connection = miConexion;
 			comandosSQL.CommandText = sql;
 			comandosSQL.ExecuteNonQuery();
-
 		}
 		public void mantenimiento_datos_Peliculas(String[] datos, String accion)
 		{
@@ -86,7 +95,6 @@ namespace Conversor_A
 					"'" + datos[4] + "'," +
 					"'" + datos[5] + "'" +
 					")";
-
 			}
 			else if (accion == "modificar")
 			{
@@ -100,11 +108,47 @@ namespace Conversor_A
 			}
 			else if (accion == "eliminar")
 			{
-				sql = "DELETE peliculas FROM peliculas WHERE IdPelicula='" + datos[0] + "'";
+				sql = "DELETE alquiler FROM peliculas WHERE IdPelicula='" + datos[0] + "'";
 			}
 			procesarSQL(sql);
 		}
 		void procesarSQL(String sql)
+		{
+			comandosSQL.Connection = miConexion;
+			comandosSQL.CommandText = sql;
+			comandosSQL.ExecuteNonQuery();
+
+		}
+		public void mantenimiento_datos_Alquiler(String[] datos, String accion)
+		{
+			String sql = "";
+			if (accion == "nuevo")
+			{
+				sql = "INSERT INTO alquiler (IdCliente,IdPelicula,fechaPrestamo,fechaDevolucion,valor) VALUES(" +
+					"'" + datos[1] + "'," +
+					"'" + datos[2] + "'," +
+					"'" + datos[3] + "'," +
+					"'" + datos[4] + "'," +
+					"'" + datos[5] + "'" +
+					")";
+			}
+			else if (accion == "modificar")
+			{
+				sql = "UPDATE alquiler SET " +
+					"IdCliente								 = '" + datos[1] + "'," +
+					"IdPelicula								 = '" + datos[2] + "'," +
+					"fechaPrestamo							 = '" + datos[3] + "'," +
+					"fechaDevolucion						 = '" + datos[4] + "'," +
+					"valor									 = '" + datos[5] + "'" +
+					"WHERE IdAlquiler						 = '" + datos[0] + "'";
+			}
+			else if (accion == "eliminar")
+			{
+				sql = "DELETE alquiler FROM alquiler WHERE IdAlquiler='" + datos[0] + "'";
+			}
+			procerSQL(sql);
+		}
+		void procerSQL(String sql)
 		{
 			comandosSQL.Connection = miConexion;
 			comandosSQL.CommandText = sql;
