@@ -62,8 +62,55 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BuscarClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BuscarClientes.Designer.cs">
+      <DependentUpon>BuscarClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BuscarPeliculas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BuscarPeliculas.Designer.cs">
+      <DependentUpon>BuscarPeliculas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Clientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Clientes.Designer.cs">
+      <DependentUpon>Clientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="conexion_db.cs" />
+    <Compile Include="db_Sistema_PeliculasDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>db_Sistema_PeliculasDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="db_Sistema_PeliculasDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>db_Sistema_PeliculasDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Peliculas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Peliculas.Designer.cs">
+      <DependentUpon>Peliculas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="BuscarClientes.resx">
+      <DependentUpon>BuscarClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BuscarPeliculas.resx">
+      <DependentUpon>BuscarPeliculas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Clientes.resx">
+      <DependentUpon>Clientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Peliculas.resx">
+      <DependentUpon>Peliculas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -74,6 +121,28 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="db_Sistema_PeliculasDataSet.xsc">
+      <DependentUpon>db_Sistema_PeliculasDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="db_Sistema_PeliculasDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>db_Sistema_PeliculasDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="db_Sistema_PeliculasDataSet.xss">
+      <DependentUpon>db_Sistema_PeliculasDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="db_Sistema_PeliculasDataSet1.xsc">
+      <DependentUpon>db_Sistema_PeliculasDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="db_Sistema_PeliculasDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>db_Sistema_PeliculasDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="db_Sistema_PeliculasDataSet1.xss">
+      <DependentUpon>db_Sistema_PeliculasDataSet1.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
