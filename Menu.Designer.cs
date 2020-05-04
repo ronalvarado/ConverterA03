@@ -28,6 +28,9 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
+			this.btnClientes = new System.Windows.Forms.Button();
+			this.btnPeliculas = new System.Windows.Forms.Button();
+			this.btnAlquiler = new System.Windows.Forms.Button();
 			this.pictureBox10 = new System.Windows.Forms.PictureBox();
 			this.pictureBox9 = new System.Windows.Forms.PictureBox();
 			this.pictureBox7 = new System.Windows.Forms.PictureBox();
@@ -37,9 +40,6 @@
 			this.pictureBox3 = new System.Windows.Forms.PictureBox();
 			this.pictureBox2 = new System.Windows.Forms.PictureBox();
 			this.pictureBox1 = new System.Windows.Forms.PictureBox();
-			this.btnClientes = new System.Windows.Forms.Button();
-			this.btnPeliculas = new System.Windows.Forms.Button();
-			this.btnAlquiler = new System.Windows.Forms.Button();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
@@ -50,6 +50,42 @@
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			this.SuspendLayout();
+			// 
+			// btnClientes
+			// 
+			this.btnClientes.BackColor = System.Drawing.Color.OrangeRed;
+			this.btnClientes.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnClientes.Location = new System.Drawing.Point(81, 397);
+			this.btnClientes.Name = "btnClientes";
+			this.btnClientes.Size = new System.Drawing.Size(122, 45);
+			this.btnClientes.TabIndex = 19;
+			this.btnClientes.Text = "&Clientes";
+			this.btnClientes.UseVisualStyleBackColor = false;
+			this.btnClientes.Click += new System.EventHandler(this.btnClientes_Click);
+			// 
+			// btnPeliculas
+			// 
+			this.btnPeliculas.BackColor = System.Drawing.Color.OrangeRed;
+			this.btnPeliculas.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnPeliculas.Location = new System.Drawing.Point(328, 397);
+			this.btnPeliculas.Name = "btnPeliculas";
+			this.btnPeliculas.Size = new System.Drawing.Size(122, 45);
+			this.btnPeliculas.TabIndex = 20;
+			this.btnPeliculas.Text = "&Películas";
+			this.btnPeliculas.UseVisualStyleBackColor = false;
+			this.btnPeliculas.Click += new System.EventHandler(this.btnPeliculas_Click);
+			// 
+			// btnAlquiler
+			// 
+			this.btnAlquiler.BackColor = System.Drawing.Color.OrangeRed;
+			this.btnAlquiler.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnAlquiler.Location = new System.Drawing.Point(550, 397);
+			this.btnAlquiler.Name = "btnAlquiler";
+			this.btnAlquiler.Size = new System.Drawing.Size(122, 45);
+			this.btnAlquiler.TabIndex = 21;
+			this.btnAlquiler.Text = "&Alquiler";
+			this.btnAlquiler.UseVisualStyleBackColor = false;
+			this.btnAlquiler.Click += new System.EventHandler(this.btnAlquiler_Click);
 			// 
 			// pictureBox10
 			// 
@@ -90,7 +126,7 @@
 			// 
 			this.pictureBox6.BackColor = System.Drawing.Color.Transparent;
 			this.pictureBox6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-			this.pictureBox6.Image = global::Conversor_A.Properties.Resources.original;
+			this.pictureBox6.Image = global::Conversor_A.Properties.Resources.Fastand1;
 			this.pictureBox6.Location = new System.Drawing.Point(224, 161);
 			this.pictureBox6.Name = "pictureBox6";
 			this.pictureBox6.Size = new System.Drawing.Size(174, 108);
@@ -150,45 +186,9 @@
 			this.pictureBox1.Image = global::Conversor_A.Properties.Resources.cine_1_;
 			this.pictureBox1.Location = new System.Drawing.Point(1, -1);
 			this.pictureBox1.Name = "pictureBox1";
-			this.pictureBox1.Size = new System.Drawing.Size(792, 506);
+			this.pictureBox1.Size = new System.Drawing.Size(795, 508);
 			this.pictureBox1.TabIndex = 10;
 			this.pictureBox1.TabStop = false;
-			// 
-			// btnClientes
-			// 
-			this.btnClientes.BackColor = System.Drawing.Color.OrangeRed;
-			this.btnClientes.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnClientes.Location = new System.Drawing.Point(81, 397);
-			this.btnClientes.Name = "btnClientes";
-			this.btnClientes.Size = new System.Drawing.Size(122, 45);
-			this.btnClientes.TabIndex = 19;
-			this.btnClientes.Text = "&Clientes";
-			this.btnClientes.UseVisualStyleBackColor = false;
-			this.btnClientes.Click += new System.EventHandler(this.btnClientes_Click);
-			// 
-			// btnPeliculas
-			// 
-			this.btnPeliculas.BackColor = System.Drawing.Color.OrangeRed;
-			this.btnPeliculas.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnPeliculas.Location = new System.Drawing.Point(328, 397);
-			this.btnPeliculas.Name = "btnPeliculas";
-			this.btnPeliculas.Size = new System.Drawing.Size(122, 45);
-			this.btnPeliculas.TabIndex = 20;
-			this.btnPeliculas.Text = "&Películas";
-			this.btnPeliculas.UseVisualStyleBackColor = false;
-			this.btnPeliculas.Click += new System.EventHandler(this.btnPeliculas_Click);
-			// 
-			// btnAlquiler
-			// 
-			this.btnAlquiler.BackColor = System.Drawing.Color.OrangeRed;
-			this.btnAlquiler.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnAlquiler.Location = new System.Drawing.Point(550, 397);
-			this.btnAlquiler.Name = "btnAlquiler";
-			this.btnAlquiler.Size = new System.Drawing.Size(122, 45);
-			this.btnAlquiler.TabIndex = 21;
-			this.btnAlquiler.Text = "&Alquiler";
-			this.btnAlquiler.UseVisualStyleBackColor = false;
-			this.btnAlquiler.Click += new System.EventHandler(this.btnAlquiler_Click);
 			// 
 			// Menu
 			// 

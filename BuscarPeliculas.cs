@@ -53,7 +53,7 @@ namespace Conversor_A
 		{
 			BindingSource bs = new BindingSource();
 			bs.DataSource = grdBuscarPeliculas.DataSource;
-            bs.Filter = "nombre like '%" + valor + "%'";
+            bs.Filter = "nombre like '%" + valor + "%' or duracion like '%" + valor + "%' or descripcion like '%" + valor + "%'";
 
             //  bs.Filter = "nombre like '%" + valor + "%' or descripcion like '%" + valor + "%' or sipnosis like '%" + valor + "%'";
             grdBuscarPeliculas.DataSource = bs;

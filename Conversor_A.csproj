@@ -206,6 +206,28 @@
     <None Include="bin\Debug\original.gif" />
     <None Include="bin\Debug\tumblr_o1uce5ksBl1t2h20ko1_500.gif" />
     <None Include="bin\Debug\tenor.gif" />
+    <None Include="bin\Debug\descarga %282%29.jpg" />
+    <None Include="bin\Debug\descarga %281%29.jpg" />
+    <None Include="bin\Debug\Fastand1.gif" />
+    <None Include="bin\Debug\images.jpg" />
+    <None Include="bin\Debug\images %281%29.jpg" />
+    <None Include="bin\Debug\WhatsApp Image 2020-05-03 at 20.14.08.jpeg" />
+    <None Include="bin\Debug\WhatsApp Image 2020-05-03 at 20.16.33.jpeg" />
+    <None Include="bin\Debug\descarga.png" />
+    <None Include="bin\Debug\WhatsApp Image 2020-05-03 at 20.19.58.jpeg" />
+    <None Include="bin\Debug\wp2730382.gif" />
+    <None Include="bin\Debug\4be353c5dfb290422be018e67f89c9db.gif" />
+    <None Include="bin\Debug\q0oz7l.gif" />
+    <None Include="bin\Debug\descarga %283%29.jpg" />
+    <None Include="bin\Debug\previous-145675_960_720.png" />
+    <None Include="bin\Debug\arrow-27066_960_720.png" />
+    <None Include="bin\Debug\forward-145679_960_720.png" />
+    <None Include="bin\Debug\images %282%29.jpg" />
+    <None Include="bin\Debug\3e5025025a2f40320eaabf887c105b77-bot--n-de-manzana-anterior-by-vexels.png" />
+    <None Include="bin\Debug\images.png" />
+    <None Include="bin\Debug\images %281%29.png" />
+    <None Include="bin\Debug\WhatsApp Image 2020-05-03 at 21.06.59.jpeg" />
+    <None Include="bin\Debug\WhatsApp Image 2020-05-03 at 21.14.47.jpeg" />
     <Content Include="db_Sistema_Peliculas.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

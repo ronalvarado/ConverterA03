@@ -66,47 +66,6 @@ namespace Conversor_A
 			btnBuscar.Enabled = valor;
 			grbClientes.Enabled = !valor;
 		}
-
-		private void btnPrimero_Click(object sender, EventArgs e)
-		{
-			posicion = 0;
-			mostrarDatos();
-		}
-
-		private void btnAnterior_Click(object sender, EventArgs e)
-		{
-			if (posicion > 0)
-			{
-				posicion--;
-				mostrarDatos();
-			}
-			else
-			{
-				MessageBox.Show("Primer Registro...", "Registros de Clientes",
-					MessageBoxButtons.OK, MessageBoxIcon.Information);
-			}
-		}
-
-		private void btnSiguiente_Click(object sender, EventArgs e)
-		{
-			if (posicion < tbl.Rows.Count - 1)
-			{
-				posicion++;
-				mostrarDatos();
-			}
-			else
-			{
-				MessageBox.Show("Ultimo Registro...", "Registros de Clientes",
-					MessageBoxButtons.OK, MessageBoxIcon.Information);
-			}
-		}
-
-		private void btnUltimo_Click(object sender, EventArgs e)
-		{
-			posicion = tbl.Rows.Count - 1;
-			mostrarDatos();
-		}
-
 		private void btnNuevo_Click(object sender, EventArgs e)
 		{
 			if (btnNuevo.Text == "Nuevo")
@@ -187,6 +146,51 @@ namespace Conversor_A
 				posicion = posicion > 0 ? posicion - 1 : 0;
 				mostrarDatos();
 			}
+		}
+
+		private void pictureBox1_Click(object sender, EventArgs e)
+		{
+
+		}
+
+		private void btnPrimero_Click_1(object sender, EventArgs e)
+		{
+			posicion = 0;
+			mostrarDatos();
+		}
+
+		private void btnAnterior_Click_1(object sender, EventArgs e)
+		{
+			if (posicion > 0)
+			{
+				posicion--;
+				mostrarDatos();
+			}
+			else
+			{
+				MessageBox.Show("Primer Registro...", "Registros de Clientes",
+					MessageBoxButtons.OK, MessageBoxIcon.Information);
+			}
+		}
+
+		private void btnSiguiente_Click_1(object sender, EventArgs e)
+		{
+			if (posicion < tbl.Rows.Count - 1)
+			{
+				posicion++;
+				mostrarDatos();
+			}
+			else
+			{
+				MessageBox.Show("Ultimo Registro...", "Registros de Clientes",
+					MessageBoxButtons.OK, MessageBoxIcon.Information);
+			}
+		}
+
+		private void btnUltimo_Click_1(object sender, EventArgs e)
+		{
+			posicion = tbl.Rows.Count - 1;
+			mostrarDatos();
 		}
 	}
 }
