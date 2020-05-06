@@ -118,100 +118,40 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="images (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\bin\Debug\images (2).jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="3e7ed5cb-2808-4623-a8ec-c0f1b85d185d" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\bin\Debug\3e7ed5cb-2808-4623-a8ec-c0f1b85d185d.JPG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="descarga (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\bin\Debug\descarga (2).jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="forward-145679_960_720" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\bin\Debug\forward-145679_960_720.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="3e5025025a2f40320eaabf887c105b77-bot--n-de-manzana-anterior-by-vexels" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\bin\Debug\3e5025025a2f40320eaabf887c105b77-bot--n-de-manzana-anterior-by-vexels.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="tumblr_o1uce5ksBl1t2h20ko1_500" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\bin\Debug\tumblr_o1uce5ksBl1t2h20ko1_500.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="original" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\bin\Debug\original.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="WhatsApp Image 2020-05-03 at 20.19.58" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\bin\Debug\WhatsApp Image 2020-05-03 at 20.19.58.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Fastand1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\bin\Debug\Fastand1.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="tenor" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\bin\Debug\tenor.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="solo-para-ninos-gifs-peliculas-infantiles-gifmaniacos-14" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\bin\Debug\solo-para-ninos-gifs-peliculas-infantiles-gifmaniacos-14.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>..\Resources\3e7ed5cb-2808-4623-a8ec-c0f1b85d185d.JPG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="32481ed4-a580-444e-928d-caaa61055102" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\bin\Debug\32481ed4-a580-444e-928d-caaa61055102.JPG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="4be353c5dfb290422be018e67f89c9db" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\bin\Debug\4be353c5dfb290422be018e67f89c9db.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="descarga (3)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\bin\Debug\descarga (3).jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="WhatsApp Image 2020-05-03 at 21.06.59" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\bin\Debug\WhatsApp Image 2020-05-03 at 21.06.59.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="descarga" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\bin\Debug\descarga.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="images (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\bin\Debug\images (1).jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="wp2730382" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\bin\Debug\wp2730382.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="descarga (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\bin\Debug\descarga (1).jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="gif23" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\bin\Debug\gif23.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="arrow-27066_960_720" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\bin\Debug\arrow-27066_960_720.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>..\Resources\32481ed4-a580-444e-928d-caaa61055102.JPG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="88690f45-60b0-46c5-9a8e-f035b1492d86" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\bin\Debug\88690f45-60b0-46c5-9a8e-f035b1492d86.JPG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="images" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\bin\Debug\images.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="images1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\bin\Debug\images.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>..\Resources\88690f45-60b0-46c5-9a8e-f035b1492d86.JPG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ab7a3257-3d1d-476a-baa4-6be437d6875b" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\bin\Debug\ab7a3257-3d1d-476a-baa4-6be437d6875b.JPG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="WhatsApp Image 2020-05-03 at 20.16.33" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\bin\Debug\WhatsApp Image 2020-05-03 at 20.16.33.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="previous-145675_960_720" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\bin\Debug\previous-145675_960_720.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>..\Resources\ab7a3257-3d1d-476a-baa4-6be437d6875b.JPG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="cine(1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\bin\Debug\cine(1).jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>..\Resources\cine(1).jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="descarga" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\descarga.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Fastand1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Fastand1.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="gif23" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gif23.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="solo-para-ninos-gifs-peliculas-infantiles-gifmaniacos-14" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\solo-para-ninos-gifs-peliculas-infantiles-gifmaniacos-14.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="tenor" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\tenor.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="WhatsApp Image 2020-05-03 at 20.14.08" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\bin\Debug\WhatsApp Image 2020-05-03 at 20.14.08.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="q0oz7l" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\bin\Debug\q0oz7l.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="images (1)1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\bin\Debug\images (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>..\Resources\WhatsApp Image 2020-05-03 at 20.14.08.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="WhatsApp Image 2020-05-03 at 21.14.47" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\bin\Debug\WhatsApp Image 2020-05-03 at 21.14.47.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>..\Resources\WhatsApp Image 2020-05-03 at 21.14.47.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

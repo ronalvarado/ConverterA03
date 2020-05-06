@@ -28,6 +28,7 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Alquileres));
 			this.grbNavegar = new System.Windows.Forms.GroupBox();
 			this.lblRegistros = new System.Windows.Forms.Label();
 			this.btnUltimo = new System.Windows.Forms.Button();
@@ -342,7 +343,7 @@
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.BackgroundImage = global::Conversor_A.Properties.Resources.WhatsApp_Image_2020_05_03_at_21_14_47;
+			this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
 			this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
 			this.ClientSize = new System.Drawing.Size(711, 433);
 			this.Controls.Add(this.grbNavegar);

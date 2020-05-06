@@ -28,7 +28,12 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Clientes));
 			this.grbNavegar = new System.Windows.Forms.GroupBox();
+			this.btnUltimo = new System.Windows.Forms.Button();
+			this.btnSiguiente = new System.Windows.Forms.Button();
+			this.btnAnterior = new System.Windows.Forms.Button();
+			this.btnPrimero = new System.Windows.Forms.Button();
 			this.lblRegistros = new System.Windows.Forms.Label();
 			this.grbEdicionClientes = new System.Windows.Forms.GroupBox();
 			this.btnEliminar = new System.Windows.Forms.Button();
@@ -45,10 +50,6 @@
 			this.lblTelefono = new System.Windows.Forms.Label();
 			this.lblDireccion = new System.Windows.Forms.Label();
 			this.lblNombre = new System.Windows.Forms.Label();
-			this.btnUltimo = new System.Windows.Forms.Button();
-			this.btnSiguiente = new System.Windows.Forms.Button();
-			this.btnAnterior = new System.Windows.Forms.Button();
-			this.btnPrimero = new System.Windows.Forms.Button();
 			this.grbNavegar.SuspendLayout();
 			this.grbEdicionClientes.SuspendLayout();
 			this.grbClientes.SuspendLayout();
@@ -70,6 +71,50 @@
 			this.grbNavegar.TabIndex = 8;
 			this.grbNavegar.TabStop = false;
 			this.grbNavegar.Text = "Navegar";
+			// 
+			// btnUltimo
+			// 
+			this.btnUltimo.BackColor = System.Drawing.Color.DarkRed;
+			this.btnUltimo.Location = new System.Drawing.Point(519, 25);
+			this.btnUltimo.Name = "btnUltimo";
+			this.btnUltimo.Size = new System.Drawing.Size(40, 23);
+			this.btnUltimo.TabIndex = 15;
+			this.btnUltimo.Text = ">|";
+			this.btnUltimo.UseVisualStyleBackColor = false;
+			this.btnUltimo.Click += new System.EventHandler(this.btnUltimo_Click_1);
+			// 
+			// btnSiguiente
+			// 
+			this.btnSiguiente.BackColor = System.Drawing.Color.Firebrick;
+			this.btnSiguiente.Location = new System.Drawing.Point(395, 25);
+			this.btnSiguiente.Name = "btnSiguiente";
+			this.btnSiguiente.Size = new System.Drawing.Size(40, 23);
+			this.btnSiguiente.TabIndex = 14;
+			this.btnSiguiente.Text = ">";
+			this.btnSiguiente.UseVisualStyleBackColor = false;
+			this.btnSiguiente.Click += new System.EventHandler(this.btnSiguiente_Click_1);
+			// 
+			// btnAnterior
+			// 
+			this.btnAnterior.BackColor = System.Drawing.Color.Firebrick;
+			this.btnAnterior.Location = new System.Drawing.Point(140, 25);
+			this.btnAnterior.Name = "btnAnterior";
+			this.btnAnterior.Size = new System.Drawing.Size(40, 23);
+			this.btnAnterior.TabIndex = 13;
+			this.btnAnterior.Text = "<";
+			this.btnAnterior.UseVisualStyleBackColor = false;
+			this.btnAnterior.Click += new System.EventHandler(this.btnAnterior_Click_1);
+			// 
+			// btnPrimero
+			// 
+			this.btnPrimero.BackColor = System.Drawing.Color.DarkRed;
+			this.btnPrimero.Location = new System.Drawing.Point(19, 25);
+			this.btnPrimero.Name = "btnPrimero";
+			this.btnPrimero.Size = new System.Drawing.Size(40, 23);
+			this.btnPrimero.TabIndex = 12;
+			this.btnPrimero.Text = "|<";
+			this.btnPrimero.UseVisualStyleBackColor = false;
+			this.btnPrimero.Click += new System.EventHandler(this.btnPrimero_Click_1);
 			// 
 			// lblRegistros
 			// 
@@ -249,55 +294,11 @@
 			this.lblNombre.TabIndex = 0;
 			this.lblNombre.Text = "Nombre:";
 			// 
-			// btnUltimo
-			// 
-			this.btnUltimo.BackColor = System.Drawing.Color.DarkRed;
-			this.btnUltimo.Location = new System.Drawing.Point(519, 25);
-			this.btnUltimo.Name = "btnUltimo";
-			this.btnUltimo.Size = new System.Drawing.Size(40, 23);
-			this.btnUltimo.TabIndex = 15;
-			this.btnUltimo.Text = ">|";
-			this.btnUltimo.UseVisualStyleBackColor = false;
-			this.btnUltimo.Click += new System.EventHandler(this.btnUltimo_Click_1);
-			// 
-			// btnSiguiente
-			// 
-			this.btnSiguiente.BackColor = System.Drawing.Color.Firebrick;
-			this.btnSiguiente.Location = new System.Drawing.Point(395, 25);
-			this.btnSiguiente.Name = "btnSiguiente";
-			this.btnSiguiente.Size = new System.Drawing.Size(40, 23);
-			this.btnSiguiente.TabIndex = 14;
-			this.btnSiguiente.Text = ">";
-			this.btnSiguiente.UseVisualStyleBackColor = false;
-			this.btnSiguiente.Click += new System.EventHandler(this.btnSiguiente_Click_1);
-			// 
-			// btnAnterior
-			// 
-			this.btnAnterior.BackColor = System.Drawing.Color.Firebrick;
-			this.btnAnterior.Location = new System.Drawing.Point(140, 25);
-			this.btnAnterior.Name = "btnAnterior";
-			this.btnAnterior.Size = new System.Drawing.Size(40, 23);
-			this.btnAnterior.TabIndex = 13;
-			this.btnAnterior.Text = "<";
-			this.btnAnterior.UseVisualStyleBackColor = false;
-			this.btnAnterior.Click += new System.EventHandler(this.btnAnterior_Click_1);
-			// 
-			// btnPrimero
-			// 
-			this.btnPrimero.BackColor = System.Drawing.Color.DarkRed;
-			this.btnPrimero.Location = new System.Drawing.Point(19, 25);
-			this.btnPrimero.Name = "btnPrimero";
-			this.btnPrimero.Size = new System.Drawing.Size(40, 23);
-			this.btnPrimero.TabIndex = 12;
-			this.btnPrimero.Text = "|<";
-			this.btnPrimero.UseVisualStyleBackColor = false;
-			this.btnPrimero.Click += new System.EventHandler(this.btnPrimero_Click_1);
-			// 
 			// Clientes
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.BackgroundImage = global::Conversor_A.Properties.Resources.WhatsApp_Image_2020_05_03_at_21_14_47;
+			this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
 			this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
 			this.ClientSize = new System.Drawing.Size(709, 365);
 			this.Controls.Add(this.grbClientes);

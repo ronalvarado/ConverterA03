@@ -28,6 +28,7 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Menu));
 			this.btnClientes = new System.Windows.Forms.Button();
 			this.btnPeliculas = new System.Windows.Forms.Button();
 			this.btnAlquiler = new System.Windows.Forms.Button();
@@ -90,7 +91,7 @@
 			// pictureBox10
 			// 
 			this.pictureBox10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-			this.pictureBox10.Image = global::Conversor_A.Properties.Resources._88690f45_60b0_46c5_9a8e_f035b1492d86;
+			this.pictureBox10.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox10.Image")));
 			this.pictureBox10.Location = new System.Drawing.Point(550, 12);
 			this.pictureBox10.Name = "pictureBox10";
 			this.pictureBox10.Size = new System.Drawing.Size(212, 117);
@@ -102,7 +103,7 @@
 			// 
 			this.pictureBox9.BackColor = System.Drawing.Color.Transparent;
 			this.pictureBox9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-			this.pictureBox9.Image = global::Conversor_A.Properties.Resources._32481ed4_a580_444e_928d_caaa61055102;
+			this.pictureBox9.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox9.Image")));
 			this.pictureBox9.Location = new System.Drawing.Point(404, 135);
 			this.pictureBox9.Name = "pictureBox9";
 			this.pictureBox9.Size = new System.Drawing.Size(183, 112);
@@ -114,7 +115,7 @@
 			// 
 			this.pictureBox7.BackColor = System.Drawing.Color.Transparent;
 			this.pictureBox7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-			this.pictureBox7.Image = global::Conversor_A.Properties.Resources.tenor;
+			this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
 			this.pictureBox7.Location = new System.Drawing.Point(593, 135);
 			this.pictureBox7.Name = "pictureBox7";
 			this.pictureBox7.Size = new System.Drawing.Size(169, 124);
@@ -126,7 +127,7 @@
 			// 
 			this.pictureBox6.BackColor = System.Drawing.Color.Transparent;
 			this.pictureBox6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-			this.pictureBox6.Image = global::Conversor_A.Properties.Resources.Fastand1;
+			this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
 			this.pictureBox6.Location = new System.Drawing.Point(224, 161);
 			this.pictureBox6.Name = "pictureBox6";
 			this.pictureBox6.Size = new System.Drawing.Size(174, 108);
@@ -137,7 +138,7 @@
 			// pictureBox5
 			// 
 			this.pictureBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-			this.pictureBox5.Image = global::Conversor_A.Properties.Resources.gif23;
+			this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
 			this.pictureBox5.Location = new System.Drawing.Point(391, 12);
 			this.pictureBox5.Name = "pictureBox5";
 			this.pictureBox5.Size = new System.Drawing.Size(153, 117);
@@ -149,7 +150,7 @@
 			// 
 			this.pictureBox4.BackColor = System.Drawing.Color.Transparent;
 			this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-			this.pictureBox4.Image = global::Conversor_A.Properties.Resources.solo_para_ninos_gifs_peliculas_infantiles_gifmaniacos_14;
+			this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
 			this.pictureBox4.Location = new System.Drawing.Point(21, 12);
 			this.pictureBox4.Name = "pictureBox4";
 			this.pictureBox4.Size = new System.Drawing.Size(168, 143);
@@ -161,8 +162,8 @@
 			// 
 			this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
 			this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-			this.pictureBox3.Image = global::Conversor_A.Properties.Resources._3e7ed5cb_2808_4623_a8ec_c0f1b85d185d;
-			this.pictureBox3.Location = new System.Drawing.Point(17, 171);
+			this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+			this.pictureBox3.Location = new System.Drawing.Point(12, 171);
 			this.pictureBox3.Name = "pictureBox3";
 			this.pictureBox3.Size = new System.Drawing.Size(201, 98);
 			this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -172,7 +173,7 @@
 			// pictureBox2
 			// 
 			this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-			this.pictureBox2.Image = global::Conversor_A.Properties.Resources.ab7a3257_3d1d_476a_baa4_6be437d6875b;
+			this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
 			this.pictureBox2.Location = new System.Drawing.Point(195, 12);
 			this.pictureBox2.Name = "pictureBox2";
 			this.pictureBox2.Size = new System.Drawing.Size(190, 143);
@@ -182,12 +183,11 @@
 			// 
 			// pictureBox1
 			// 
-			this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-			this.pictureBox1.Image = global::Conversor_A.Properties.Resources.cine_1_;
-			this.pictureBox1.Location = new System.Drawing.Point(1, -1);
+			this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+			this.pictureBox1.Location = new System.Drawing.Point(-2, -4);
 			this.pictureBox1.Name = "pictureBox1";
-			this.pictureBox1.Size = new System.Drawing.Size(795, 508);
-			this.pictureBox1.TabIndex = 10;
+			this.pictureBox1.Size = new System.Drawing.Size(798, 512);
+			this.pictureBox1.TabIndex = 22;
 			this.pictureBox1.TabStop = false;
 			// 
 			// Menu
@@ -232,9 +232,9 @@
 		private System.Windows.Forms.PictureBox pictureBox4;
 		private System.Windows.Forms.PictureBox pictureBox3;
 		private System.Windows.Forms.PictureBox pictureBox2;
-		private System.Windows.Forms.PictureBox pictureBox1;
 		private System.Windows.Forms.Button btnClientes;
 		private System.Windows.Forms.Button btnPeliculas;
 		private System.Windows.Forms.Button btnAlquiler;
+		private System.Windows.Forms.PictureBox pictureBox1;
 	}
 }
