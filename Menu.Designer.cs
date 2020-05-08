@@ -116,7 +116,7 @@
 			this.pictureBox7.BackColor = System.Drawing.Color.Transparent;
 			this.pictureBox7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
 			this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
-			this.pictureBox7.Location = new System.Drawing.Point(593, 135);
+			this.pictureBox7.Location = new System.Drawing.Point(593, 145);
 			this.pictureBox7.Name = "pictureBox7";
 			this.pictureBox7.Size = new System.Drawing.Size(169, 124);
 			this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
