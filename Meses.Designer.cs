@@ -28,6 +28,7 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Meses));
 			this.grbMeses = new System.Windows.Forms.GroupBox();
 			this.txtMes = new System.Windows.Forms.TextBox();
 			this.lblIdMes = new System.Windows.Forms.Label();
@@ -223,7 +224,7 @@
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.BackgroundImage = global::Conversor_A.Properties.Resources.tema_azul_clasico_abstracto_fondo_pantalla_23_2148410363;
+			this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
 			this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
 			this.ClientSize = new System.Drawing.Size(419, 178);
 			this.Controls.Add(this.grbEdiciondeMeses);

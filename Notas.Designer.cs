@@ -28,6 +28,7 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Notas));
 			this.grbEdiciondeNotas = new System.Windows.Forms.GroupBox();
 			this.btnBuscar = new System.Windows.Forms.Button();
 			this.btnEliminar = new System.Windows.Forms.Button();
@@ -40,6 +41,13 @@
 			this.btnAnterior = new System.Windows.Forms.Button();
 			this.btnPrimero = new System.Windows.Forms.Button();
 			this.grbNota = new System.Windows.Forms.GroupBox();
+			this.btnHacer = new System.Windows.Forms.Button();
+			this.lblAct2 = new System.Windows.Forms.Label();
+			this.txtNota = new System.Windows.Forms.TextBox();
+			this.lblNota = new System.Windows.Forms.Label();
+			this.txtActividad2 = new System.Windows.Forms.TextBox();
+			this.txtActividad1 = new System.Windows.Forms.TextBox();
+			this.lblExam = new System.Windows.Forms.Label();
 			this.cboIdMateria = new System.Windows.Forms.ComboBox();
 			this.cboIdAlumno = new System.Windows.Forms.ComboBox();
 			this.txtExamen = new System.Windows.Forms.TextBox();
@@ -47,13 +55,6 @@
 			this.lblIdMaterias = new System.Windows.Forms.Label();
 			this.lblIdNota = new System.Windows.Forms.Label();
 			this.lblIdAlumno = new System.Windows.Forms.Label();
-			this.txtActividad1 = new System.Windows.Forms.TextBox();
-			this.lblExam = new System.Windows.Forms.Label();
-			this.txtActividad2 = new System.Windows.Forms.TextBox();
-			this.txtNota = new System.Windows.Forms.TextBox();
-			this.lblNota = new System.Windows.Forms.Label();
-			this.lblAct2 = new System.Windows.Forms.Label();
-			this.btnHacer = new System.Windows.Forms.Button();
 			this.grbEdiciondeNotas.SuspendLayout();
 			this.grbNavegacion.SuspendLayout();
 			this.grbNota.SuspendLayout();
@@ -213,6 +214,65 @@
 			this.grbNota.TabStop = false;
 			this.grbNota.Text = "Mantenimiento Notas";
 			// 
+			// btnHacer
+			// 
+			this.btnHacer.BackColor = System.Drawing.Color.LightSeaGreen;
+			this.btnHacer.Location = new System.Drawing.Point(298, 172);
+			this.btnHacer.Name = "btnHacer";
+			this.btnHacer.Size = new System.Drawing.Size(75, 23);
+			this.btnHacer.TabIndex = 16;
+			this.btnHacer.Text = "Hacer";
+			this.btnHacer.UseVisualStyleBackColor = false;
+			this.btnHacer.Click += new System.EventHandler(this.btnHacer_Click);
+			// 
+			// lblAct2
+			// 
+			this.lblAct2.AutoSize = true;
+			this.lblAct2.Location = new System.Drawing.Point(13, 151);
+			this.lblAct2.Name = "lblAct2";
+			this.lblAct2.Size = new System.Drawing.Size(60, 13);
+			this.lblAct2.TabIndex = 15;
+			this.lblAct2.Text = "Actividad2:";
+			// 
+			// txtNota
+			// 
+			this.txtNota.Location = new System.Drawing.Point(98, 174);
+			this.txtNota.Name = "txtNota";
+			this.txtNota.Size = new System.Drawing.Size(170, 20);
+			this.txtNota.TabIndex = 14;
+			// 
+			// lblNota
+			// 
+			this.lblNota.AutoSize = true;
+			this.lblNota.Location = new System.Drawing.Point(17, 177);
+			this.lblNota.Name = "lblNota";
+			this.lblNota.Size = new System.Drawing.Size(33, 13);
+			this.lblNota.TabIndex = 13;
+			this.lblNota.Text = "Nota:";
+			// 
+			// txtActividad2
+			// 
+			this.txtActividad2.Location = new System.Drawing.Point(98, 148);
+			this.txtActividad2.Name = "txtActividad2";
+			this.txtActividad2.Size = new System.Drawing.Size(170, 20);
+			this.txtActividad2.TabIndex = 12;
+			// 
+			// txtActividad1
+			// 
+			this.txtActividad1.Location = new System.Drawing.Point(98, 122);
+			this.txtActividad1.Name = "txtActividad1";
+			this.txtActividad1.Size = new System.Drawing.Size(170, 20);
+			this.txtActividad1.TabIndex = 10;
+			// 
+			// lblExam
+			// 
+			this.lblExam.AutoSize = true;
+			this.lblExam.Location = new System.Drawing.Point(22, 99);
+			this.lblExam.Name = "lblExam";
+			this.lblExam.Size = new System.Drawing.Size(48, 13);
+			this.lblExam.TabIndex = 9;
+			this.lblExam.Text = "Examen:";
+			// 
 			// cboIdMateria
 			// 
 			this.cboIdMateria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -274,70 +334,11 @@
 			this.lblIdAlumno.TabIndex = 0;
 			this.lblIdAlumno.Text = "Alumno:";
 			// 
-			// txtActividad1
-			// 
-			this.txtActividad1.Location = new System.Drawing.Point(98, 122);
-			this.txtActividad1.Name = "txtActividad1";
-			this.txtActividad1.Size = new System.Drawing.Size(170, 20);
-			this.txtActividad1.TabIndex = 10;
-			// 
-			// lblExam
-			// 
-			this.lblExam.AutoSize = true;
-			this.lblExam.Location = new System.Drawing.Point(22, 99);
-			this.lblExam.Name = "lblExam";
-			this.lblExam.Size = new System.Drawing.Size(48, 13);
-			this.lblExam.TabIndex = 9;
-			this.lblExam.Text = "Examen:";
-			// 
-			// txtActividad2
-			// 
-			this.txtActividad2.Location = new System.Drawing.Point(98, 148);
-			this.txtActividad2.Name = "txtActividad2";
-			this.txtActividad2.Size = new System.Drawing.Size(170, 20);
-			this.txtActividad2.TabIndex = 12;
-			// 
-			// txtNota
-			// 
-			this.txtNota.Location = new System.Drawing.Point(98, 174);
-			this.txtNota.Name = "txtNota";
-			this.txtNota.Size = new System.Drawing.Size(170, 20);
-			this.txtNota.TabIndex = 14;
-			// 
-			// lblNota
-			// 
-			this.lblNota.AutoSize = true;
-			this.lblNota.Location = new System.Drawing.Point(17, 177);
-			this.lblNota.Name = "lblNota";
-			this.lblNota.Size = new System.Drawing.Size(33, 13);
-			this.lblNota.TabIndex = 13;
-			this.lblNota.Text = "Nota:";
-			// 
-			// lblAct2
-			// 
-			this.lblAct2.AutoSize = true;
-			this.lblAct2.Location = new System.Drawing.Point(13, 151);
-			this.lblAct2.Name = "lblAct2";
-			this.lblAct2.Size = new System.Drawing.Size(60, 13);
-			this.lblAct2.TabIndex = 15;
-			this.lblAct2.Text = "Actividad2:";
-			// 
-			// btnHacer
-			// 
-			this.btnHacer.BackColor = System.Drawing.Color.LightSeaGreen;
-			this.btnHacer.Location = new System.Drawing.Point(298, 172);
-			this.btnHacer.Name = "btnHacer";
-			this.btnHacer.Size = new System.Drawing.Size(75, 23);
-			this.btnHacer.TabIndex = 16;
-			this.btnHacer.Text = "Hacer";
-			this.btnHacer.UseVisualStyleBackColor = false;
-			this.btnHacer.Click += new System.EventHandler(this.btnHacer_Click);
-			// 
 			// Notas
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.BackgroundImage = global::Conversor_A.Properties.Resources.tema_azul_clasico_abstracto_fondo_pantalla_23_2148410363;
+			this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
 			this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
 			this.ClientSize = new System.Drawing.Size(671, 301);
 			this.Controls.Add(this.grbEdiciondeNotas);

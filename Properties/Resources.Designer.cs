@@ -59,15 +59,5 @@ namespace Conversor_A.Properties {
                 resourceCulture = value;
             }
         }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap tema_azul_clasico_abstracto_fondo_pantalla_23_2148410363 {
-            get {
-                object obj = ResourceManager.GetObject("tema-azul-clasico-abstracto-fondo-pantalla_23-2148410363", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
     }
 }

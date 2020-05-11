@@ -28,6 +28,7 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TutorAula));
 			this.grbEdiciondeTutorAula = new System.Windows.Forms.GroupBox();
 			this.btnBuscar = new System.Windows.Forms.Button();
 			this.btnEliminar = new System.Windows.Forms.Button();
@@ -40,6 +41,7 @@
 			this.btnAnterior = new System.Windows.Forms.Button();
 			this.btnPrimero = new System.Windows.Forms.Button();
 			this.grbAulas = new System.Windows.Forms.GroupBox();
+			this.btnBuscarDocentes = new System.Windows.Forms.Button();
 			this.txtSeccion = new System.Windows.Forms.TextBox();
 			this.lblSeccion = new System.Windows.Forms.Label();
 			this.txtGrado = new System.Windows.Forms.TextBox();
@@ -49,7 +51,6 @@
 			this.lblCodigo = new System.Windows.Forms.Label();
 			this.lblIdAula = new System.Windows.Forms.Label();
 			this.lblIdDocente = new System.Windows.Forms.Label();
-			this.btnBuscarDocentes = new System.Windows.Forms.Button();
 			this.grbEdiciondeTutorAula.SuspendLayout();
 			this.grbNavegacion.SuspendLayout();
 			this.grbAulas.SuspendLayout();
@@ -205,6 +206,17 @@
 			this.grbAulas.TabStop = false;
 			this.grbAulas.Text = "Mantenimiento Tutor de Aulas";
 			// 
+			// btnBuscarDocentes
+			// 
+			this.btnBuscarDocentes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+			this.btnBuscarDocentes.Location = new System.Drawing.Point(402, 35);
+			this.btnBuscarDocentes.Name = "btnBuscarDocentes";
+			this.btnBuscarDocentes.Size = new System.Drawing.Size(75, 23);
+			this.btnBuscarDocentes.TabIndex = 12;
+			this.btnBuscarDocentes.Text = "Buscar Docentes";
+			this.btnBuscarDocentes.UseVisualStyleBackColor = false;
+			this.btnBuscarDocentes.Click += new System.EventHandler(this.btnBuscarDocentes_Click);
+			// 
 			// txtSeccion
 			// 
 			this.txtSeccion.Location = new System.Drawing.Point(98, 129);
@@ -279,22 +291,11 @@
 			this.lblIdDocente.TabIndex = 0;
 			this.lblIdDocente.Text = "Docente:";
 			// 
-			// btnBuscarDocentes
-			// 
-			this.btnBuscarDocentes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-			this.btnBuscarDocentes.Location = new System.Drawing.Point(402, 35);
-			this.btnBuscarDocentes.Name = "btnBuscarDocentes";
-			this.btnBuscarDocentes.Size = new System.Drawing.Size(75, 23);
-			this.btnBuscarDocentes.TabIndex = 12;
-			this.btnBuscarDocentes.Text = "Buscar Docentes";
-			this.btnBuscarDocentes.UseVisualStyleBackColor = false;
-			this.btnBuscarDocentes.Click += new System.EventHandler(this.btnBuscarDocentes_Click);
-			// 
 			// TutorAula
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.BackgroundImage = global::Conversor_A.Properties.Resources.tema_azul_clasico_abstracto_fondo_pantalla_23_2148410363;
+			this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
 			this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
 			this.ClientSize = new System.Drawing.Size(676, 256);
 			this.Controls.Add(this.grbEdiciondeTutorAula);
