@@ -48,35 +48,22 @@ namespace Conversor_A
 				cboAlumno.SelectedValue = tbl.Rows[posicion].ItemArray[1].ToString();
 
 				cboMes.SelectedValue = tbl.Rows[posicion].ItemArray[2].ToString();
+                lblIdAsistencia.Text = tbl.Rows[posicion].ItemArray[0].ToString();
 
-				lblIdAsistencia.Text = tbl.Rows[posicion].ItemArray[0].ToString();
-				txtDia.Text = tbl.Rows[posicion].ItemArray[3].ToString();
+                txtDia.Text = tbl.Rows[posicion].ItemArray[3].ToString();
 				txtSi.Text = tbl.Rows[posicion].ItemArray[4].ToString();
 				txtNo.Text = tbl.Rows[posicion].ItemArray[5].ToString();
 
-				lblnregistros.Text = (posicion + 1) + " de " + tbl.Rows.Count;
+                lblnregistros.Text = (posicion + 1) + " de " + tbl.Rows.Count;
 			}
 			catch (Exception)
 			{
-				MessageBox.Show("No hay Datos que mostrar", "Registros de Asistencia",
+				MessageBox.Show("No hay Datos que mostrar", "Registros de Asistencias",
 					MessageBoxButtons.OK, MessageBoxIcon.Information);
 				limpiar_cajas();
 			}
 		}
-		void limpiar_cajas()
-		{
-			txtDia.Text = "";
-			txtSi.Text = "";
-			txtNo.Text = "";
-		}
-		void controles(Boolean valor)
-		{
-			grbNavegacion.Enabled = valor;
-			btnEliminar.Enabled = valor;
-			btnBuscar.Enabled = valor;
-			grbAsistencia.Enabled = !valor;
-		}
-
+		
 
 		private void btnPrimero_Click(object sender, EventArgs e)
 		{
@@ -117,8 +104,21 @@ namespace Conversor_A
 			posicion = tbl.Rows.Count - 1;
 			mostrarDatos();
 		}
+        void limpiar_cajas()
+        {
+            txtDia.Text = "";
+            //txtSi.Text = "";
+           // txtNo.Text = "";
+        }
+        void controles(Boolean valor)
+        {
+            grbNavegacion.Enabled = valor;
+            btnEliminar.Enabled = valor;
+            btnBuscar.Enabled = valor;
+            grbAsistencia.Enabled = !valor;
+        }
 
-		private void btnNuevo_Click(object sender, EventArgs e)
+        private void btnNuevo_Click(object sender, EventArgs e)
 		{
 			if (btnNuevo.Text == "Nuevo")
 			{//boton de nuevo
@@ -132,7 +132,6 @@ namespace Conversor_A
 			else
 			{ //boton de guardar
 				String[] valores = {
-			        lblIdAsistencia.Text,
 					cboAlumno.SelectedValue.ToString(),
 					cboMes.SelectedValue.ToString(),
 					txtDia.Text,
@@ -182,7 +181,7 @@ namespace Conversor_A
 
 		private void btnEliminar_Click(object sender, EventArgs e)
 		{
-			if (MessageBox.Show("Esta seguro de elimina a " + txtDia.Text, "Registro de Asistencias",
+			if (MessageBox.Show("Esta seguro de elimina a " + cboAlumno.Text, "Registro de Asistencias",
   MessageBoxButtons.YesNo, MessageBoxIcon.Error) == DialogResult.Yes)
 			{
 				String[] valores = { lblIdAsistencia.Text };

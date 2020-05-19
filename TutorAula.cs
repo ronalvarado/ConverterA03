@@ -51,24 +51,12 @@ namespace Conversor_A
 			}
 			catch (Exception)
 			{
-				MessageBox.Show("No hay Datos que mostrar", "Registros de Tutor Aula",
+				MessageBox.Show("No hay Datos que mostrar", "Registros de TutordAula",
 					MessageBoxButtons.OK, MessageBoxIcon.Information);
 				limpiar_cajas();
 			}
 		}
-		void limpiar_cajas()
-		{
-			txtCodigo.Text = "";
-			txtGrado.Text = "";
-			txtSeccion.Text = "";
-		}
-		void controles(Boolean valor)
-		{
-			grbNavegacion.Enabled = valor;
-			btnEliminar.Enabled = valor;
-			btnBuscar.Enabled = valor;
-			grbAulas.Enabled = !valor;
-		}
+		
 
 		private void btnPrimero_Click(object sender, EventArgs e)
 		{
@@ -85,7 +73,7 @@ namespace Conversor_A
 			}
 			else
 			{
-				MessageBox.Show("Primer Registro...", "Registros de Tutor de Aula",
+				MessageBox.Show("Primer Registro...", "Registros de TutordAula",
 					MessageBoxButtons.OK, MessageBoxIcon.Information);
 			}
 		}
@@ -99,7 +87,7 @@ namespace Conversor_A
 			}
 			else
 			{
-				MessageBox.Show("Ultimo Registro...", "Registros de Tutor de Aula",
+				MessageBox.Show("Ultimo Registro...", "Registros de TutordAula",
 					MessageBoxButtons.OK, MessageBoxIcon.Information);
 			}
 		}
@@ -109,8 +97,21 @@ namespace Conversor_A
 			posicion = tbl.Rows.Count - 1;
 			mostrarDatos();
 		}
+        void limpiar_cajas()
+        {
+            txtCodigo.Text = "";
+            txtGrado.Text = "";
+            txtSeccion.Text = "";
+        }
+        void controles(Boolean valor)
+        {
+            grbNavegacion.Enabled = valor;
+            btnEliminar.Enabled = valor;
+            btnBuscar.Enabled = valor;
+            grbAulas.Enabled = !valor;
+        }
 
-		private void btnNuevo_Click(object sender, EventArgs e)
+        private void btnNuevo_Click(object sender, EventArgs e)
 		{
 			if (btnNuevo.Text == "Nuevo")
 			{//boton de nuevo
@@ -124,12 +125,14 @@ namespace Conversor_A
 			else
 			{ //boton de guardar
 				String[] valores = {
-					lblIdAula.Text,
+                    cboIdDocente.SelectedValue.ToString(),
+
+                    lblIdAula.Text,
 					txtCodigo.Text,
 					txtGrado.Text,
 					txtSeccion.Text,
-				};
-				objConexion.mantenimiento_datos_TutordAula (valores, accion);
+                };
+				objConexion.mantenimiento_datos_TutordAula(valores, accion);
 				actualizarDs();
 				posicion = tbl.Rows.Count - 1;
 				mostrarDatos();
@@ -167,10 +170,10 @@ namespace Conversor_A
 
 		private void btnEliminar_Click(object sender, EventArgs e)
 		{
-			if (MessageBox.Show("Esta seguro de elimina a " + txtGrado.Text, "Registro de Aulas",
+			if (MessageBox.Show("Esta seguro de elimina a " + lblIdAula.Text, "Registro de TutordAula",
 			  MessageBoxButtons.YesNo, MessageBoxIcon.Error) == DialogResult.Yes)
 			{
-				String[] valores = { lblIdAula.Text };
+				String[] valores = { txtCodigo.Text };
 				objConexion.mantenimiento_datos_TutordAula(valores, "eliminar");
 
 				actualizarDs();

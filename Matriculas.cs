@@ -32,8 +32,9 @@ namespace Conversor_A
 		{
 			tbl = objConexion.obtener_datos().Tables["Matriculas"];
 			tbl.PrimaryKey = new DataColumn[] { tbl.Columns["IdMatricula"] };
+           
 
-			cboIdAlumno.DataSource = objConexion.obtener_datos().Tables["Alumnos"];
+            cboIdAlumno.DataSource = objConexion.obtener_datos().Tables["Alumnos"];
 			cboIdAlumno.DisplayMember = "Nombre_Alumno";
 			cboIdAlumno.ValueMember = "Alumnos.IdAlumno";
 
@@ -41,7 +42,9 @@ namespace Conversor_A
 			cboIdResponsables.DisplayMember = "Nombre_Responsables";
 			cboIdResponsables.ValueMember = "Responsables.IdResponsables";
 
-		}
+           
+
+        }
 		void mostrarDatos()
 		{
 			try
@@ -50,11 +53,11 @@ namespace Conversor_A
 				cboIdAlumno.SelectedValue = tbl.Rows[posicion].ItemArray[1].ToString();
 		
 				cboIdResponsables.SelectedValue = tbl.Rows[posicion].ItemArray[2].ToString();
+                txtFecha.Text = tbl.Rows[posicion].ItemArray[3].ToString();
 
-				lblIdMatricula.Text = tbl.Rows[posicion].ItemArray[0].ToString();
-				txtFecha.Text = tbl.Rows[posicion].ItemArray[3].ToString();
+                lblIdMatricula.Text = tbl.Rows[posicion].ItemArray[0].ToString();
 
-				lblnregistros.Text = (posicion + 1) + " de " + tbl.Rows.Count;
+                lblnregistros.Text = (posicion + 1) + " de " + tbl.Rows.Count;
 			}
 			catch (Exception)
 			{
@@ -63,17 +66,7 @@ namespace Conversor_A
 				limpiar_cajas();
 			}
 		}
-		void limpiar_cajas()
-		{
-			txtFecha.Text = "";
-		}
-		void controles(Boolean valor)
-		{
-			grbNavegacion.Enabled = valor;
-			btnEliminar.Enabled = valor;
-			btnBuscar.Enabled = valor;
-			grbMatriculas.Enabled = !valor;
-		}
+		
 
 		private void btnPrimero_Click(object sender, EventArgs e)
 		{
@@ -90,7 +83,7 @@ namespace Conversor_A
 			}
 			else
 			{
-				MessageBox.Show("Primer Registro...", "Registros de Matriculas",
+				MessageBox.Show("Primer Registro...", "Registros de Matricula",
 					MessageBoxButtons.OK, MessageBoxIcon.Information);
 			}
 		}
@@ -104,7 +97,7 @@ namespace Conversor_A
 			}
 			else
 			{
-				MessageBox.Show("Ultimo Registro...", "Registros de Matriculas",
+				MessageBox.Show("Ultimo Registro...", "Registros de Matricula",
 					MessageBoxButtons.OK, MessageBoxIcon.Information);
 			}
 		}
@@ -114,8 +107,22 @@ namespace Conversor_A
 			posicion = tbl.Rows.Count - 1;
 			mostrarDatos();
 		}
+        void limpiar_cajas()
+        {
+txtFecha.Text = ""; 
+            cboIdAlumno.Text = "";
+            cboIdResponsables.Text = "";
+        }
+        void controles(Boolean valor)
+        {
+            grbNavegacion.Enabled = valor;
+            btnEliminar.Enabled = valor;
+            btnBuscar.Enabled = valor;
+            grbMatriculas.Enabled = !valor;
+            
+        }
 
-		private void btnNuevo_Click(object sender, EventArgs e)
+        private void btnNuevo_Click(object sender, EventArgs e)
 		{
 			if (btnNuevo.Text == "Nuevo")
 			{//boton de nuevo
@@ -130,8 +137,12 @@ namespace Conversor_A
 			{ //boton de guardar
 				String[] valores = {
 					lblIdMatricula.Text,
-					txtFecha.Text,
-				};
+                                        txtFecha.Text,
+
+                    cboIdResponsables.SelectedValue.ToString(),
+                    cboIdResponsables.SelectedValue.ToString(),
+
+                };
 				objConexion.mantenimiento_Matriculas(valores, accion);
 				actualizarDs();
 				posicion = tbl.Rows.Count - 1;
@@ -170,11 +181,11 @@ namespace Conversor_A
 
 		private void btnEliminar_Click(object sender, EventArgs e)
 		{
-			if (MessageBox.Show("Esta seguro de elimina a " + txtFecha.Text, "Registro de Matriculas",
+			if (MessageBox.Show("Esta seguro de elimina a " + cboIdResponsables.Text, "Registro de Matricula",
 			  MessageBoxButtons.YesNo, MessageBoxIcon.Error) == DialogResult.Yes)
 			{
 				String[] valores = { lblIdMatricula.Text };
-				objConexion.mantenimiento_Matriculas (valores, "eliminar");
+				objConexion.mantenimiento_Matriculas(valores, "eliminar");
 
 				actualizarDs();
 				posicion = posicion > 0 ? posicion - 1 : 0;

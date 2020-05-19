@@ -160,10 +160,10 @@ namespace Conversor_A
 
 		private void btnEliminar_Click(object sender, EventArgs e)
 		{
-			if (MessageBox.Show("Esta seguro de elimina a " + txtMes.Text, "Registro de Meses",
+			if (MessageBox.Show("Esta seguro de elimina a " + lblIdMes.Text, "Registro de Meses",
 			  MessageBoxButtons.YesNo, MessageBoxIcon.Error) == DialogResult.Yes)
 			{
-				String[] valores = { lblIdMes.Text };
+				String[] valores = { txtMes.Text };
 				objConexion.mantenimiento_datos_Meses(valores, "eliminar");
 
 				actualizarDs();

@@ -50,18 +50,7 @@ namespace Conversor_A
 				limpiar_cajas();
 			}
 		}
-		void limpiar_cajas()
-		{
-			txtCodigo.Text = "";
-			txtMateria.Text = "";
-		}
-		void controles(Boolean valor)
-		{
-			grbNavegacion.Enabled = valor;
-			btnEliminar.Enabled = valor;
-			btnBuscar.Enabled = valor;
-			grbMateria.Enabled = !valor;
-		}
+		
 
 		private void btnPrimero_Click(object sender, EventArgs e)
 		{
@@ -102,8 +91,20 @@ namespace Conversor_A
 			posicion = tbl.Rows.Count - 1;
 			mostrarDatos();
 		}
+        void limpiar_cajas()
+        {
+            txtCodigo.Text = "";
+            txtMateria.Text = "";
+        }
+        void controles(Boolean valor)
+        {
+            grbNavegacion.Enabled = valor;
+            btnEliminar.Enabled = valor;
+            btnBuscar.Enabled = valor;
+            grbMateria.Enabled = !valor;
+        }
 
-		private void btnNuevo_Click(object sender, EventArgs e)
+        private void btnNuevo_Click(object sender, EventArgs e)
 		{
 			if (btnNuevo.Text == "Nuevo")
 			{//boton de nuevo
@@ -171,10 +172,10 @@ namespace Conversor_A
 
 		private void btnEliminar_Click(object sender, EventArgs e)
 		{
-			if (MessageBox.Show("Esta seguro de elimina a " + txtMateria.Text, "Registro de Materias",
+			if (MessageBox.Show("Esta seguro de elimina a " + lblIdMateria.Text, "Registro de Materias",
 			  MessageBoxButtons.YesNo, MessageBoxIcon.Error) == DialogResult.Yes)
 			{
-				String[] valores = { lblMateria.Text };
+				String[] valores = { txtCodigo.Text };
 				objConexion.mantenimiento_Materias(valores, "eliminar");
 
 				actualizarDs();

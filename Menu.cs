@@ -72,11 +72,14 @@ namespace Conversor_A
             Asistencias.Show();
         }
 
+        private void Menu_Load(object sender, EventArgs e)
+        {
+
+        }
+
         private void btnNotas_Click(object sender, EventArgs e)
         {
-            Notas Notas = new Notas();
 
-            Notas.Show();
         }
     }
 }

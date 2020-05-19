@@ -22,43 +22,10 @@ namespace Conversor_A
 			miConexion.ConnectionString = cadena;
 			miConexion.Open();
 
-			parametrizacion();
-		}
-		private void parametrizacion()
-		{
-			comandosSQL.Parameters.Add("@IdA", SqlDbType.Int).Value = 0;
-			comandosSQL.Parameters.Add("@IdAs", SqlDbType.Int).Value = 0;
-			comandosSQL.Parameters.Add("@IdD", SqlDbType.Int).Value = 0;
-			comandosSQL.Parameters.Add("@IdMat", SqlDbType.Int).Value = 0;
-			comandosSQL.Parameters.Add("@IdMatri", SqlDbType.Int).Value = 0;
-			comandosSQL.Parameters.Add("@IdNot", SqlDbType.Int).Value = 0;
-			comandosSQL.Parameters.Add("@IdPag", SqlDbType.Int).Value = 0;
-			comandosSQL.Parameters.Add("@IdRes", SqlDbType.Int).Value = 0;
-			comandosSQL.Parameters.Add("@IdAu", SqlDbType.Int).Value = 0;
-			comandosSQL.Parameters.Add("@Cod", SqlDbType.Char).Value = "";
-			comandosSQL.Parameters.Add("@Nom", SqlDbType.Char).Value = "";
-			comandosSQL.Parameters.Add("@Dir", SqlDbType.Char).Value = "";
-			comandosSQL.Parameters.Add("@Tel", SqlDbType.Char).Value = "";
-			comandosSQL.Parameters.Add("@Dui", SqlDbType.Char).Value = "";
-			comandosSQL.Parameters.Add("@Nit", SqlDbType.Char).Value = "";
-			comandosSQL.Parameters.Add("@Eda", SqlDbType.Char).Value = "";
-			comandosSQL.Parameters.Add("@Grad", SqlDbType.Char).Value = "";
-			comandosSQL.Parameters.Add("@Dia", SqlDbType.Char).Value = "";
-			comandosSQL.Parameters.Add("@No", SqlDbType.Char).Value = "";
-			comandosSQL.Parameters.Add("@Si", SqlDbType.Char).Value = "";
-			comandosSQL.Parameters.Add("@Sec", SqlDbType.Char).Value = "";
-			comandosSQL.Parameters.Add("@Esp", SqlDbType.Char).Value = "";
-			comandosSQL.Parameters.Add("@Corr", SqlDbType.Char).Value = "";
-			comandosSQL.Parameters.Add("@FMat", SqlDbType.Char).Value = "";
-			comandosSQL.Parameters.Add("@Exa", SqlDbType.Char).Value = "";
-			comandosSQL.Parameters.Add("@Ac1", SqlDbType.Char).Value = "";
-			comandosSQL.Parameters.Add("@Ac2", SqlDbType.Char).Value = "";
-			comandosSQL.Parameters.Add("@Not", SqlDbType.Char).Value = "";
-			comandosSQL.Parameters.Add("@Sueld", SqlDbType.Char).Value = "";
-			comandosSQL.Parameters.Add("@TotP", SqlDbType.Char).Value = "";
+		
 
-		}
-		public DataSet obtener_datos()
+        }
+        public DataSet obtener_datos()
 		{
 			ds.Clear();
 			comandosSQL.Connection = miConexion;
@@ -66,414 +33,441 @@ namespace Conversor_A
 			comandosSQL.CommandText = "select * from Alumnos";
 			miAdaptadorDatos.SelectCommand = comandosSQL;
 			miAdaptadorDatos.Fill(ds, "Alumnos");
+            comandosSQL.Connection = miConexion;
 
-			comandosSQL.CommandText = "select * from Responsables";
+            comandosSQL.CommandText = "select * from Asistencias";
+            miAdaptadorDatos.SelectCommand = comandosSQL;
+            miAdaptadorDatos.Fill(ds, "Asistencias");
+            comandosSQL.Connection = miConexion;
+
+            comandosSQL.CommandText = "select * from Meses";
+            miAdaptadorDatos.SelectCommand = comandosSQL;
+            miAdaptadorDatos.Fill(ds, "Meses");
+            comandosSQL.Connection = miConexion;
+
+            comandosSQL.CommandText = "select Alumnos.Nombre_Alumno, Asistencias.Dia, Asistencias.Si, Asistencias.No," +
+               " Asistencias.IdAlumno from Asistencias inner join Alumnos on(Alumnos.IdAlumno=Asistencias.IdAlumno)";
+            miAdaptadorDatos.SelectCommand = comandosSQL;
+            miAdaptadorDatos.Fill(ds, "Asistencias_Alumnos");
+            comandosSQL.Connection = miConexion;
+
+            comandosSQL.CommandText = "select Meses.Mes, Asistencias.Dia, Asistencias.Si, Asistencias.No," +
+               " Asistencias.IdMes from Asistencias inner join Meses on(Meses.IdMes=Asistencias.IdMes)";
+            miAdaptadorDatos.SelectCommand = comandosSQL;
+            miAdaptadorDatos.Fill(ds, "Asistencias_Meses");
+
+            comandosSQL.Connection = miConexion;
+            comandosSQL.CommandText = "select Alumnos.Nombre_Alumno, Asistencias.Dia, Asistencias.Si, Asistencias.No," +
+           " Meses.Mes " + " from Asistencias " + " inner join Alumnos on(Alumnos.IdAlumno = Asistencias.IdAlumno)" +
+           " inner join Meses on(Meses.IdMes = Asistencias.IdMes)";
+            miAdaptadorDatos.SelectCommand = comandosSQL;
+            miAdaptadorDatos.Fill(ds, "Asistencias_Alumnos_Meses");
+
+            comandosSQL.CommandText = "select * from Alumnos";
+            miAdaptadorDatos.SelectCommand = comandosSQL;
+            miAdaptadorDatos.Fill(ds, "Alumnos");
+            comandosSQL.Connection = miConexion;
+
+            ///////
+            comandosSQL.Connection = miConexion;
+
+            comandosSQL.CommandText = "select * from Responsables";
 			miAdaptadorDatos.SelectCommand = comandosSQL;
 			miAdaptadorDatos.Fill(ds, "Responsables");
 
-			comandosSQL.CommandText = "select * from Docentes";
-			miAdaptadorDatos.SelectCommand = comandosSQL;
-			miAdaptadorDatos.Fill(ds, "Docentes");
+            comandosSQL.Connection = miConexion;
 
-			comandosSQL.CommandText = "select Alumnos.Nombre_Alumno, Matriculas.IdMatricula, Matriculas.FechadeMatricula from Matriculas inner join Alumnos on(Alumnos.IdAlumno=Matriculas.IdAlumno)";
+            comandosSQL.CommandText = "select Alumnos.Nombre_Alumno, Matriculas.FechadeMatricula, " +
+                "Matriculas.IdAlumno from Matriculas inner join Alumnos on(Alumnos.IdAlumno=Matriculas.IdAlumno)";
 			miAdaptadorDatos.SelectCommand = comandosSQL;
 			miAdaptadorDatos.Fill(ds, "Matriculas_Alumnos");
+            comandosSQL.Connection = miConexion;
 
-			comandosSQL.CommandText = "select Responsables.Nombre_Responsables, Matriculas.IdMatricula, Matriculas.FechadeMatricula from Matriculas inner join Responsables on(Responsables.IdResponsables=Matriculas.IdResponsables)";
+            comandosSQL.CommandText = "select Responsables.Nombre_Responsables, Matriculas.FechadeMatricula,"+
+                "Matriculas.IdResponsables from Matriculas inner join Responsables on(Responsables.IdResponsables=Matriculas.IdResponsables)";
 			miAdaptadorDatos.SelectCommand = comandosSQL;
 			miAdaptadorDatos.Fill(ds, "Matriculas_Responsables");
 
-			comandosSQL.Connection = miConexion;
-			comandosSQL.CommandText = "select Alumnos.Nombre_Alumno, Matriculas.IdMatricula, Matriculas.FechadeMatricula," + " Responsables.Nombre_Responsables " + " from Matriculas " + " inner join Alumnos on(Alumnos.IdAlumno = Matriculas.IdAlumno)" + " inner join Responsables on(Responsables.IdResponsables = Matriculas.IdResponsables)";
-			miAdaptadorDatos.SelectCommand = comandosSQL;
-			miAdaptadorDatos.Fill(ds, "Alumnos_Responsables_Matriculas");
+            comandosSQL.Connection = miConexion;
+            comandosSQL.CommandText = "select Alumnos.Nombre_Alumno, Matriculas.FechadeMatricula," +
+           " Responsables.Nombre_Responsables " + " from Matriculas " + " inner join Alumnos on(Alumnos.IdAlumno = Matriculas.IdAlumno)" +
+           " inner join Responsables on(Responsables.IdResponsables = Matriculas.IdResponsables)";
 
-			comandosSQL.CommandText = "select * from Matriculas";
+            miAdaptadorDatos.SelectCommand = comandosSQL;
+            miAdaptadorDatos.Fill(ds, "Matriculas_Alumnos_Responsables");
+            comandosSQL.Connection = miConexion;
+
+            comandosSQL.CommandText = "select * from Matriculas";
 			miAdaptadorDatos.SelectCommand = comandosSQL;
 			miAdaptadorDatos.Fill(ds, "Matriculas");
 
-			//comandosSQL.CommandText = "select Docentes.Docente, TutordAula.IdAula, TutordAula.Codigo, TutordAula.Grado, TutordAula.Seccion from TutordAula inner join Docentes on(Docentes.IdDocente=TutordAula.IdDocente)";
-			//miAdaptadorDatos.SelectCommand = comandosSQL;
-			//miAdaptadorDatos.Fill(ds, "TutordAula_Docentes");
+            ////////////////
+            comandosSQL.Connection = miConexion;
 
-			//comandosSQL.Connection = miConexion;
-			//comandosSQL.CommandText = "select Docentes.Docente, TutordAula.IdAula, TutordAula.Codigo, TutordAula.Grado, TutordAula.Seccion," + " inner join Docentes on(Docentes.IdDocente = TutordAula.IdDocente)";
-			//miAdaptadorDatos.SelectCommand = comandosSQL;
-			//miAdaptadorDatos.Fill(ds, "Docentes_TutordAula");
-
-			comandosSQL.CommandText = "select Docentes.Docente, TutordAula.IdAula, TutordAula.codigo, TutordAula.Grado, TutordAula.Seccion from TutordAula inner join Docentes on(Docentes.IdDocente=TutordAula.IdDocente)";
+            comandosSQL.CommandText = "select Docentes.Docente,  TutordAula.Codigo, TutordAula.Grado, TutordAula.Seccion,"+
+                "TutordAula.IdDocente from TutordAula inner join Docentes on(Docentes.IdDocente=TutordAula.IdDocente)";
 			miAdaptadorDatos.SelectCommand = comandosSQL;
 			miAdaptadorDatos.Fill(ds, "TutordAula_Docentes");
 
-			comandosSQL.CommandText = "select * from TutordAula";
+            comandosSQL.Connection = miConexion;
+            comandosSQL.CommandText = "select * from Docentes";
+            miAdaptadorDatos.SelectCommand = comandosSQL;
+            miAdaptadorDatos.Fill(ds, "Docentes");
+
+            comandosSQL.Connection = miConexion;
+            comandosSQL.CommandText = "select * from TutordAula";
 			miAdaptadorDatos.SelectCommand = comandosSQL;
 			miAdaptadorDatos.Fill(ds, "TutordAula");
 
 
-			comandosSQL.CommandText = "select * from Asistencias";
-			miAdaptadorDatos.SelectCommand = comandosSQL;
-			miAdaptadorDatos.Fill(ds, "Asistencias");
+            ////////////
+            ///
 
-			comandosSQL.CommandText = "select * from Meses";
-			miAdaptadorDatos.SelectCommand = comandosSQL;
-			miAdaptadorDatos.Fill(ds, "Meses");
+      		comandosSQL.Connection = miConexion;
 
-			comandosSQL.CommandText = "select * from Materias";
+            comandosSQL.CommandText = "select * from Materias";
 			miAdaptadorDatos.SelectCommand = comandosSQL;
 			miAdaptadorDatos.Fill(ds, "Materias");
-
-			comandosSQL.CommandText = "select Alumnos.Nombre_Alumno, Notas.IdNotas, Notas.Examen, Notas.Actividad1, Notas.Actividad2, Notas.Nota from Notas inner join Alumnos on(Alumnos.IdAlumno=Notas.IdAlumno)";
-			miAdaptadorDatos.SelectCommand = comandosSQL;
-			miAdaptadorDatos.Fill(ds, "Notas_Alumnos");
-
-			comandosSQL.CommandText = "select Materias.Nombre_Materia, Notas.IdNotas, Notas.Examen, Notas.Actividad1, Notas.Actividad2, Notas.Nota from Notas inner join Materias on(Materias.IdMateria=Notas.IdMateria)";
-			miAdaptadorDatos.SelectCommand = comandosSQL;
-			miAdaptadorDatos.Fill(ds, "Notas_Alumnos");
-
-			comandosSQL.Connection = miConexion;
-			comandosSQL.CommandText = "select Alumnos.Nombre_Alumno, Notas.IdNotas, Notas.Examen, Notas.Actividad1, Notas.Actividad2, Notas.Nota," + " Materias.Nombre_Materia " + " from Notas " + " inner join Alumnos on(Alumnos.IdAlumno = Notas.IdAlumno)" + " inner join Materias on(Materias.IdMateria = Notas.IdMateria)";
-			miAdaptadorDatos.SelectCommand = comandosSQL;
-			miAdaptadorDatos.Fill(ds, "Alumnos_Materias_Notas");
-
-			comandosSQL.CommandText = "select * from Notas";
-			miAdaptadorDatos.SelectCommand = comandosSQL;
-			miAdaptadorDatos.Fill(ds, "Notas");
-
 			return ds;
 		}
-		public void mantenimiento_datos(String[] datos, String accion)
-		{
-			String sql = "";
-			if (accion == "nuevo") {
-				sql = "INSERT INTO Alumnos (Codigo,Nombre_Alumno,Edad,Direccion,Telefono,Grado,Seccion) VALUES(@Cod,@Nom,@Eda,@Dir,@Tel,@Grad,@Sec)";
-			} else if (accion == "modificar") {
-				sql = "UPDATE Alumnos SET " +
-					"Codigo                   = @Cod," +
-					"Nombre_Alumno            = @Nom," +
-					"Edad                     = @Eda," +
-					"Direccion                = @Dir," +
-					"Telefono                 = @Tel," +
-					"Grado                    = @Grad,"+
-					"Seccion                  = @Sec " +
-					"WHERE IdAlumno           = @IdA";
-			} 
-			else if (accion == "eliminar")
-			{
-				sql = "DELETE Alumnos FROM Alumnos WHERE IdAlumno=@IdA";
-			}
-			comandosSQL.Parameters["@IdA"].Value = datos[0];
-			if (accion != "eliminar")
-			{
-				comandosSQL.Parameters["@Cod"].Value = datos[1];
-				comandosSQL.Parameters["@Nom"].Value = datos[2];
-				comandosSQL.Parameters["@Eda"].Value = datos[3];
-				comandosSQL.Parameters["@Dir"].Value = datos[4];
-				comandosSQL.Parameters["@Tel"].Value = datos[5];
-				comandosSQL.Parameters["@Grad"].Value = datos[6];
-				comandosSQL.Parameters["@Sec"].Value = datos[7];
-			}
-			procesiaSQL(sql);
-		}
+        ///////////////ALUMNOS
+        public void mantenimiento_datos(String[] datos, String accion)
+        {
+            String sql = "";
+            if (accion == "nuevo")
+            {
+                sql = "INSERT INTO Alumnos (Codigo,Nombre_Alumno,Edad,Direccion,Telefono,Grado,Seccion) VALUES(" +
+                    "'" + datos[1] + "'," +
+                    "'" + datos[2] + "'," +
+                    "'" + datos[3] + "'," +
+                    "'" + datos[4] + "'," +
+                    "'" + datos[5] + "'," +
+                    "'" + datos[6] + "'," +
+                    "'" + datos[7] + "'" +
+                    ")";
 
-		void procesiaSQL(String sql)
-		{
-			comandosSQL.Connection = miConexion;
-			comandosSQL.CommandText = sql;
-			comandosSQL.ExecuteNonQuery();
-		}
+            }
+            else if (accion == "modificar")
+            {
+                sql = "UPDATE Alumnos SET " +
+                    "Codigo                   = '" + datos[1] + "'," +
+                    "Nombre_Alumno            = '" + datos[2] + "'," +
+                    "Edad                     = '" + datos[3] + "'," +
+                    "Direccion                = '" + datos[4] + "'," +
+                    "Telefono                 = '" + datos[5] + "'," +
+                    "Grado                    = '" + datos[6] + "'," +
+                    "Seccion                  = '" + datos[7] + "'" +
+                    "WHERE IdAlumno           = '" + datos[0] + "'";
+            } 
+            else if (accion == "eliminar")
+            {
+                sql = "DELETE Alumnos FROM Alumnos WHERE IdAlumno='" + datos[0] + "'";
+            }
+            procesiaSQL(sql);
+        }
+        void procesiaSQL(String sql)
+        {
+            comandosSQL.Connection = miConexion;
+            comandosSQL.CommandText = sql;
+            comandosSQL.ExecuteNonQuery();
 
-		public void mantenimiento_datos_Responsables(String[] datos, String accion)
-		{
+        }
+        ///////////////RESPONSABLES
 
-			String sql = "";
-			if (accion == "nuevo")
-			{
-				sql = "INSERT INTO Responsables (Codigo,Nombre_Responsables,Edad,Direccion,Telefono,DUI,NIT) VALUES(@Cod,@Nom,@Eda,@Dir,@Tel,@Dui,@Nit)";
-			}
-			else if (accion == "modificar")
-			{
-				sql = "UPDATE Responsables SET " +
-					"Codigo                        = @Cod," +
-					"Nombre_Responsables           = @Nom," +
-					"Edad                          = @Eda," +
-					"Direccion                     = @Dir," +
-					"Telefono                      = @Tel," +
-					"DUI                           = @Dui," +
-					"NIT                           = @Nit " +
-					"WHERE IdResponsables           =@IdRes";
-			}
-			else if (accion == "eliminar")
-			{
-				sql = "DELETE Responsables FROM Responsables WHERE IdResponsables=@IdRes";
-			}
-			comandosSQL.Parameters["@IdRes"].Value = datos[0];
-			if (accion != "eliminar")
-			{
-				comandosSQL.Parameters["@Cod"].Value = datos[1];
-				comandosSQL.Parameters["@Nom"].Value = datos[2];
-				comandosSQL.Parameters["@Eda"].Value = datos[3];
-				comandosSQL.Parameters["@Dir"].Value = datos[4];
-				comandosSQL.Parameters["@Tel"].Value = datos[5];
-				comandosSQL.Parameters["@Dui"].Value = datos[6];
-				comandosSQL.Parameters["@Nit"].Value = datos[7];
-			}
-			prrocesaSQL(sql);
-		}
-		void prrocesaSQL(String sql)
-		{
-			comandosSQL.Connection = miConexion;
-			comandosSQL.CommandText = sql;
-			comandosSQL.ExecuteNonQuery();
+        public void mantenimiento_datos_Responsables(String[] datos, String accion)
+        {
+            String sql = "";
+            if (accion == "nuevo")
+            {
+                sql = "INSERT INTO Responsables (Codigo,Nombre_Responsables,Edad,Direccion,DUI,NIT, Telefono) VALUES(" +
+                    "'" + datos[1] + "'," +
+                    "'" + datos[2] + "'," +
+                    "'" + datos[3] + "'," +
+                    "'" + datos[4] + "'," +
+                    "'" + datos[5] + "'," +
+                    "'" + datos[6] + "'," +
+                    "'" + datos[7] + "'" +
+                    ")";
 
-		}
-		public void mantenimiento_datos_Docentes(String[] datos, String accion)
-		{
-			String sql = "";
-			if (accion == "nuevo")
-			{
-				sql = "INSERT INTO Docentes (Codigo,Docente,DUI,NIT,Especializacion,Correo_Electronico,Telefono) VALUES(@Cod,@Nom,@Dui,@Nit,@Esp,@Corr,@Tel)";
-			}
-			else if (accion == "modificar")
-			{
-				sql = "UPDATE Docentes SET " +
-					"Codigo                          = @Cod," +
-					"Docente                         = @Nom," +
-					"DUI                             = @Dui," +
-					"NIT                             = @Nit," +
-					"Especializacion                 = @Esp," +
-					"Correo_Electronico              = @Corr," +
-					"Telefono                        = @Tel " +
-					"WHERE IdDocente                 = @IdD";
-			}
-			else if (accion == "eliminar")
-			{
-				sql = "DELETE Docentes FROM Docentes WHERE IdDocente= @IdD";
-			}
-			comandosSQL.Parameters["@IdD"].Value = datos[0];
-			if (accion != "eliminar")
-			{
-				comandosSQL.Parameters["@Cod"].Value = datos[1];
-				comandosSQL.Parameters["@Nom"].Value = datos[2];
-				comandosSQL.Parameters["@Dui"].Value = datos[3];
-				comandosSQL.Parameters["@Nit"].Value = datos[4];
-				comandosSQL.Parameters["@Esp"].Value = datos[5];
-				comandosSQL.Parameters["@Corr"].Value = datos[6];
-				comandosSQL.Parameters["@Tel"].Value = datos[7];
-			}
-			pocesaSQL(sql);
-		}
-		void pocesaSQL(String sql)
-		{
-			comandosSQL.Connection = miConexion;
-			comandosSQL.CommandText = sql;
-			comandosSQL.ExecuteNonQuery();
+            }
+            else if (accion == "modificar")
+            {
+                sql = "UPDATE Responsables SET " +
+                    "Codigo                        = '" + datos[1] + "'," +
+                    "Nombre_Responsables           = '" + datos[2] + "'," +
+                    "Edad                          = '" + datos[3] + "'," +
+                    "Direccion                     = '" + datos[4] + "'," +
+                    "DUI                      = '" + datos[5] + "'," +
+                    "NIT                           = '" + datos[6] + "'," +
+                    "Telefono                           = '" + datos[7] + "'" +
+                    "WHERE IdResponsables           = '" + datos[0] + "'";
+            }
+            else if (accion == "eliminar")
+            {
+                sql = "DELETE Responsables FROM Responsables WHERE IdResponsables='" + datos[0] + "'";
+            }
+            prrocesasSQL(sql);
+        }
+        void prrocesasSQL(String sql)
+        {
+            comandosSQL.Connection = miConexion;
+            comandosSQL.CommandText = sql;
+            comandosSQL.ExecuteNonQuery();
 
-		}
-		public void mantenimiento_datos_TutordAula(String[] datos, String accion)
-		{
-			String sql = "";
-			if (accion == "nuevo")
-			{
-				sql = "INSERT INTO TutordAula (IdDocente,Codigo,Grado,Seccion) VALUES(@IdD,@Cod,@Grad,@Sec)";
-			}
-			else if (accion == "modificar")
-			{
-				sql = "UPDATE TutordAula SET " +
-					"IdDocente           = @IdD," +
-					"Codigo		         = @Cod," +
-					"Grado			     = @Grad," +
-					"Seccion		     = @Sec " +
-					"WHERE IdAula = @IdAu";
-			}
-			else if (accion == "eliminar")
-			{
-				sql = "DELETE TutordAula FROM TutordAula WHERE IdAula=@IdAu";
-			}
-			comandosSQL.Parameters["@IdAu"].Value = datos[0];
-			if (accion != "eliminar")
-			{
-				comandosSQL.Parameters["@IdD"].Value = datos[1];
-				comandosSQL.Parameters["@Cod"].Value = datos[2];
-				comandosSQL.Parameters["@Grad"].Value = datos[3];
-				comandosSQL.Parameters["@Sec"].Value = datos[4];
-			}
-			proceaSQL(sql);
-		}
-		void proceaSQL(String sql)
-		{
-			comandosSQL.Connection = miConexion;
-			comandosSQL.CommandText = sql;
-			comandosSQL.ExecuteNonQuery();
+        }
+        ///////////////DOCENTES
 
-		}
-		public void mantenimiento_Matriculas(String[] datos, String accion)
-		{
-			String sql = "";
-			if (accion == "nuevo")
-			{
-				sql = "INSERT INTO Matriculas (IdAlumno,IdResponsable,FechadeMatricula) VALUES(@IdA,@IdRes,@FMat)";
-			}
-			else if (accion == "modificar")
-			{
-				sql = "UPDATE Matriculas SET " +
-					"IdAlumno                     = @IdA," +
-					"IdResponsables               = @IdRes," +
-					"FechadeMatricula			  = @FMat " +
-					"WHERE IdMatricula            = @IdMatri";
-			}
-			else if (accion == "eliminar")
-			{
-				sql = "DELETE Matriculas FROM Matriculas WHERE IdMatricula= @IdMatri";
-			}
-			comandosSQL.Parameters["@IdAu"].Value = datos[0];
-			if (accion != "eliminar")
-			{
-				comandosSQL.Parameters["@IdA"].Value = datos[1];
-				comandosSQL.Parameters["@IdRes"].Value = datos[2];
-				comandosSQL.Parameters["@FMatri"].Value = datos[3];
-			}
-			procsaSQL(sql);
-		}
-		void procsaSQL(String sql)
-		{
-			comandosSQL.Connection = miConexion;
-			comandosSQL.CommandText = sql;
-			comandosSQL.ExecuteNonQuery();
+        public void mantenimiento_datos_Docentes(String[] datos, String accion)
+        {
+            String sql = "";
+            if (accion == "nuevo")
+            {
+                sql = "INSERT INTO Docentes (Codigo,Docente,DUI,NIT,Especializacion,Correo_Electronico,Telefono) VALUES(" +
+                    "'" + datos[1] + "'," +
+                    "'" + datos[2] + "'," +
+                    "'" + datos[3] + "'," +
+                    "'" + datos[4] + "'," +
+                    "'" + datos[5] + "'," +
+                    "'" + datos[6] + "'," +
+                    "'" + datos[7] + "'" +
+                    ")";
 
-		}
-		public void mantenimiento_Asistencias(String[] datos, String accion)
-		{
-			String sql = "";
-			if (accion == "nuevo") {
-				sql = "INSERT INTO Asistencias (IdAlumno,IdMes,Dia,Si,No,) VALUES(@IdA,@IdMes,@Dia,@Si,@No)";
+            }
+            else if (accion == "modificar")
+            {
+                sql = "UPDATE Docentes SET " +
+                    "Codigo                          = '" + datos[1] + "'," +
+                    "Docente                         = '" + datos[2] + "'," +
+                    "DUI                             = '" + datos[3] + "'," +
+                    "NIT                             = '" + datos[4] + "'," +
+                    "Especializacion                 = '" + datos[5] + "'," +
+                    "Correo_Electronico              = '" + datos[6] + "'," +
+                    "Telefono                        = '" + datos[7] + "'" +
+                    "WHERE IdDocente            = '" + datos[0] + "'";
+            }
+            else if (accion == "eliminar")
+            {
+                sql = "DELETE Docentes FROM Docentes WHERE IdDocente='" + datos[0] + "'";
+            }
+            pocesassSQL(sql);
+        }
+        void pocesassSQL(String sql)
+        {
+            comandosSQL.Connection = miConexion;
+            comandosSQL.CommandText = sql;
+            comandosSQL.ExecuteNonQuery();
 
-			}
-			else if (accion == "modificar") {
-				sql = "UPDATE Asistencias SET " +
-					"IdAlumno                   = @IdA," +
-					"IdMes                      = @IdMes," +
-					"Dia                        = @Dia," +
-					"Si                         = @Si," +
-					"No                         = @No " +
-					"WHERE IdAsistencia         = @IdAs";
-			}
-			else if (accion == "eliminar") {
-				sql = "DELETE Asistencias FROM Asistencias WHERE IdAsistencia=@IdAs";
-			}
-			comandosSQL.Parameters["@IdAs"].Value = datos[0];
-			if (accion != "eliminar")
-			{
-				comandosSQL.Parameters["@IdA"].Value = datos[1];
-				comandosSQL.Parameters["@IdMes"].Value = datos[2];
-				comandosSQL.Parameters["@Dia"].Value = datos[3];
-				comandosSQL.Parameters["@Si"].Value = datos[4];
-				comandosSQL.Parameters["@No"].Value = datos[5];
-			}
-			procesaisSQL(sql);
-		}
-		void procesaisSQL(String sql)
-		{
-			comandosSQL.Connection = miConexion;
-			comandosSQL.CommandText = sql;
-			comandosSQL.ExecuteNonQuery();
+        }
+        ///////////////TUTORES
 
-		}
-		public void mantenimiento_datos_Meses(String[] datos, String accion)
-		{
-			String sql = "";
-			if (accion == "nuevo")
-			{
-				sql = "INSERT INTO Meses (Mes) VALUES(" +
-					"'" + datos[1] + "'" +
-					")";
-			}
-			else if (accion == "modificar")
-			{
-				sql = "UPDATE Meses SET " +
-					"Mes            = '" + datos[1] + "'" +
-					"WHERE IdMes    = '" + datos[0] + "'";
-			}
-			else if (accion == "eliminar")
-			{
-				sql = "DELETE Meses FROM Meses WHERE IdMes='" + datos[0] + "'";
-			}
-			procesasSQL(sql);
-		}
-		void procesasSQL(String sql)
-		{
-			comandosSQL.Connection = miConexion;
-			comandosSQL.CommandText = sql;
-			comandosSQL.ExecuteNonQuery();
+        public void mantenimiento_datos_TutordAula(String[] datos, String accion)
+        {
+            String sql = "";
+            if (accion == "nuevo")
+            {
+                sql = "INSERT INTO TutordAula (IdDocente,Codigo,Grado,Seccion) VALUES(" +
+                    "'" + datos[1] + "'," +
+                    "'" + datos[2] + "'," +
+                    "'" + datos[3] + "'," +
+                    "'" + datos[4] + "'" +
+                    ")";
+            }
+            else if (accion == "modificar")
+            {
+                sql = "UPDATE TutordAula SET " +
+                    "IdDocente           = '" + datos[1] + "'," +
+                    "Codigo		         = '" + datos[2] + "'," +
+                    "Grado			     = '" + datos[3] + "'," +
+                    "Seccion		     = '" + datos[4] + "'" +
+                    "WHERE IdAula        = '" + datos[0] + "'";
+            }
+            else if (accion == "eliminar")
+            {
+                sql = "DELETE TutordAula FROM TutordAula WHERE IdAula='" + datos[0] + "'";
+            }
+            proceaSQL(sql);
+        }
+        void proceaSQL(String sql)
+        {
+            comandosSQL.Connection = miConexion;
+            comandosSQL.CommandText = sql;
+            comandosSQL.ExecuteNonQuery();
 
-		}
-		public void mantenimiento_Materias(String[] datos, String accion)
-		{
-			String sql = "";
-			if (accion == "nuevo")
-			{
-				sql = "INSERT INTO Materias (Codigo,Nombre_Materia) VALUES(" +
-					"'" + datos[1] + "'," +
-					"'" + datos[2] + "'" +
-					")";
+        }
+        ///////////////MATRICULA
 
-			}
-			else if (accion == "modificar")
-			{
-				sql = "UPDATE Materias SET " +
-					"Codigo                   = '" + datos[1] + "'," +
-					"Nombre_Materia          = '" + datos[2] + "'" +
-					"WHERE IdMateria           = '" + datos[0] + "'";
-			}
-			else if (accion == "eliminar")
-			{
-				sql = "DELETE Materias FROM Materias WHERE IdMateria='" + datos[0] + "'";
-			}
-			procesaeSQL(sql);
-		}
-		void procesaeSQL(String sql)
-		{
-			comandosSQL.Connection = miConexion;
-			comandosSQL.CommandText = sql;
-			comandosSQL.ExecuteNonQuery();
+        public void mantenimiento_Matriculas(String[] datos, String accion)
+        {
+            String sql = "";
+            if (accion == "nuevo")
+            {
+                sql = "INSERT INTO Matriculas (IdAlumno,IdResponsables,FechadeMatricula) VALUES(" +
+                    "'" + datos[1] + "'," +
+                    "'" + datos[2] + "'," +
+                    "'" + datos[3] + "'" +
+                    ")";
 
-		}
-		public void mantenimiento_datos_Notas(String[] datos, String accion)
-		{
-			string sql = "";
-			if (accion == "nuevo") {
-				sql = "INSERT INTO Notas (IdAlumno,IdMateria,Examen,Actividad1,Actividad2,Nota) VALUES(@IdA,@IdMat,@Exa,@Ac1,@Ac2,@Not)";
-			}
-			else if (accion == "modificar"){
-				sql = "UPDATE Notas SET" +
-					"IdAlumno				=@IdA," +
-					"IdMateria				=@IdMat," +
-					"Examen					=@Exa," +
-					"Actividad1				=@Ac1," +
-					"Actividad2				=@Ac2," +
-					"Nota					=@Not "  +
-					"WHERE IdNotas			=@IdNot" ;
-			}
-			else if (accion == "eliminar")
-			{
-				sql = "DELETE Notas FROM Notas WHERE IdNotas=@IdNot" ;
-			}
-			comandosSQL.Parameters["@IdNot"].Value = datos[0];
-			if (accion != "eliminar")
-			{
-				comandosSQL.Parameters["@IdA"].Value = datos[1];
-				comandosSQL.Parameters["@IdMat"].Value = datos[2];
-				comandosSQL.Parameters["@Exa"].Value = datos[3];
-				comandosSQL.Parameters["@Ac1"].Value = datos[4];
-				comandosSQL.Parameters["@Ac2"].Value = datos[5];
-				comandosSQL.Parameters["@Not"].Value = datos[6];
-			}
-			procesaSQL(sql);
-		}
-		void procesaSQL(String sql)
-		{
-			comandosSQL.Connection = miConexion;
-			comandosSQL.CommandText = sql;
-			comandosSQL.ExecuteNonQuery();
-		}
-	}
+            }
+            else if (accion == "modificar")
+            {
+                sql = "UPDATE Matriculas SET " +
+                    "IdAlumno                     = '" + datos[1] + "'," +
+                    "IdResponsables                = '" + datos[2] + "'," +
+                    "FechadeMatricula			  = '" + datos[3] + "'" +
+                    "WHERE IdMatricula            = '" + datos[0] + "'";
+            }
+            else if (accion == "eliminar")
+            {
+                sql = "DELETE Matriculas FROM Matriculas WHERE IdMatricula='" + datos[0] + "'";
+            }
+            procsasssSQL(sql);
+        }
+        void procsasssSQL(String sql)
+        {
+            comandosSQL.Connection = miConexion;
+            comandosSQL.CommandText = sql;
+            comandosSQL.ExecuteNonQuery();
+
+        }
+        ///////////////ASISTENCIA
+
+        public void mantenimiento_Asistencias(String[] datos, String accion)
+        {
+            String sql = "";
+            if (accion == "nuevo")
+            {
+                sql = "INSERT INTO Asistencias (IdAlumno,IdMes,Dia,Si,No,) VALUES(" +
+                    "'" + datos[1] + "'," +
+                    "'" + datos[2] + "'," +
+                    "'" + datos[3] + "'," +
+                    "'" + datos[4] + "'," +
+                    "'" + datos[5] + "'" +
+                    ")";
+            }
+            else if (accion == "modificar")
+            {
+                sql = "UPDATE Asistencias SET " +
+                    "IdAlumno                   = '" + datos[1] + "'," +
+                    "IdMes                      = '" + datos[2] + "'," +
+                    "Dia                        = '" + datos[3] + "'," +
+                    "Si                         = '" + datos[4] + "'," +
+                    "No                         = '" + datos[5] + "'" +
+                    "WHERE IdAsistencia         = '" + datos[0] + "'";
+            }
+            else if (accion == "eliminar")
+            {
+                sql = "DELETE Asistencias FROM Asistencias WHERE IdAsistencia='" + datos[0] + "'";
+            }
+            procesaisssSQL(sql);
+        }
+        void procesaisssSQL(String sql)
+        {
+            comandosSQL.Connection = miConexion;
+            comandosSQL.CommandText = sql;
+            comandosSQL.ExecuteNonQuery();
+
+        }
+        ///////////////MESES
+
+        public void mantenimiento_datos_Meses(String[] datos, String accion)
+        {
+            String sql = "";
+            if (accion == "nuevo")
+            {
+                sql = "INSERT INTO Meses (Mes) VALUES(" +
+                    "'" + datos[1] + "'" +
+                    ")";
+            }
+            else if (accion == "modificar")
+            {
+                sql = "UPDATE Meses SET " +
+                    "Mes            = '" + datos[1] + "'" +
+                    "WHERE IdMes    = '" + datos[0] + "'";
+            }
+            else if (accion == "eliminar")
+            {
+                sql = "DELETE Meses FROM Meses WHERE IdMes='" + datos[0] + "'";
+            }
+            procesasmmSQL(sql);
+        }
+        void procesasmmSQL(String sql)
+        {
+            comandosSQL.Connection = miConexion;
+            comandosSQL.CommandText = sql;
+            comandosSQL.ExecuteNonQuery();
+
+        }
+        ///////////////MATERIAS
+
+        public void mantenimiento_Materias(String[] datos, String accion)
+        {
+            String sql = "";
+            if (accion == "nuevo")
+            {
+                sql = "INSERT INTO Materias (Codigo,Nombre_Materia) VALUES(" +
+                    "'" + datos[1] + "'," +
+                    "'" + datos[2] + "'" +
+                    ")";
+
+            }
+            else if (accion == "modificar")
+            {
+                sql = "UPDATE Materias SET " +
+                    "Codigo                   = '" + datos[1] + "'," +
+                    "Nombre_Materia          = '" + datos[2] + "'" +
+                    "WHERE IdMateria           = '" + datos[0] + "'";
+            }
+            else if (accion == "eliminar")
+            {
+                sql = "DELETE Materias FROM Materias WHERE IdMateria='" + datos[0] + "'";
+            }
+            procesaemSQL(sql);
+        }
+        void procesaemSQL(String sql)
+        {
+            comandosSQL.Connection = miConexion;
+            comandosSQL.CommandText = sql;
+            comandosSQL.ExecuteNonQuery();
+
+        }
+        public void mantenimiento_datos_Notas(String[] datos, String accion)
+        {
+            string sql = "";
+            if (accion == "nuevo")
+            {
+                sql = "INSERT INTO Notas (IdAlumno,IdMateria,Examen,Actividad1,Actividad2,Nota) VALUES(" +
+                    "'" + datos[1] + "'," +
+                    "'" + datos[2] + "'," +
+                    "'" + datos[3] + "'," +
+                    "'" + datos[4] + "'," +
+                    "'" + datos[5] + "'," +
+                    "'" + datos[6] + "'" +
+                    ")";
+            }
+            else if (accion == "modificar")
+            {
+                sql = "UPDATE Notas SET" +
+                    "IdAlumno				='" + datos[1] + "'," +
+                    "IdMateria				='" + datos[2] + "'," +
+                    "Examen					='" + datos[3] + "'," +
+                    "Actividad1				='" + datos[4] + "'," +
+                    "Actividad2				='" + datos[5] + "'," +
+                    "Nota					='" + datos[6] + "'" +
+                    "WHERE IdNota			='" + datos[0] + "'";
+            }
+            else if (accion == "eliminar")
+            {
+                sql = "DELETE Notas FROM Notas WHERE IdNota='" + datos[0] + "'";
+            }
+            procccSQL(sql);
+        }
+        void procccSQL(String sql)
+        {
+            comandosSQL.Connection = miConexion;
+            comandosSQL.CommandText = sql;
+            comandosSQL.ExecuteNonQuery();
+
+        }
+    }
 }
+
