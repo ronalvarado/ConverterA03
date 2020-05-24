@@ -188,7 +188,6 @@ namespace Conversor_A
 				mostrarDatos();
 			}
 		}
-
         private void grbAlumnos_Enter(object sender, EventArgs e)
         {
 

@@ -79,7 +79,9 @@ namespace Conversor_A
 
         private void btnNotas_Click(object sender, EventArgs e)
         {
+            Notas Notas = new Notas();
 
+            Notas.Show();
         }
     }
 }

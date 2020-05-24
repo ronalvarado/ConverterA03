@@ -21,9 +21,6 @@ namespace Conversor_A
 			String cadena = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\ProyectoEscuela_.mdf;Integrated Security=True";
 			miConexion.ConnectionString = cadena;
 			miConexion.Open();
-
-		
-
         }
         public DataSet obtener_datos()
 		{
