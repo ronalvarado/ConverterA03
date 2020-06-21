@@ -28,6 +28,7 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Meses));
 			this.grbMeses = new System.Windows.Forms.GroupBox();
 			this.txtMes = new System.Windows.Forms.TextBox();
 			this.lblIdMes = new System.Windows.Forms.Label();
@@ -82,7 +83,7 @@
 			// lblIdMeses
 			// 
 			this.lblIdMeses.AutoSize = true;
-			this.lblIdMeses.Location = new System.Drawing.Point(269, 34);
+			this.lblIdMeses.Location = new System.Drawing.Point(267, 34);
 			this.lblIdMeses.Name = "lblIdMeses";
 			this.lblIdMeses.Size = new System.Drawing.Size(21, 13);
 			this.lblIdMeses.TabIndex = 1;
@@ -223,7 +224,7 @@
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.BackColor = System.Drawing.Color.Black;
+			this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
 			this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
 			this.ClientSize = new System.Drawing.Size(419, 178);
 			this.Controls.Add(this.grbEdiciondeMeses);

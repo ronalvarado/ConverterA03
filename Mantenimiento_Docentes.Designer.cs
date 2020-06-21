@@ -28,6 +28,7 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Mantenimiento_Docentes));
 			this.grbEdicionderesponsables = new System.Windows.Forms.GroupBox();
 			this.btnBuscar = new System.Windows.Forms.Button();
 			this.btnEliminar = new System.Windows.Forms.Button();
@@ -52,7 +53,9 @@
 			this.lblEspecialización = new System.Windows.Forms.Label();
 			this.txtNombre = new System.Windows.Forms.TextBox();
 			this.lblNombre = new System.Windows.Forms.Label();
+			this.txtCodigo = new System.Windows.Forms.TextBox();
 			this.lblIdDocente = new System.Windows.Forms.Label();
+			this.lblCódigo = new System.Windows.Forms.Label();
 			this.grbEdicionderesponsables.SuspendLayout();
 			this.grbNavegacion.SuspendLayout();
 			this.grbDocentes.SuspendLayout();
@@ -200,7 +203,9 @@
 			this.grbDocentes.Controls.Add(this.lblEspecialización);
 			this.grbDocentes.Controls.Add(this.txtNombre);
 			this.grbDocentes.Controls.Add(this.lblNombre);
+			this.grbDocentes.Controls.Add(this.txtCodigo);
 			this.grbDocentes.Controls.Add(this.lblIdDocente);
+			this.grbDocentes.Controls.Add(this.lblCódigo);
 			this.grbDocentes.Enabled = false;
 			this.grbDocentes.ForeColor = System.Drawing.Color.White;
 			this.grbDocentes.Location = new System.Drawing.Point(12, 12);
@@ -306,6 +311,13 @@
 			this.lblNombre.TabIndex = 3;
 			this.lblNombre.Text = "Nombre:";
 			// 
+			// txtCodigo
+			// 
+			this.txtCodigo.Location = new System.Drawing.Point(115, 45);
+			this.txtCodigo.Name = "txtCodigo";
+			this.txtCodigo.Size = new System.Drawing.Size(100, 20);
+			this.txtCodigo.TabIndex = 2;
+			// 
 			// lblIdDocente
 			// 
 			this.lblIdDocente.AutoSize = true;
@@ -315,11 +327,21 @@
 			this.lblIdDocente.TabIndex = 1;
 			this.lblIdDocente.Text = "ID:";
 			// 
+			// lblCódigo
+			// 
+			this.lblCódigo.AutoSize = true;
+			this.lblCódigo.Location = new System.Drawing.Point(20, 48);
+			this.lblCódigo.Name = "lblCódigo";
+			this.lblCódigo.Size = new System.Drawing.Size(40, 13);
+			this.lblCódigo.TabIndex = 0;
+			this.lblCódigo.Text = "Código";
+			// 
 			// Mantenimiento_Docentes
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.BackColor = System.Drawing.Color.Black;
+			this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+			this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
 			this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
 			this.ClientSize = new System.Drawing.Size(543, 313);
 			this.Controls.Add(this.grbDocentes);
@@ -363,6 +385,8 @@
         private System.Windows.Forms.Label lblEspecialización;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Label lblNombre;
+        private System.Windows.Forms.TextBox txtCodigo;
         private System.Windows.Forms.Label lblIdDocente;
+        private System.Windows.Forms.Label lblCódigo;
     }
 }

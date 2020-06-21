@@ -28,6 +28,7 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Materias));
 			this.grbEdiciondeMateria = new System.Windows.Forms.GroupBox();
 			this.btnBuscar = new System.Windows.Forms.Button();
 			this.btnEliminar = new System.Windows.Forms.Button();
@@ -40,11 +41,11 @@
 			this.btnAnterior = new System.Windows.Forms.Button();
 			this.btnPrimero = new System.Windows.Forms.Button();
 			this.grbMateria = new System.Windows.Forms.GroupBox();
+			this.txtCodigo = new System.Windows.Forms.TextBox();
+			this.lblMateria = new System.Windows.Forms.Label();
 			this.txtMateria = new System.Windows.Forms.TextBox();
 			this.lblCodigo = new System.Windows.Forms.Label();
 			this.lblIdMateria = new System.Windows.Forms.Label();
-			this.txtCodigo = new System.Windows.Forms.TextBox();
-			this.lblMateria = new System.Windows.Forms.Label();
 			this.grbEdiciondeMateria.SuspendLayout();
 			this.grbNavegacion.SuspendLayout();
 			this.grbMateria.SuspendLayout();
@@ -198,6 +199,22 @@
 			this.grbMateria.TabStop = false;
 			this.grbMateria.Text = "Mantenimiento Materias";
 			// 
+			// txtCodigo
+			// 
+			this.txtCodigo.Location = new System.Drawing.Point(55, 31);
+			this.txtCodigo.Name = "txtCodigo";
+			this.txtCodigo.Size = new System.Drawing.Size(219, 20);
+			this.txtCodigo.TabIndex = 8;
+			// 
+			// lblMateria
+			// 
+			this.lblMateria.AutoSize = true;
+			this.lblMateria.Location = new System.Drawing.Point(6, 58);
+			this.lblMateria.Name = "lblMateria";
+			this.lblMateria.Size = new System.Drawing.Size(45, 13);
+			this.lblMateria.TabIndex = 7;
+			this.lblMateria.Text = "Materia:";
+			// 
 			// txtMateria
 			// 
 			this.txtMateria.Location = new System.Drawing.Point(55, 55);
@@ -223,26 +240,11 @@
 			this.lblIdMateria.TabIndex = 1;
 			this.lblIdMateria.Text = "ID:";
 			// 
-			// txtCodigo
-			// 
-			this.txtCodigo.Location = new System.Drawing.Point(55, 31);
-			this.txtCodigo.Name = "txtCodigo";
-			this.txtCodigo.Size = new System.Drawing.Size(219, 20);
-			this.txtCodigo.TabIndex = 8;
-			// 
-			// lblMateria
-			// 
-			this.lblMateria.AutoSize = true;
-			this.lblMateria.Location = new System.Drawing.Point(6, 58);
-			this.lblMateria.Name = "lblMateria";
-			this.lblMateria.Size = new System.Drawing.Size(45, 13);
-			this.lblMateria.TabIndex = 7;
-			this.lblMateria.Text = "Materia:";
-			// 
 			// Materias
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
 			this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
 			this.ClientSize = new System.Drawing.Size(410, 171);
 			this.Controls.Add(this.grbEdiciondeMateria);

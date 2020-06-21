@@ -29,15 +29,15 @@ namespace Conversor_A
 		void actualizarDs()
 		{
 			tbl = objConexion.obtener_datos().Tables["Asistencias"];
-			tbl.PrimaryKey = new DataColumn[] { tbl.Columns["idAsistencia"] };
+			tbl.PrimaryKey = new DataColumn[] { tbl.Columns["IdAsistencia"] };
 
 			cboAlumno.DataSource = objConexion.obtener_datos().Tables["Alumnos"];
-			cboAlumno.DisplayMember = "nombreAlumno";
-			cboAlumno.ValueMember = "Alumnos.idAlumno";
+			cboAlumno.DisplayMember = "Nombre_Alumno";
+			cboAlumno.ValueMember = "Alumnos.IdAlumno";
 
 			cboMes.DataSource = objConexion.obtener_datos().Tables["Meses"];
-			cboMes.DisplayMember = "nombreMes";
-			cboMes.ValueMember = "Meses.idMes";
+			cboMes.DisplayMember = "Mes";
+			cboMes.ValueMember = "Meses.IdMes";
 
 		}
 		void mostrarDatos()
@@ -48,34 +48,22 @@ namespace Conversor_A
 				cboAlumno.SelectedValue = tbl.Rows[posicion].ItemArray[1].ToString();
 
 				cboMes.SelectedValue = tbl.Rows[posicion].ItemArray[2].ToString();
+                lblIdAsistencia.Text = tbl.Rows[posicion].ItemArray[0].ToString();
 
-				lblIdAsistencia.Text = tbl.Rows[posicion].ItemArray[0].ToString();
-				txtDia.Text = tbl.Rows[posicion].ItemArray[3].ToString();
-				txtasistencia.Text = tbl.Rows[posicion].ItemArray[4].ToString();
+                txtDia.Text = tbl.Rows[posicion].ItemArray[3].ToString();
+				txtSi.Text = tbl.Rows[posicion].ItemArray[4].ToString();
+				txtNo.Text = tbl.Rows[posicion].ItemArray[5].ToString();
 
-				lblnregistros.Text = (posicion + 1) + " de " + tbl.Rows.Count;
+                lblnregistros.Text = (posicion + 1) + " de " + tbl.Rows.Count;
 			}
 			catch (Exception)
 			{
-				MessageBox.Show("No hay Datos que mostrar", "Registros de Asistencia",
+				MessageBox.Show("No hay Datos que mostrar", "Registros de Asistencias",
 					MessageBoxButtons.OK, MessageBoxIcon.Information);
 				limpiar_cajas();
 			}
 		}
-		void limpiar_cajas()
-		{
-			txtDia.Text = "";
-			txtasistencia.Text = "";
-
-		}
-		void controles(Boolean valor)
-		{
-			grbNavegacion.Enabled = valor;
-			btnEliminar.Enabled = valor;
-			btnBuscar.Enabled = valor;
-			grbAsistencia.Enabled = !valor;
-		}
-
+		
 
 		private void btnPrimero_Click(object sender, EventArgs e)
 		{
@@ -116,8 +104,21 @@ namespace Conversor_A
 			posicion = tbl.Rows.Count - 1;
 			mostrarDatos();
 		}
+        void limpiar_cajas()
+        {
+            txtDia.Text = "";
+            //txtSi.Text = "";
+           // txtNo.Text = "";
+        }
+        void controles(Boolean valor)
+        {
+            grbNavegacion.Enabled = valor;
+            btnEliminar.Enabled = valor;
+            btnBuscar.Enabled = valor;
+            grbAsistencia.Enabled = !valor;
+        }
 
-		private void btnNuevo_Click(object sender, EventArgs e)
+        private void btnNuevo_Click(object sender, EventArgs e)
 		{
 			if (btnNuevo.Text == "Nuevo")
 			{//boton de nuevo
@@ -131,11 +132,11 @@ namespace Conversor_A
 			else
 			{ //boton de guardar
 				String[] valores = {
-			        lblIdAsistencia.Text,
 					cboAlumno.SelectedValue.ToString(),
 					cboMes.SelectedValue.ToString(),
 					txtDia.Text,
-					txtasistencia.Text,
+					txtSi.Text,
+					txtNo.Text,
 				};
 				objConexion.mantenimiento_Asistencias(valores, accion);
 				actualizarDs();
@@ -180,7 +181,7 @@ namespace Conversor_A
 
 		private void btnEliminar_Click(object sender, EventArgs e)
 		{
-			if (MessageBox.Show("Esta seguro de elimina a " + txtDia.Text, "Registro de Asistencias",
+			if (MessageBox.Show("Esta seguro de elimina a " + cboAlumno.Text, "Registro de Asistencias",
   MessageBoxButtons.YesNo, MessageBoxIcon.Error) == DialogResult.Yes)
 			{
 				String[] valores = { lblIdAsistencia.Text };

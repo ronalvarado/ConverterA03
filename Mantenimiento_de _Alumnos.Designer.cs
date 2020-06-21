@@ -28,7 +28,12 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Mantenimiento_de__Alumnos));
 			this.grbAlumnos = new System.Windows.Forms.GroupBox();
+			this.txtSeccion = new System.Windows.Forms.TextBox();
+			this.lblSeccion = new System.Windows.Forms.Label();
+			this.txtGrado = new System.Windows.Forms.TextBox();
+			this.lblGrado = new System.Windows.Forms.Label();
 			this.txtTelefono = new System.Windows.Forms.TextBox();
 			this.txtDireccion = new System.Windows.Forms.TextBox();
 			this.txtEdad = new System.Windows.Forms.TextBox();
@@ -59,6 +64,10 @@
 			// grbAlumnos
 			// 
 			this.grbAlumnos.BackColor = System.Drawing.Color.Transparent;
+			this.grbAlumnos.Controls.Add(this.txtSeccion);
+			this.grbAlumnos.Controls.Add(this.lblSeccion);
+			this.grbAlumnos.Controls.Add(this.txtGrado);
+			this.grbAlumnos.Controls.Add(this.lblGrado);
 			this.grbAlumnos.Controls.Add(this.txtTelefono);
 			this.grbAlumnos.Controls.Add(this.txtDireccion);
 			this.grbAlumnos.Controls.Add(this.txtEdad);
@@ -79,6 +88,38 @@
 			this.grbAlumnos.TabStop = false;
 			this.grbAlumnos.Text = "Mantenimiento Alumnos ";
 			this.grbAlumnos.Enter += new System.EventHandler(this.grbAlumnos_Enter);
+			// 
+			// txtSeccion
+			// 
+			this.txtSeccion.Location = new System.Drawing.Point(84, 201);
+			this.txtSeccion.Name = "txtSeccion";
+			this.txtSeccion.Size = new System.Drawing.Size(100, 20);
+			this.txtSeccion.TabIndex = 14;
+			// 
+			// lblSeccion
+			// 
+			this.lblSeccion.AutoSize = true;
+			this.lblSeccion.Location = new System.Drawing.Point(20, 204);
+			this.lblSeccion.Name = "lblSeccion";
+			this.lblSeccion.Size = new System.Drawing.Size(46, 13);
+			this.lblSeccion.TabIndex = 13;
+			this.lblSeccion.Text = "Sección";
+			// 
+			// txtGrado
+			// 
+			this.txtGrado.Location = new System.Drawing.Point(84, 175);
+			this.txtGrado.Name = "txtGrado";
+			this.txtGrado.Size = new System.Drawing.Size(100, 20);
+			this.txtGrado.TabIndex = 12;
+			// 
+			// lblGrado
+			// 
+			this.lblGrado.AutoSize = true;
+			this.lblGrado.Location = new System.Drawing.Point(20, 178);
+			this.lblGrado.Name = "lblGrado";
+			this.lblGrado.Size = new System.Drawing.Size(36, 13);
+			this.lblGrado.TabIndex = 11;
+			this.lblGrado.Text = "Grado";
 			// 
 			// txtTelefono
 			// 
@@ -113,18 +154,18 @@
 			this.lblTelefono.AutoSize = true;
 			this.lblTelefono.Location = new System.Drawing.Point(20, 152);
 			this.lblTelefono.Name = "lblTelefono";
-			this.lblTelefono.Size = new System.Drawing.Size(52, 13);
+			this.lblTelefono.Size = new System.Drawing.Size(49, 13);
 			this.lblTelefono.TabIndex = 6;
-			this.lblTelefono.Text = "Telefóno:";
+			this.lblTelefono.Text = "Telefóno";
 			// 
 			// lblDireccion
 			// 
 			this.lblDireccion.AutoSize = true;
 			this.lblDireccion.Location = new System.Drawing.Point(20, 126);
 			this.lblDireccion.Name = "lblDireccion";
-			this.lblDireccion.Size = new System.Drawing.Size(55, 13);
+			this.lblDireccion.Size = new System.Drawing.Size(52, 13);
 			this.lblDireccion.TabIndex = 5;
-			this.lblDireccion.Text = "Dirección:";
+			this.lblDireccion.Text = "Dirección";
 			// 
 			// lblEdad
 			// 
@@ -140,9 +181,9 @@
 			this.lblNombre.AutoSize = true;
 			this.lblNombre.Location = new System.Drawing.Point(20, 74);
 			this.lblNombre.Name = "lblNombre";
-			this.lblNombre.Size = new System.Drawing.Size(47, 13);
+			this.lblNombre.Size = new System.Drawing.Size(44, 13);
 			this.lblNombre.TabIndex = 3;
-			this.lblNombre.Text = "Nombre:";
+			this.lblNombre.Text = "Nombre";
 			// 
 			// txtCodigo
 			// 
@@ -165,9 +206,9 @@
 			this.lblCódigo.AutoSize = true;
 			this.lblCódigo.Location = new System.Drawing.Point(20, 48);
 			this.lblCódigo.Name = "lblCódigo";
-			this.lblCódigo.Size = new System.Drawing.Size(43, 13);
+			this.lblCódigo.Size = new System.Drawing.Size(40, 13);
 			this.lblCódigo.TabIndex = 0;
-			this.lblCódigo.Text = "Código:";
+			this.lblCódigo.Text = "Código";
 			// 
 			// grbNavegacion
 			// 
@@ -300,7 +341,8 @@
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.BackColor = System.Drawing.Color.Black;
+			this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+			this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
 			this.ClientSize = new System.Drawing.Size(682, 318);
 			this.Controls.Add(this.grbEdiciondealumnos);
 			this.Controls.Add(this.grbNavegacion);
@@ -342,5 +384,9 @@
 		private System.Windows.Forms.Label lblDireccion;
 		private System.Windows.Forms.Label lblEdad;
 		private System.Windows.Forms.Label lblNombre;
+		private System.Windows.Forms.TextBox txtSeccion;
+		private System.Windows.Forms.Label lblSeccion;
+		private System.Windows.Forms.TextBox txtGrado;
+		private System.Windows.Forms.Label lblGrado;
 	}
 }
