@@ -29,10 +29,6 @@
 		private void InitializeComponent()
 		{
 			this.grbAsistencia = new System.Windows.Forms.GroupBox();
-			this.lblNo = new System.Windows.Forms.Label();
-			this.lblSi = new System.Windows.Forms.Label();
-			this.txtNo = new System.Windows.Forms.TextBox();
-			this.txtSi = new System.Windows.Forms.TextBox();
 			this.cboMes = new System.Windows.Forms.ComboBox();
 			this.cboAlumno = new System.Windows.Forms.ComboBox();
 			this.txtDia = new System.Windows.Forms.TextBox();
@@ -51,6 +47,8 @@
 			this.btnEliminar = new System.Windows.Forms.Button();
 			this.btnModificar = new System.Windows.Forms.Button();
 			this.btnNuevo = new System.Windows.Forms.Button();
+			this.txtasistencia = new System.Windows.Forms.TextBox();
+			this.lblasistencia = new System.Windows.Forms.Label();
 			this.grbAsistencia.SuspendLayout();
 			this.grbNavegacion.SuspendLayout();
 			this.grbEdiciondeMatriculas.SuspendLayout();
@@ -59,10 +57,8 @@
 			// grbAsistencia
 			// 
 			this.grbAsistencia.BackColor = System.Drawing.Color.Transparent;
-			this.grbAsistencia.Controls.Add(this.lblNo);
-			this.grbAsistencia.Controls.Add(this.lblSi);
-			this.grbAsistencia.Controls.Add(this.txtNo);
-			this.grbAsistencia.Controls.Add(this.txtSi);
+			this.grbAsistencia.Controls.Add(this.txtasistencia);
+			this.grbAsistencia.Controls.Add(this.lblasistencia);
 			this.grbAsistencia.Controls.Add(this.cboMes);
 			this.grbAsistencia.Controls.Add(this.cboAlumno);
 			this.grbAsistencia.Controls.Add(this.txtDia);
@@ -78,38 +74,6 @@
 			this.grbAsistencia.TabIndex = 7;
 			this.grbAsistencia.TabStop = false;
 			this.grbAsistencia.Text = "Mantenimiento Asistencias";
-			// 
-			// lblNo
-			// 
-			this.lblNo.AutoSize = true;
-			this.lblNo.Location = new System.Drawing.Point(37, 152);
-			this.lblNo.Name = "lblNo";
-			this.lblNo.Size = new System.Drawing.Size(26, 13);
-			this.lblNo.TabIndex = 12;
-			this.lblNo.Text = "NO:";
-			// 
-			// lblSi
-			// 
-			this.lblSi.AutoSize = true;
-			this.lblSi.Location = new System.Drawing.Point(37, 126);
-			this.lblSi.Name = "lblSi";
-			this.lblSi.Size = new System.Drawing.Size(20, 13);
-			this.lblSi.TabIndex = 11;
-			this.lblSi.Text = "SI:";
-			// 
-			// txtNo
-			// 
-			this.txtNo.Location = new System.Drawing.Point(98, 145);
-			this.txtNo.Name = "txtNo";
-			this.txtNo.Size = new System.Drawing.Size(45, 20);
-			this.txtNo.TabIndex = 10;
-			// 
-			// txtSi
-			// 
-			this.txtSi.Location = new System.Drawing.Point(98, 119);
-			this.txtSi.Name = "txtSi";
-			this.txtSi.Size = new System.Drawing.Size(45, 20);
-			this.txtSi.TabIndex = 9;
 			// 
 			// cboMes
 			// 
@@ -303,11 +267,27 @@
 			this.btnNuevo.UseVisualStyleBackColor = false;
 			this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
 			// 
+			// txtasistencia
+			// 
+			this.txtasistencia.Location = new System.Drawing.Point(98, 119);
+			this.txtasistencia.Name = "txtasistencia";
+			this.txtasistencia.Size = new System.Drawing.Size(170, 20);
+			this.txtasistencia.TabIndex = 10;
+			// 
+			// lblasistencia
+			// 
+			this.lblasistencia.AutoSize = true;
+			this.lblasistencia.Location = new System.Drawing.Point(7, 122);
+			this.lblasistencia.Name = "lblasistencia";
+			this.lblasistencia.Size = new System.Drawing.Size(58, 13);
+			this.lblasistencia.TabIndex = 9;
+			this.lblasistencia.Text = "Asistencia:";
+			// 
 			// Asistencias
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.BackgroundImage = global::Conversor_A.Properties.Resources.tema_azul_clasico_abstracto_fondo_pantalla_23_2148410363;
+			this.BackColor = System.Drawing.Color.Black;
 			this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
 			this.ClientSize = new System.Drawing.Size(594, 261);
 			this.Controls.Add(this.grbEdiciondeMatriculas);
@@ -328,10 +308,6 @@
 		#endregion
 
 		private System.Windows.Forms.GroupBox grbAsistencia;
-		private System.Windows.Forms.Label lblNo;
-		private System.Windows.Forms.Label lblSi;
-		private System.Windows.Forms.TextBox txtNo;
-		private System.Windows.Forms.TextBox txtSi;
 		private System.Windows.Forms.ComboBox cboMes;
 		private System.Windows.Forms.ComboBox cboAlumno;
 		private System.Windows.Forms.TextBox txtDia;
@@ -350,5 +326,7 @@
 		private System.Windows.Forms.Button btnEliminar;
 		private System.Windows.Forms.Button btnModificar;
 		private System.Windows.Forms.Button btnNuevo;
+		private System.Windows.Forms.TextBox txtasistencia;
+		private System.Windows.Forms.Label lblasistencia;
 	}
 }

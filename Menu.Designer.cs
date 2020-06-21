@@ -77,7 +77,6 @@
 			this.btnMatriculas.TabIndex = 3;
 			this.btnMatriculas.Text = "Matriculas";
 			this.btnMatriculas.UseVisualStyleBackColor = true;
-			this.btnMatriculas.Click += new System.EventHandler(this.btnMatriculas_Click);
 			// 
 			// btnTutor
 			// 
@@ -87,7 +86,6 @@
 			this.btnTutor.TabIndex = 4;
 			this.btnTutor.Text = "Tutor de Aula";
 			this.btnTutor.UseVisualStyleBackColor = true;
-			this.btnTutor.Click += new System.EventHandler(this.btnTutor_Click);
 			// 
 			// btnMeses
 			// 
@@ -127,13 +125,11 @@
 			this.btnNotas.TabIndex = 8;
 			this.btnNotas.Text = "Notas";
 			this.btnNotas.UseVisualStyleBackColor = true;
-			this.btnNotas.Click += new System.EventHandler(this.btnNotas_Click);
 			// 
 			// Menu
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.BackgroundImage = global::Conversor_A.Properties.Resources.tema_azul_clasico_abstracto_fondo_pantalla_23_2148410363;
 			this.ClientSize = new System.Drawing.Size(354, 260);
 			this.Controls.Add(this.btnNotas);
 			this.Controls.Add(this.btnAsistencias);

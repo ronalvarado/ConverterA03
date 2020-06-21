@@ -29,15 +29,15 @@ namespace Conversor_A
 		void actualizarDs()
 		{
 			tbl = objConexion.obtener_datos().Tables["Asistencias"];
-			tbl.PrimaryKey = new DataColumn[] { tbl.Columns["IdAsistencia"] };
+			tbl.PrimaryKey = new DataColumn[] { tbl.Columns["idAsistencia"] };
 
 			cboAlumno.DataSource = objConexion.obtener_datos().Tables["Alumnos"];
-			cboAlumno.DisplayMember = "Nombre_Alumno";
-			cboAlumno.ValueMember = "Alumnos.IdAlumno";
+			cboAlumno.DisplayMember = "nombreAlumno";
+			cboAlumno.ValueMember = "Alumnos.idAlumno";
 
 			cboMes.DataSource = objConexion.obtener_datos().Tables["Meses"];
-			cboMes.DisplayMember = "Mes";
-			cboMes.ValueMember = "Meses.IdMes";
+			cboMes.DisplayMember = "nombreMes";
+			cboMes.ValueMember = "Meses.idMes";
 
 		}
 		void mostrarDatos()
@@ -51,8 +51,7 @@ namespace Conversor_A
 
 				lblIdAsistencia.Text = tbl.Rows[posicion].ItemArray[0].ToString();
 				txtDia.Text = tbl.Rows[posicion].ItemArray[3].ToString();
-				txtSi.Text = tbl.Rows[posicion].ItemArray[4].ToString();
-				txtNo.Text = tbl.Rows[posicion].ItemArray[5].ToString();
+				txtasistencia.Text = tbl.Rows[posicion].ItemArray[4].ToString();
 
 				lblnregistros.Text = (posicion + 1) + " de " + tbl.Rows.Count;
 			}
@@ -66,8 +65,8 @@ namespace Conversor_A
 		void limpiar_cajas()
 		{
 			txtDia.Text = "";
-			txtSi.Text = "";
-			txtNo.Text = "";
+			txtasistencia.Text = "";
+
 		}
 		void controles(Boolean valor)
 		{
@@ -136,8 +135,7 @@ namespace Conversor_A
 					cboAlumno.SelectedValue.ToString(),
 					cboMes.SelectedValue.ToString(),
 					txtDia.Text,
-					txtSi.Text,
-					txtNo.Text,
+					txtasistencia.Text,
 				};
 				objConexion.mantenimiento_Asistencias(valores, accion);
 				actualizarDs();

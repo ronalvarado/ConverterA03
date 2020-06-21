@@ -37,7 +37,7 @@ namespace Conversor_A
         void actualizarDs()
         {
             tbl = objConexion.obtener_datos().Tables["Responsables"];
-            tbl.PrimaryKey = new DataColumn[] { tbl.Columns["IdResponsables"] };
+            tbl.PrimaryKey = new DataColumn[] { tbl.Columns["idResponsable"] };
         }
         void mostrarDatos()
         {
@@ -155,9 +155,9 @@ namespace Conversor_A
             Buscar_Responsables frmBuscarResponsables = new Buscar_Responsables();
             frmBuscarResponsables.ShowDialog();
 
-            if (frmBuscarResponsables._IdResponsables > 0)
+            if (frmBuscarResponsables._idResponsable > 0)
             {
-                posicion = tbl.Rows.IndexOf(tbl.Rows.Find(frmBuscarResponsables._IdResponsables));
+                posicion = tbl.Rows.IndexOf(tbl.Rows.Find(frmBuscarResponsables._idResponsable));
                 mostrarDatos();
             }
         }

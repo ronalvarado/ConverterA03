@@ -31,7 +31,7 @@ namespace Conversor_A
 		void actualizarDs()
 		{
 			tbl = objConexion.obtener_datos().Tables["Alumnos"];
-			tbl.PrimaryKey = new DataColumn[] { tbl.Columns["IdAlumno"] };
+			//tbl.PrimaryKey = new DataColumn[] { tbl.Columns["idAlumno"] };
 		}
 		void mostrarDatos()
 		{
@@ -43,8 +43,6 @@ namespace Conversor_A
 				txtEdad.Text = tbl.Rows[posicion].ItemArray[3].ToString();
 				txtDireccion.Text = tbl.Rows[posicion].ItemArray[4].ToString();
 				txtTelefono.Text = tbl.Rows[posicion].ItemArray[5].ToString();
-				txtGrado.Text = tbl.Rows[posicion].ItemArray[6].ToString();
-				txtSeccion.Text = tbl.Rows[posicion].ItemArray[7].ToString();
 
 				lblnregistros.Text = (posicion + 1) + " de " + tbl.Rows.Count;
 			}catch (Exception ){
@@ -60,8 +58,6 @@ namespace Conversor_A
 			txtEdad.Text = "";
 			txtDireccion.Text = "";
 			txtTelefono.Text = "";
-			txtGrado.Text = "";
-			txtSeccion.Text = "";
 
 		}
 		void controles(Boolean valor)
@@ -127,8 +123,6 @@ namespace Conversor_A
 					txtEdad.Text,
 					txtDireccion.Text,
 					txtTelefono.Text,
-					txtGrado.Text,
-					txtSeccion.Text,
 				};
 				objConexion.mantenimiento_datos(valores, accion);
 				actualizarDs();

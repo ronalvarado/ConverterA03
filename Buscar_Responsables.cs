@@ -13,7 +13,7 @@ namespace Conversor_A
 	public partial class Buscar_Responsables : Form
 	{
 		Conexion_BD objConexion = new Conexion_BD();
-		public int _IdResponsables;
+		public int _idResponsable;
 		public Buscar_Responsables()
 		{
 			InitializeComponent();
@@ -29,7 +29,7 @@ namespace Conversor_A
 		{
 			if (grdBusquedaResponsables.RowCount > 0)
 			{
-				_IdResponsables = int.Parse(grdBusquedaResponsables.CurrentRow.Cells[0].Value.ToString());
+				_idResponsable = int.Parse(grdBusquedaResponsables.CurrentRow.Cells[0].Value.ToString());
 				Close();
 			}
 			else
@@ -57,7 +57,7 @@ namespace Conversor_A
         {
             if (grdBusquedaResponsables.RowCount > 0)
             {
-                _IdResponsables = int.Parse(grdBusquedaResponsables.CurrentRow.Cells[0].Value.ToString());
+                _idResponsable = int.Parse(grdBusquedaResponsables.CurrentRow.Cells[0].Value.ToString());
                 Close();
             }
             else

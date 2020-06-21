@@ -30,20 +30,19 @@ namespace Conversor_A
         void actualizarDs()
         {
             tbl = objConexion.obtener_datos().Tables["Docentes"];
-            tbl.PrimaryKey = new DataColumn[] { tbl.Columns["IdDocente"] };
+            tbl.PrimaryKey = new DataColumn[] { tbl.Columns["idDocente"] };
         }
         void mostrarDatos()
         {
             try
             {
                 lblIdDocente.Text = tbl.Rows[posicion].ItemArray[0].ToString();
-                txtCodigo.Text = tbl.Rows[posicion].ItemArray[1].ToString();
-                txtNombre.Text = tbl.Rows[posicion].ItemArray[2].ToString();
-                txtDui.Text = tbl.Rows[posicion].ItemArray[3].ToString();
-                txtNit.Text = tbl.Rows[posicion].ItemArray[4].ToString();
-                txtEspecializacion.Text = tbl.Rows[posicion].ItemArray[5].ToString();
-                txtCorreo.Text = tbl.Rows[posicion].ItemArray[6].ToString();
-                txtTelefono.Text = tbl.Rows[posicion].ItemArray[7].ToString();
+                txtNombre.Text = tbl.Rows[posicion].ItemArray[1].ToString();
+                txtDui.Text = tbl.Rows[posicion].ItemArray[2].ToString();
+                txtNit.Text = tbl.Rows[posicion].ItemArray[3].ToString();
+                txtEspecializacion.Text = tbl.Rows[posicion].ItemArray[4].ToString();
+                txtCorreo.Text = tbl.Rows[posicion].ItemArray[5].ToString();
+                txtTelefono.Text = tbl.Rows[posicion].ItemArray[6].ToString();
 
                 lblnregistros.Text = (posicion + 1) + " de " + tbl.Rows.Count;
             }
@@ -56,14 +55,12 @@ namespace Conversor_A
         }
         void limpiar_cajas()
         {
-            txtCodigo.Text = "";
             txtNombre.Text = "";
             txtDui.Text = "";
             txtNit.Text = "";
             txtEspecializacion.Text = "";
             txtCorreo.Text = "";
             txtTelefono.Text = "";
-
         }
         void controles(Boolean valor)
         {
@@ -128,7 +125,6 @@ namespace Conversor_A
             { //boton de guardar
                 String[] valores = {
                     lblIdDocente.Text,
-                    txtCodigo.Text,
                     txtNombre.Text,
                     txtDui.Text,
                     txtNit.Text,

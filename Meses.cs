@@ -31,7 +31,7 @@ namespace Conversor_A
 		void actualizarDs()
 		{
 			tbl = objConexion.obtener_datos().Tables["Meses"];
-			tbl.PrimaryKey = new DataColumn[] { tbl.Columns["IdMes"] };
+			tbl.PrimaryKey = new DataColumn[] { tbl.Columns["idMes"] };
 		}
 		void mostrarDatos()
 		{

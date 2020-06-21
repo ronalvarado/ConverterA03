@@ -38,20 +38,6 @@ namespace Conversor_A
             Mantenimiento_Docentes.Show();
         }
 
-        private void btnMatriculas_Click(object sender, EventArgs e)
-        {
-            Matriculas Matriculas = new Matriculas();
-
-            Matriculas.Show();
-        }
-
-        private void btnTutor_Click(object sender, EventArgs e)
-        {
-            TutorAula TutorAula = new TutorAula();
-
-            TutorAula.Show();
-        }
-
         private void btnMeses_Click(object sender, EventArgs e)
         {
             Meses Meses = new Meses();
@@ -70,13 +56,6 @@ namespace Conversor_A
             Asistencias Asistencias = new Asistencias();
 
             Asistencias.Show();
-        }
-
-        private void btnNotas_Click(object sender, EventArgs e)
-        {
-            Notas Notas = new Notas();
-
-            Notas.Show();
         }
     }
 }

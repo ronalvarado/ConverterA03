@@ -7,6 +7,7 @@ using System.Data;
 using System.Data.SqlClient;
 
 
+
 namespace Conversor_A
 {
 	class Conexion_BD
@@ -43,13 +44,29 @@ namespace Conversor_A
 			miAdaptadorDatos.SelectCommand = comandosSQL;
 			miAdaptadorDatos.Fill(ds, "Matriculas");
 
-			comandosSQL.CommandText = "select * from TutordAula";
+			comandosSQL.CommandText = "select * from TutorAula";
 			miAdaptadorDatos.SelectCommand = comandosSQL;
-			miAdaptadorDatos.Fill(ds, "TutordAula");
+			miAdaptadorDatos.Fill(ds, "TutorAula");
 
 			comandosSQL.CommandText = "select * from Asistencias";
 			miAdaptadorDatos.SelectCommand = comandosSQL;
 			miAdaptadorDatos.Fill(ds, "Asistencias");
+
+			comandosSQL.CommandText = "select Alumnos.nombreAlumno, Asistencias.dia, Asistencias.asistencia," +
+			   " Asistencias.idAlumno from Asistencias inner join Alumnos on(Alumnos.idAlumno=Asistencias.idAlumno)";
+			miAdaptadorDatos.SelectCommand = comandosSQL;
+			miAdaptadorDatos.Fill(ds, "Asistencias_Alumnos");
+			comandosSQL.Connection = miConexion;
+
+			comandosSQL.CommandText = "select Meses.nombreMes, Asistencias.dia, Asistencias.asistencia," +
+			   " Asistencias.idMes from Asistencias inner join Meses on(Meses.idMes=Asistencias.idMes)";
+			miAdaptadorDatos.SelectCommand = comandosSQL;
+			miAdaptadorDatos.Fill(ds, "Asistencias_Meses");
+
+			comandosSQL.Connection = miConexion;
+			comandosSQL.CommandText = "select Alumnos.nombreAlumno, Asistencias.idAsistencia, Asistencias.dia, Asistencias.asistencia, " + " Meses.nombreMes " + " from Asistencias " + " inner join Alumnos on(Alumnos.idAlumno = Asistencias.idAlumno)" + " inner join Meses on(Meses.idMes = Asistencias.idMes)";
+			miAdaptadorDatos.SelectCommand = comandosSQL;
+			miAdaptadorDatos.Fill(ds, "Alumnos_Meses_Asistencias");
 
 			comandosSQL.CommandText = "select * from Meses";
 			miAdaptadorDatos.SelectCommand = comandosSQL;
@@ -69,32 +86,26 @@ namespace Conversor_A
 		{
 			String sql = "";
 			if (accion == "nuevo") {
-				sql = "INSERT INTO Alumnos (Codigo,Nombre_Alumno,Edad,Direccion,Telefono,Grado,Seccion) VALUES(" +
+				sql = "INSERT INTO Alumnos (codigo,nombreAlumno,edad,direccion,telefono) VALUES(" +
 					"'" + datos[1] + "'," +
 					"'" + datos[2] + "'," +
 					"'" + datos[3] + "'," +
 					"'" + datos[4] + "'," +
-					"'" + datos[5] + "'," +
-					"'" + datos[6] + "'," +
-					"'" + datos[7] + "'" +
+					"'" + datos[5] + "'" +
 					")";
 
 			} else if (accion == "modificar") {
 				sql = "UPDATE Alumnos SET " +
-					"Codigo                   = '" + datos[1] + "'," +
-					"Nombre_Alumno            = '" + datos[2] + "'," +
-					"Edad                     = '" + datos[3] + "'," +
-					"Direccion                = '" + datos[4] + "'," +
-					"Telefono                 = '" + datos[5] + "'," +
-					"Grado                    = '" + datos[6] + "'," +
-					"Seccion                  = '" + datos[7] + "'" +
-					"WHERE IdAlumno           = '" + datos[0] + "'";
-			} //else if (accion == "eliminar") {
-			  //sql = "DELETE Alumnos FROM Alumnos WHERE IdAlumno='" + datos[0] + "'";
-			  //}
+					"codigo                   = '" + datos[1] + "'," +
+					"nombreAlumno            = '" + datos[2] + "'," +
+					"edad                     = '" + datos[3] + "'," +
+					"direccion                = '" + datos[4] + "'," +				
+					"telefono                  = '" + datos[5] + "'" +
+					"WHERE idAlumno           = '" + datos[0] + "'";
+			} 
 			else if (accion == "eliminar")
 			{
-				sql = "DELETE Alumnos FROM Alumnos WHERE IdAlumno='" + datos[0] + "'";
+				sql = "DELETE Alumnos FROM Alumnos WHERE idAlumno='" + datos[0] + "'";
 			}
 			procesiaSQL(sql);
 		}
@@ -110,7 +121,7 @@ namespace Conversor_A
 			String sql = "";
 			if (accion == "nuevo")
 			{
-				sql = "INSERT INTO Responsables (Codigo,Nombre_Responsables,Edad,Direccion,Telefono,DUI,NIT) VALUES(" +
+				sql = "INSERT INTO Responsables (codigo,nombreResponsable,edad,direccion,telefono,dui,nit) VALUES(" +
 					"'" + datos[1] + "'," +
 					"'" + datos[2] + "'," +
 					"'" + datos[3] + "'," +
@@ -125,17 +136,17 @@ namespace Conversor_A
 			{
 				sql = "UPDATE Responsables SET " +
 					"Codigo                        = '" + datos[1] + "'," +
-					"Nombre_Responsables           = '" + datos[2] + "'," +
-					"Edad                          = '" + datos[3] + "'," +
-					"Direccion                     = '" + datos[4] + "'," +
-					"Telefono                      = '" + datos[5] + "'," +
-					"DUI                           = '" + datos[6] + "'," +
-					"NIT                           = '" + datos[7] + "'" +
-					"WHERE IdResponsables           = '" + datos[0] + "'";
+					"nombreResponsable           = '" + datos[2] + "'," +
+					"edad                          = '" + datos[3] + "'," +
+					"direccion                     = '" + datos[4] + "'," +
+					"telefono                      = '" + datos[5] + "'," +
+					"dui                           = '" + datos[6] + "'," +
+					"nit                           = '" + datos[7] + "'" +
+					"WHERE idResponsable           = '" + datos[0] + "'";
 			}
 			else if (accion == "eliminar")
 			{
-				sql = "DELETE Responsables FROM Responsables WHERE IdResponsables='" + datos[0] + "'";
+				sql = "DELETE Responsables FROM Responsables WHERE idResponsable='" + datos[0] + "'";
 			}
 			prrocesaSQL(sql);
 		}
@@ -151,32 +162,30 @@ namespace Conversor_A
 			String sql = "";
 			if (accion == "nuevo")
 			{
-				sql = "INSERT INTO Docentes (Codigo,Docente,DUI,NIT,Especializacion,Correo_Electronico,Telefono) VALUES(" +
+				sql = "INSERT INTO Docentes (nombreDocente,dui,nit,especializacion,correoElectronico,telefono) VALUES(" +
 					"'" + datos[1] + "'," +
 					"'" + datos[2] + "'," +
 					"'" + datos[3] + "'," +
 					"'" + datos[4] + "'," +
 					"'" + datos[5] + "'," +
-					"'" + datos[6] + "'," +
-					"'" + datos[7] + "'" +
+					"'" + datos[6] + "'" +
 					")";
 
 			}
 			else if (accion == "modificar")
 			{
 				sql = "UPDATE Docentes SET " +
-					"Codigo                          = '" + datos[1] + "'," +
-					"Docente                         = '" + datos[2] + "'," +
-					"DUI                             = '" + datos[3] + "'," +
-					"NIT                             = '" + datos[4] + "'," +
-					"Especializacion                 = '" + datos[5] + "'," +
-					"Correo_Electronico              = '" + datos[6] + "'," +
-					"Telefono                        = '" + datos[7] + "'" +
-					"WHERE IdDocente            = '" + datos[0] + "'";
+					"nombreDocente                        = '" + datos[1] + "'," +
+					"dui								  = '" + datos[2] + "'," +
+					"nit								  = '" + datos[3] + "'," +
+					"especializacion					  = '" + datos[4] + "'," +
+					"correoElectronico					  = '" + datos[5] + "'," +
+					"telefono							  = '" + datos[6] + "'" +
+					"WHERE idDocente            = '" + datos[0] + "'";
 			}
 			else if (accion == "eliminar")
 			{
-				sql = "DELETE Docentes FROM Docentes WHERE IdDocente='" + datos[0] + "'";
+				sql = "DELETE Docentes FROM Docentes WHERE idDocente='" + datos[0] + "'";
 			}
 			pocesaSQL(sql);
 		}
@@ -258,25 +267,23 @@ namespace Conversor_A
 		{
 			String sql = "";
 			if (accion == "nuevo") {
-				sql = "INSERT INTO Asistencias (IdAlumno,IdMes,Dia,Si,No,) VALUES(" +
+				sql = "INSERT INTO Asistencias (idAlumno,idMes,dia,asistencia) VALUES(" +
 					"'" + datos[1] + "'," +
 					"'" + datos[2] + "'," +
 					"'" + datos[3] + "'," +
-					"'" + datos[4] + "'," +
-					"'" + datos[5] + "'" +
+					"'" + datos[4] + "'" +
 					")";
 			}
 			else if (accion == "modificar") {
 				sql = "UPDATE Asistencias SET " +
-					"IdAlumno                   = '" + datos[1] + "'," +
-					"IdMes                      = '" + datos[2] + "'," +
-					"Dia                        = '" + datos[3] + "'," +
-					"Si                         = '" + datos[4] + "'," +
-					"No                         = '" + datos[5] + "'" +
-					"WHERE IdAsistencia         = '" + datos[0] + "'";
+					"idAlumno                   = '" + datos[1] + "'," +
+					"idMes                      = '" + datos[2] + "'," +
+					"dia						= '" + datos[3] + "'," +
+					"asistencia                 = '" + datos[4] + "'" +
+					"WHERE idAsistencia         = '" + datos[0] + "'";
 			}
 			else if (accion == "eliminar") {
-				sql = "DELETE Asistencias FROM Asistencias WHERE IdAsistencia='" + datos[0] + "'";
+				sql = "DELETE Asistencias FROM Asistencias WHERE idAsistencia='" + datos[0] + "'";
 			}
 			procesaisSQL(sql);
 		}
@@ -300,11 +307,11 @@ namespace Conversor_A
 			{
 				sql = "UPDATE categorias SET " +
 					"Mes            = '" + datos[1] + "'" +
-					"WHERE IdMes    = '" + datos[0] + "'";
+					"WHERE idMes    = '" + datos[0] + "'";
 			}
 			else if (accion == "eliminar")
 			{
-				sql = "DELETE Meses FROM Meses WHERE IdMes='" + datos[0] + "'";
+				sql = "DELETE Meses FROM Meses WHERE idMes='" + datos[0] + "'";
 			}
 			procesasSQL(sql);
 		}
