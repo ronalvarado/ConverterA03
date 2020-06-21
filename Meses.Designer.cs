@@ -82,7 +82,7 @@
 			// lblIdMeses
 			// 
 			this.lblIdMeses.AutoSize = true;
-			this.lblIdMeses.Location = new System.Drawing.Point(267, 34);
+			this.lblIdMeses.Location = new System.Drawing.Point(269, 34);
 			this.lblIdMeses.Name = "lblIdMeses";
 			this.lblIdMeses.Size = new System.Drawing.Size(21, 13);
 			this.lblIdMeses.TabIndex = 1;
