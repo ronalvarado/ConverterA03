@@ -16,5 +16,26 @@ namespace Conversor_A
 		{
 			InitializeComponent();
 		}
+
+		private void btnAlumno_Click(object sender, EventArgs e)
+		{
+			frmAlumnos frmAlumnos = new frmAlumnos();
+
+			frmAlumnos.Show();
+		}
+
+		private void btnResponsable_Click(object sender, EventArgs e)
+		{
+			frmResponsables frmResponsables = new frmResponsables();
+
+			frmResponsables.Show();
+		}
+
+		private void btnDocente_Click(object sender, EventArgs e)
+		{
+			frmDocentes frmDocentes = new frmDocentes();
+
+			frmDocentes.Show();
+		}
 	}
 }
