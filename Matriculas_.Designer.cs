@@ -295,7 +295,7 @@
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.BackgroundImage = global::Conversor_A.Properties.Resources.fondo_del_aqua_7733781;
+			this.BackColor = System.Drawing.Color.Brown;
 			this.ClientSize = new System.Drawing.Size(800, 460);
 			this.Controls.Add(this.dMatriculasDataGridView);
 			this.Controls.Add(idMatriculaLabel);

@@ -299,12 +299,12 @@
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.BackColor = System.Drawing.Color.Black;
-			this.BackgroundImage = global::Conversor_A.Properties.Resources.lineas_abstractas_curvas_fondo_azul_sombra_23_2148273610;
+			this.BackColor = System.Drawing.Color.Coral;
 			this.ClientSize = new System.Drawing.Size(678, 325);
 			this.Controls.Add(this.grbEdiciondealumnos);
 			this.Controls.Add(this.grbNavegacion);
 			this.Controls.Add(this.grbAlumnos);
+			this.ForeColor = System.Drawing.SystemColors.ControlText;
 			this.Name = "frmAlumnos";
 			this.Text = "frmAlumnos";
 			this.Load += new System.EventHandler(this.frmAlumnos_Load);

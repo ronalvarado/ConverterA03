@@ -327,7 +327,7 @@
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.BackgroundImage = global::Conversor_A.Properties.Resources.descarga;
+			this.BackColor = System.Drawing.Color.SaddleBrown;
 			this.ClientSize = new System.Drawing.Size(592, 344);
 			this.Controls.Add(this.grbNotas);
 			this.Controls.Add(this.grbNavegacion);

@@ -32,29 +32,29 @@
 			System.Windows.Forms.Label idNotaLabel;
 			System.Windows.Forms.Label nombreMateriaLabel;
 			System.Windows.Forms.Label nombreTrimestreLabel;
-			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmANotas));
 			System.Windows.Forms.Label idMateriaLabel1;
 			System.Windows.Forms.Label idTrimestreLabel1;
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmANotas));
 			this.baseEscuelaDataSet = new Conversor_A.BaseEscuelaDataSet();
 			this.aNotasBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.aNotasTableAdapter = new Conversor_A.BaseEscuelaDataSetTableAdapters.ANotasTableAdapter();
 			this.tableAdapterManager = new Conversor_A.BaseEscuelaDataSetTableAdapters.TableAdapterManager();
 			this.aNotasBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
-			this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
-			this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
-			this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
-			this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-			this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-			this.idNotaLabel1 = new System.Windows.Forms.Label();
-			this.nombreMateriaComboBox = new System.Windows.Forms.ComboBox();
-			this.nombreTrimestreComboBox = new System.Windows.Forms.ComboBox();
 			this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
+			this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
 			this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
 			this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
 			this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
+			this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
+			this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
+			this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
 			this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
 			this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
+			this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
 			this.aNotasBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
+			this.idNotaLabel1 = new System.Windows.Forms.Label();
+			this.nombreMateriaComboBox = new System.Windows.Forms.ComboBox();
+			this.nombreTrimestreComboBox = new System.Windows.Forms.ComboBox();
 			this.idMateriaLabel2 = new System.Windows.Forms.Label();
 			this.idTrimestreLabel2 = new System.Windows.Forms.Label();
 			this.aNotasDataGridView = new System.Windows.Forms.DataGridView();
@@ -81,6 +81,51 @@
 			this.aNotasBindingNavigator.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.aNotasDataGridView)).BeginInit();
 			this.SuspendLayout();
+			// 
+			// idNotaLabel
+			// 
+			idNotaLabel.AutoSize = true;
+			idNotaLabel.Location = new System.Drawing.Point(12, 45);
+			idNotaLabel.Name = "idNotaLabel";
+			idNotaLabel.Size = new System.Drawing.Size(47, 13);
+			idNotaLabel.TabIndex = 1;
+			idNotaLabel.Text = "ID Nota:";
+			// 
+			// nombreMateriaLabel
+			// 
+			nombreMateriaLabel.AutoSize = true;
+			nombreMateriaLabel.Location = new System.Drawing.Point(12, 133);
+			nombreMateriaLabel.Name = "nombreMateriaLabel";
+			nombreMateriaLabel.Size = new System.Drawing.Size(45, 13);
+			nombreMateriaLabel.TabIndex = 13;
+			nombreMateriaLabel.Text = "Materia:";
+			// 
+			// nombreTrimestreLabel
+			// 
+			nombreTrimestreLabel.AutoSize = true;
+			nombreTrimestreLabel.Location = new System.Drawing.Point(409, 133);
+			nombreTrimestreLabel.Name = "nombreTrimestreLabel";
+			nombreTrimestreLabel.Size = new System.Drawing.Size(53, 13);
+			nombreTrimestreLabel.TabIndex = 17;
+			nombreTrimestreLabel.Text = "Trimestre:";
+			// 
+			// idMateriaLabel1
+			// 
+			idMateriaLabel1.AutoSize = true;
+			idMateriaLabel1.Location = new System.Drawing.Point(12, 91);
+			idMateriaLabel1.Name = "idMateriaLabel1";
+			idMateriaLabel1.Size = new System.Drawing.Size(59, 13);
+			idMateriaLabel1.TabIndex = 24;
+			idMateriaLabel1.Text = "ID Materia:";
+			// 
+			// idTrimestreLabel1
+			// 
+			idTrimestreLabel1.AutoSize = true;
+			idTrimestreLabel1.Location = new System.Drawing.Point(409, 91);
+			idTrimestreLabel1.Name = "idTrimestreLabel1";
+			idTrimestreLabel1.Size = new System.Drawing.Size(67, 13);
+			idTrimestreLabel1.TabIndex = 25;
+			idTrimestreLabel1.Text = "ID Trimestre:";
 			// 
 			// baseEscuelaDataSet
 			// 
@@ -147,100 +192,6 @@
 			this.aNotasBindingNavigator.TabIndex = 0;
 			this.aNotasBindingNavigator.Text = "bindingNavigator1";
 			// 
-			// bindingNavigatorSeparator
-			// 
-			this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
-			this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 25);
-			// 
-			// bindingNavigatorPositionItem
-			// 
-			this.bindingNavigatorPositionItem.AccessibleName = "Posición";
-			this.bindingNavigatorPositionItem.AutoSize = false;
-			this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
-			this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
-			this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
-			this.bindingNavigatorPositionItem.Text = "0";
-			this.bindingNavigatorPositionItem.ToolTipText = "Posición actual";
-			// 
-			// bindingNavigatorCountItem
-			// 
-			this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-			this.bindingNavigatorCountItem.Size = new System.Drawing.Size(37, 22);
-			this.bindingNavigatorCountItem.Text = "de {0}";
-			this.bindingNavigatorCountItem.ToolTipText = "Número total de elementos";
-			// 
-			// bindingNavigatorSeparator1
-			// 
-			this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator";
-			this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
-			// 
-			// bindingNavigatorSeparator2
-			// 
-			this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator";
-			this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
-			// 
-			// idNotaLabel
-			// 
-			idNotaLabel.AutoSize = true;
-			idNotaLabel.Location = new System.Drawing.Point(12, 45);
-			idNotaLabel.Name = "idNotaLabel";
-			idNotaLabel.Size = new System.Drawing.Size(47, 13);
-			idNotaLabel.TabIndex = 1;
-			idNotaLabel.Text = "ID Nota:";
-			// 
-			// idNotaLabel1
-			// 
-			this.idNotaLabel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-			this.idNotaLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.aNotasBindingSource, "idNota", true));
-			this.idNotaLabel1.Location = new System.Drawing.Point(65, 41);
-			this.idNotaLabel1.Name = "idNotaLabel1";
-			this.idNotaLabel1.Size = new System.Drawing.Size(55, 23);
-			this.idNotaLabel1.TabIndex = 2;
-			// 
-			// nombreMateriaLabel
-			// 
-			nombreMateriaLabel.AutoSize = true;
-			nombreMateriaLabel.Location = new System.Drawing.Point(12, 133);
-			nombreMateriaLabel.Name = "nombreMateriaLabel";
-			nombreMateriaLabel.Size = new System.Drawing.Size(45, 13);
-			nombreMateriaLabel.TabIndex = 13;
-			nombreMateriaLabel.Text = "Materia:";
-			// 
-			// nombreMateriaComboBox
-			// 
-			this.nombreMateriaComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.aNotasBindingSource, "nombreMateria", true));
-			this.nombreMateriaComboBox.DataSource = this.aNotasBindingSource;
-			this.nombreMateriaComboBox.DisplayMember = "nombreMateria";
-			this.nombreMateriaComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-			this.nombreMateriaComboBox.FormattingEnabled = true;
-			this.nombreMateriaComboBox.Location = new System.Drawing.Point(79, 130);
-			this.nombreMateriaComboBox.Name = "nombreMateriaComboBox";
-			this.nombreMateriaComboBox.Size = new System.Drawing.Size(293, 21);
-			this.nombreMateriaComboBox.TabIndex = 14;
-			this.nombreMateriaComboBox.ValueMember = "idMateria";
-			// 
-			// nombreTrimestreLabel
-			// 
-			nombreTrimestreLabel.AutoSize = true;
-			nombreTrimestreLabel.Location = new System.Drawing.Point(409, 133);
-			nombreTrimestreLabel.Name = "nombreTrimestreLabel";
-			nombreTrimestreLabel.Size = new System.Drawing.Size(53, 13);
-			nombreTrimestreLabel.TabIndex = 17;
-			nombreTrimestreLabel.Text = "Trimestre:";
-			// 
-			// nombreTrimestreComboBox
-			// 
-			this.nombreTrimestreComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.aNotasBindingSource, "idTrimestre", true));
-			this.nombreTrimestreComboBox.DataSource = this.aNotasBindingSource;
-			this.nombreTrimestreComboBox.DisplayMember = "nombreTrimestre";
-			this.nombreTrimestreComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-			this.nombreTrimestreComboBox.FormattingEnabled = true;
-			this.nombreTrimestreComboBox.Location = new System.Drawing.Point(468, 130);
-			this.nombreTrimestreComboBox.Name = "nombreTrimestreComboBox";
-			this.nombreTrimestreComboBox.Size = new System.Drawing.Size(121, 21);
-			this.nombreTrimestreComboBox.TabIndex = 18;
-			this.nombreTrimestreComboBox.ValueMember = "idTrimestre";
-			// 
 			// bindingNavigatorAddNewItem
 			// 
 			this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -249,6 +200,13 @@
 			this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
 			this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
 			this.bindingNavigatorAddNewItem.Text = "Agregar nuevo";
+			// 
+			// bindingNavigatorCountItem
+			// 
+			this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
+			this.bindingNavigatorCountItem.Size = new System.Drawing.Size(37, 22);
+			this.bindingNavigatorCountItem.Text = "de {0}";
+			this.bindingNavigatorCountItem.ToolTipText = "Número total de elementos";
 			// 
 			// bindingNavigatorDeleteItem
 			// 
@@ -277,6 +235,26 @@
 			this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(23, 22);
 			this.bindingNavigatorMovePreviousItem.Text = "Mover anterior";
 			// 
+			// bindingNavigatorSeparator
+			// 
+			this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
+			this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 25);
+			// 
+			// bindingNavigatorPositionItem
+			// 
+			this.bindingNavigatorPositionItem.AccessibleName = "Posición";
+			this.bindingNavigatorPositionItem.AutoSize = false;
+			this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
+			this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
+			this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
+			this.bindingNavigatorPositionItem.Text = "0";
+			this.bindingNavigatorPositionItem.ToolTipText = "Posición actual";
+			// 
+			// bindingNavigatorSeparator1
+			// 
+			this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
+			this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
+			// 
 			// bindingNavigatorMoveNextItem
 			// 
 			this.bindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -295,6 +273,11 @@
 			this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 22);
 			this.bindingNavigatorMoveLastItem.Text = "Mover último";
 			// 
+			// bindingNavigatorSeparator2
+			// 
+			this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
+			this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
+			// 
 			// aNotasBindingNavigatorSaveItem
 			// 
 			this.aNotasBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -304,14 +287,40 @@
 			this.aNotasBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
 			this.aNotasBindingNavigatorSaveItem.Text = "Guardar datos";
 			// 
-			// idMateriaLabel1
+			// idNotaLabel1
 			// 
-			idMateriaLabel1.AutoSize = true;
-			idMateriaLabel1.Location = new System.Drawing.Point(12, 91);
-			idMateriaLabel1.Name = "idMateriaLabel1";
-			idMateriaLabel1.Size = new System.Drawing.Size(59, 13);
-			idMateriaLabel1.TabIndex = 24;
-			idMateriaLabel1.Text = "ID Materia:";
+			this.idNotaLabel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+			this.idNotaLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.aNotasBindingSource, "idNota", true));
+			this.idNotaLabel1.Location = new System.Drawing.Point(65, 41);
+			this.idNotaLabel1.Name = "idNotaLabel1";
+			this.idNotaLabel1.Size = new System.Drawing.Size(55, 23);
+			this.idNotaLabel1.TabIndex = 2;
+			// 
+			// nombreMateriaComboBox
+			// 
+			this.nombreMateriaComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.aNotasBindingSource, "nombreMateria", true));
+			this.nombreMateriaComboBox.DataSource = this.aNotasBindingSource;
+			this.nombreMateriaComboBox.DisplayMember = "nombreMateria";
+			this.nombreMateriaComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.nombreMateriaComboBox.FormattingEnabled = true;
+			this.nombreMateriaComboBox.Location = new System.Drawing.Point(79, 130);
+			this.nombreMateriaComboBox.Name = "nombreMateriaComboBox";
+			this.nombreMateriaComboBox.Size = new System.Drawing.Size(293, 21);
+			this.nombreMateriaComboBox.TabIndex = 14;
+			this.nombreMateriaComboBox.ValueMember = "idMateria";
+			// 
+			// nombreTrimestreComboBox
+			// 
+			this.nombreTrimestreComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.aNotasBindingSource, "idTrimestre", true));
+			this.nombreTrimestreComboBox.DataSource = this.aNotasBindingSource;
+			this.nombreTrimestreComboBox.DisplayMember = "nombreTrimestre";
+			this.nombreTrimestreComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.nombreTrimestreComboBox.FormattingEnabled = true;
+			this.nombreTrimestreComboBox.Location = new System.Drawing.Point(468, 130);
+			this.nombreTrimestreComboBox.Name = "nombreTrimestreComboBox";
+			this.nombreTrimestreComboBox.Size = new System.Drawing.Size(121, 21);
+			this.nombreTrimestreComboBox.TabIndex = 18;
+			this.nombreTrimestreComboBox.ValueMember = "idTrimestre";
 			// 
 			// idMateriaLabel2
 			// 
@@ -321,15 +330,6 @@
 			this.idMateriaLabel2.Name = "idMateriaLabel2";
 			this.idMateriaLabel2.Size = new System.Drawing.Size(43, 23);
 			this.idMateriaLabel2.TabIndex = 25;
-			// 
-			// idTrimestreLabel1
-			// 
-			idTrimestreLabel1.AutoSize = true;
-			idTrimestreLabel1.Location = new System.Drawing.Point(409, 91);
-			idTrimestreLabel1.Name = "idTrimestreLabel1";
-			idTrimestreLabel1.Size = new System.Drawing.Size(67, 13);
-			idTrimestreLabel1.TabIndex = 25;
-			idTrimestreLabel1.Text = "ID Trimestre:";
 			// 
 			// idTrimestreLabel2
 			// 
@@ -454,7 +454,7 @@
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.BackgroundImage = global::Conversor_A.Properties.Resources.fondo_del_aqua_7733781;
+			this.BackColor = System.Drawing.Color.Brown;
 			this.ClientSize = new System.Drawing.Size(699, 487);
 			this.Controls.Add(this.aNotasDataGridView);
 			this.Controls.Add(idTrimestreLabel1);

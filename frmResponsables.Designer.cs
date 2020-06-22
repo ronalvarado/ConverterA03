@@ -343,8 +343,7 @@
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.BackColor = System.Drawing.Color.Black;
-			this.BackgroundImage = global::Conversor_A.Properties.Resources.lineas_abstractas_curvas_fondo_azul_sombra_23_2148273610;
+			this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
 			this.ClientSize = new System.Drawing.Size(544, 319);
 			this.Controls.Add(this.grbEdicionderesponsables);
 			this.Controls.Add(this.grbNavegacion);

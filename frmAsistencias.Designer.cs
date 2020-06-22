@@ -35,6 +35,9 @@
 			this.txtasistio = new System.Windows.Forms.TextBox();
 			this.lblasistio = new System.Windows.Forms.Label();
 			this.grbAsistencia = new System.Windows.Forms.GroupBox();
+			this.cboMeses = new System.Windows.Forms.ComboBox();
+			this.txtfecha = new System.Windows.Forms.TextBox();
+			this.lblIdMes = new System.Windows.Forms.Label();
 			this.btnPrimero = new System.Windows.Forms.Button();
 			this.btnAnterior = new System.Windows.Forms.Button();
 			this.btnSiguiente = new System.Windows.Forms.Button();
@@ -46,9 +49,6 @@
 			this.btnEliminar = new System.Windows.Forms.Button();
 			this.btnBuscar = new System.Windows.Forms.Button();
 			this.grbEdiciondeAsistencias = new System.Windows.Forms.GroupBox();
-			this.lblIdMes = new System.Windows.Forms.Label();
-			this.cboMeses = new System.Windows.Forms.ComboBox();
-			this.txtfecha = new System.Windows.Forms.TextBox();
 			this.grbAsistencia.SuspendLayout();
 			this.grbNavegacion.SuspendLayout();
 			this.grbEdiciondeAsistencias.SuspendLayout();
@@ -126,6 +126,31 @@
 			this.grbAsistencia.TabIndex = 10;
 			this.grbAsistencia.TabStop = false;
 			this.grbAsistencia.Text = "Mantenimiento Asistencias";
+			// 
+			// cboMeses
+			// 
+			this.cboMeses.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.cboMeses.FormattingEnabled = true;
+			this.cboMeses.Location = new System.Drawing.Point(98, 62);
+			this.cboMeses.Name = "cboMeses";
+			this.cboMeses.Size = new System.Drawing.Size(298, 21);
+			this.cboMeses.TabIndex = 8;
+			// 
+			// txtfecha
+			// 
+			this.txtfecha.Location = new System.Drawing.Point(98, 93);
+			this.txtfecha.Name = "txtfecha";
+			this.txtfecha.Size = new System.Drawing.Size(170, 20);
+			this.txtfecha.TabIndex = 6;
+			// 
+			// lblIdMes
+			// 
+			this.lblIdMes.AutoSize = true;
+			this.lblIdMes.Location = new System.Drawing.Point(35, 65);
+			this.lblIdMes.Name = "lblIdMes";
+			this.lblIdMes.Size = new System.Drawing.Size(30, 13);
+			this.lblIdMes.TabIndex = 3;
+			this.lblIdMes.Text = "Mes:";
 			// 
 			// btnPrimero
 			// 
@@ -258,37 +283,11 @@
 			this.grbEdiciondeAsistencias.TabStop = false;
 			this.grbEdiciondeAsistencias.Text = "Edición de Asistencias";
 			// 
-			// lblIdMes
-			// 
-			this.lblIdMes.AutoSize = true;
-			this.lblIdMes.Location = new System.Drawing.Point(35, 65);
-			this.lblIdMes.Name = "lblIdMes";
-			this.lblIdMes.Size = new System.Drawing.Size(30, 13);
-			this.lblIdMes.TabIndex = 3;
-			this.lblIdMes.Text = "Mes:";
-			// 
-			// cboMeses
-			// 
-			this.cboMeses.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-			this.cboMeses.FormattingEnabled = true;
-			this.cboMeses.Location = new System.Drawing.Point(98, 62);
-			this.cboMeses.Name = "cboMeses";
-			this.cboMeses.Size = new System.Drawing.Size(298, 21);
-			this.cboMeses.TabIndex = 8;
-			// 
-			// txtfecha
-			// 
-			this.txtfecha.Location = new System.Drawing.Point(98, 93);
-			this.txtfecha.Name = "txtfecha";
-			this.txtfecha.Size = new System.Drawing.Size(170, 20);
-			this.txtfecha.TabIndex = 6;
-			// 
 			// frmAsistencias
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.BackColor = System.Drawing.Color.Black;
-			this.BackgroundImage = global::Conversor_A.Properties.Resources.descarga;
+			this.BackColor = System.Drawing.Color.SaddleBrown;
 			this.ClientSize = new System.Drawing.Size(593, 264);
 			this.Controls.Add(this.grbEdiciondeAsistencias);
 			this.Controls.Add(this.grbNavegacion);
