@@ -62,6 +62,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BaseEscuelaDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BaseEscuelaDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="conexion_db.cs" />
     <Compile Include="frmAlumnos.cs">
       <SubType>Form</SubType>
@@ -69,17 +74,71 @@
     <Compile Include="frmAlumnos.Designer.cs">
       <DependentUpon>frmAlumnos.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmAsistencias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAsistencias.Designer.cs">
+      <DependentUpon>frmAsistencias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAulas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAulas.Designer.cs">
+      <DependentUpon>frmAulas.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmDocentes.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmDocentes.Designer.cs">
       <DependentUpon>frmDocentes.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmGrados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGrados.Designer.cs">
+      <DependentUpon>frmGrados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMaterias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMaterias.Designer.cs">
+      <DependentUpon>frmMaterias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPagaDocente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPagaDocente.Designer.cs">
+      <DependentUpon>frmPagaDocente.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmResponsables.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmResponsables.Designer.cs">
       <DependentUpon>frmResponsables.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSecciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSecciones.Designer.cs">
+      <DependentUpon>frmSecciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTrimestres.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTrimestres.Designer.cs">
+      <DependentUpon>frmTrimestres.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTutorAula.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTutorAula.Designer.cs">
+      <DependentUpon>frmTutorAula.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Matriculas_.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Matriculas_.Designer.cs">
+      <DependentUpon>Matriculas_.cs</DependentUpon>
     </Compile>
     <Compile Include="Menú.cs">
       <SubType>Form</SubType>
@@ -92,11 +151,38 @@
     <EmbeddedResource Include="frmAlumnos.resx">
       <DependentUpon>frmAlumnos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmAsistencias.resx">
+      <DependentUpon>frmAsistencias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAulas.resx">
+      <DependentUpon>frmAulas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmDocentes.resx">
       <DependentUpon>frmDocentes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmGrados.resx">
+      <DependentUpon>frmGrados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMaterias.resx">
+      <DependentUpon>frmMaterias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPagaDocente.resx">
+      <DependentUpon>frmPagaDocente.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmResponsables.resx">
       <DependentUpon>frmResponsables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSecciones.resx">
+      <DependentUpon>frmSecciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTrimestres.resx">
+      <DependentUpon>frmTrimestres.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTutorAula.resx">
+      <DependentUpon>frmTutorAula.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Matriculas_.resx">
+      <DependentUpon>Matriculas_.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Menú.resx">
       <DependentUpon>Menú.cs</DependentUpon>
@@ -111,6 +197,17 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="BaseEscuelaDataSet.xsc">
+      <DependentUpon>BaseEscuelaDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="BaseEscuelaDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BaseEscuelaDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BaseEscuelaDataSet.xss">
+      <DependentUpon>BaseEscuelaDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

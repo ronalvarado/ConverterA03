@@ -37,5 +37,75 @@ namespace Conversor_A
 
 			frmDocentes.Show();
 		}
+
+		private void btnMateria_Click(object sender, EventArgs e)
+		{
+			frmMaterias frmMaterias = new frmMaterias();
+
+			frmMaterias.Show();
+		}
+
+		private void btnGrados_Click(object sender, EventArgs e)
+		{
+			frmGrados frmGrados = new frmGrados();
+
+			frmGrados.Show();
+		}
+
+		private void btnSeccion_Click(object sender, EventArgs e)
+		{
+			frmSecciones frmSecciones = new frmSecciones();
+
+			frmSecciones.Show();
+		}
+
+		private void btnTrimestre_Click(object sender, EventArgs e)
+		{
+			frmTrimestres frmTrimestres = new frmTrimestres();
+
+			frmTrimestres.Show();
+		}
+
+		private void btnAula_Click(object sender, EventArgs e)
+		{
+			frmAulas frmAulas = new frmAulas();
+
+			frmAulas.Show();
+		}
+
+		private void btnAsistencia_Click(object sender, EventArgs e)
+		{
+			frmAsistencias frmAsistencias = new frmAsistencias();
+
+			frmAsistencias.Show();
+		}
+
+		private void btnpagaDocente_Click(object sender, EventArgs e)
+		{
+			frmPagaDocente frmPagaDocente = new frmPagaDocente();
+
+			frmPagaDocente.Show();
+		}
+
+		//private void btnNota_Click(object sender, EventArgs e)
+		//{
+		//	FrmNotas FrmNotas = new FrmNotas();
+
+		//	FrmNotas.Show();
+		//}
+
+		private void btnTutor_Click(object sender, EventArgs e)
+		{
+			frmTutorAula frmTutorAula = new frmTutorAula();
+
+			frmTutorAula.Show();
+		}
+
+		private void btnMatricula_Click(object sender, EventArgs e)
+		{
+			Matriculas_ matriculas_ = new Matriculas_();
+
+			matriculas_.Show();
+		}
 	}
 }
