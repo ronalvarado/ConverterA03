@@ -28,6 +28,7 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmResponsables));
 			this.grbEdicionderesponsables = new System.Windows.Forms.GroupBox();
 			this.btnBuscar = new System.Windows.Forms.Button();
 			this.btnEliminar = new System.Windows.Forms.Button();
@@ -63,11 +64,12 @@
 			// grbEdicionderesponsables
 			// 
 			this.grbEdicionderesponsables.BackColor = System.Drawing.Color.Transparent;
+			this.grbEdicionderesponsables.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("grbEdicionderesponsables.BackgroundImage")));
 			this.grbEdicionderesponsables.Controls.Add(this.btnBuscar);
 			this.grbEdicionderesponsables.Controls.Add(this.btnEliminar);
 			this.grbEdicionderesponsables.Controls.Add(this.btnModificar);
 			this.grbEdicionderesponsables.Controls.Add(this.btnNuevo);
-			this.grbEdicionderesponsables.ForeColor = System.Drawing.Color.White;
+			this.grbEdicionderesponsables.ForeColor = System.Drawing.Color.Black;
 			this.grbEdicionderesponsables.Location = new System.Drawing.Point(436, 12);
 			this.grbEdicionderesponsables.Name = "grbEdicionderesponsables";
 			this.grbEdicionderesponsables.Size = new System.Drawing.Size(90, 293);
@@ -122,12 +124,13 @@
 			// grbNavegacion
 			// 
 			this.grbNavegacion.BackColor = System.Drawing.Color.Transparent;
+			this.grbNavegacion.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("grbNavegacion.BackgroundImage")));
 			this.grbNavegacion.Controls.Add(this.lblnregistros);
 			this.grbNavegacion.Controls.Add(this.btnUltimo);
 			this.grbNavegacion.Controls.Add(this.btnSiguiente);
 			this.grbNavegacion.Controls.Add(this.btnAnterior);
 			this.grbNavegacion.Controls.Add(this.btnPrimero);
-			this.grbNavegacion.ForeColor = System.Drawing.Color.White;
+			this.grbNavegacion.ForeColor = System.Drawing.Color.Black;
 			this.grbNavegacion.Location = new System.Drawing.Point(12, 252);
 			this.grbNavegacion.Name = "grbNavegacion";
 			this.grbNavegacion.Size = new System.Drawing.Size(418, 53);
@@ -190,6 +193,7 @@
 			// grbResponsables
 			// 
 			this.grbResponsables.BackColor = System.Drawing.Color.Transparent;
+			this.grbResponsables.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("grbResponsables.BackgroundImage")));
 			this.grbResponsables.Controls.Add(this.txtTelefono);
 			this.grbResponsables.Controls.Add(this.lblTelefono);
 			this.grbResponsables.Controls.Add(this.txtNit);
@@ -206,7 +210,7 @@
 			this.grbResponsables.Controls.Add(this.lblIdResponsable);
 			this.grbResponsables.Controls.Add(this.lblCódigo);
 			this.grbResponsables.Enabled = false;
-			this.grbResponsables.ForeColor = System.Drawing.Color.White;
+			this.grbResponsables.ForeColor = System.Drawing.Color.Black;
 			this.grbResponsables.Location = new System.Drawing.Point(12, 12);
 			this.grbResponsables.Name = "grbResponsables";
 			this.grbResponsables.Size = new System.Drawing.Size(418, 234);
@@ -340,6 +344,7 @@
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.Black;
+			this.BackgroundImage = global::Conversor_A.Properties.Resources.lineas_abstractas_curvas_fondo_azul_sombra_23_2148273610;
 			this.ClientSize = new System.Drawing.Size(544, 319);
 			this.Controls.Add(this.grbEdicionderesponsables);
 			this.Controls.Add(this.grbNavegacion);

@@ -108,6 +108,24 @@ namespace Conversor_A
             miAdaptadorDatos.SelectCommand = comandosSQL;
             miAdaptadorDatos.Fill(ds, "Docentes_Meses_pagaDocente");
 
+            comandosSQL.CommandText = "select * from Notas";
+            miAdaptadorDatos.SelectCommand = comandosSQL;
+            miAdaptadorDatos.Fill(ds, "Notas");
+            comandosSQL.Connection = miConexion;
+
+            comandosSQL.CommandText = "select Alumnos.nombreAlumno, Notas.idNota, Notas.actividad1, Notas.actividad2, Notas.examen, Notas.nota from Notas inner join Alumnos on(Alumnos.idAlumno=Notas.idAlumno)";
+            miAdaptadorDatos.SelectCommand = comandosSQL;
+            miAdaptadorDatos.Fill(ds, "Notas_Alumnos");
+
+            comandosSQL.CommandText = "select Materias.nombreMateria, Notas.idNota, Notas.actividad1, Notas.actividad2, Notas.examen, Notas.nota from Notas inner join Materias on(Materias.idMateria=Notas.idMateria)";
+            miAdaptadorDatos.SelectCommand = comandosSQL;
+            miAdaptadorDatos.Fill(ds, "Notas_Materia");
+
+            comandosSQL.Connection = miConexion;
+            comandosSQL.CommandText = "select Alumnos.nombreAlumno,Notas.idNota, Notas.actividad1, Notas.actividad2, Notas.examen, Notas.nota, " + " Materias.nombreMateria " + " from Notas " + " inner join Alumnos on(Alumnos.idAlumno = Notas.idAlumno) " + " inner join Materias on(Materias.idMateria = Notas.idMateria)";
+            miAdaptadorDatos.SelectCommand = comandosSQL;
+            miAdaptadorDatos.Fill(ds, "Alumnos_Materias_Notas");
+
             return ds;
 		}
         public void mantenimiento_datos_Alumnos(String[] datos, String accion)
@@ -166,7 +184,7 @@ namespace Conversor_A
             else if (accion == "modificar")
             {
                 sql = "UPDATE Responsables SET " +
-                    "odigo                              = '" + datos[1] + "'," +
+                    "codigo                              = '" + datos[1] + "'," +
                     "nombreResponsable                  = '" + datos[2] + "'," +
                     "edad                               = '" + datos[3] + "'," +
                     "direccion                          = '" + datos[4] + "'," +
@@ -208,7 +226,7 @@ namespace Conversor_A
             {
                 sql = "UPDATE Docentes SET " +
                     "codigo                          = '" + datos[1] + "'," +
-                    "docente                         = '" + datos[2] + "'," +
+                    "nombreDocente                   = '" + datos[2] + "'," +
                     "dui                             = '" + datos[3] + "'," +
                     "nit                             = '" + datos[4] + "'," +
                     "especializacion                 = '" + datos[5] + "'," +
@@ -441,6 +459,43 @@ namespace Conversor_A
             procereaSQL(sql);
         }
         void procereaSQL(String sql)
+        {
+            comandosSQL.Connection = miConexion;
+            comandosSQL.CommandText = sql;
+            comandosSQL.ExecuteNonQuery();
+        }
+        public void mantenimiento_datos_Notas (String[] datos, String accion)
+        {
+            String sql = "";
+            if (accion == "nuevo")
+            {
+                sql = "INSERT INTO Notas (idAlumno,idMateria,actividad1,actividad2,examen,nota) VALUES(" +
+                    "'" + datos[1] + "'," +
+                    "'" + datos[2] + "'," +
+                    "'" + datos[3] + "'," +
+                    "'" + datos[4] + "'," +
+                    "'" + datos[5] + "'," +
+                    "'" + datos[6] + "'" +
+                    ")";
+            }
+            else if (accion == "modificar")
+            {
+                sql = "UPDATE Notas SET " +
+                    "idAlumno						    		     = '" + datos[1] + "'," +
+                    "idMateria						             	 = '" + datos[2] + "'," +
+                    "actividad1							             = '" + datos[3] + "'," +
+                    "actividad2						    		     = '" + datos[4] + "'," +
+                    "examen						             	     = '" + datos[5] + "'," +
+                    "nota									         = '" + datos[6] + "'" +
+                    "WHERE idNota					         	     = '" + datos[0] + "'";
+            }
+            else if (accion == "eliminar")
+            {
+                sql = "DELETE Notas FROM Notas WHERE idNota='" + datos[0] + "'";
+            }
+            procerewaSQL(sql);
+        }
+        void procerewaSQL(String sql)
         {
             comandosSQL.Connection = miConexion;
             comandosSQL.CommandText = sql;

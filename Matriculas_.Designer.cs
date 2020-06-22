@@ -64,6 +64,44 @@
 			((System.ComponentModel.ISupportInitialize)(this.dMatriculasDataGridView)).BeginInit();
 			this.SuspendLayout();
 			// 
+			// idMatriculaLabel
+			// 
+			idMatriculaLabel.AutoSize = true;
+			idMatriculaLabel.Location = new System.Drawing.Point(36, 30);
+			idMatriculaLabel.Name = "idMatriculaLabel";
+			idMatriculaLabel.Size = new System.Drawing.Size(67, 13);
+			idMatriculaLabel.TabIndex = 0;
+			idMatriculaLabel.Text = "ID Matricula:";
+			// 
+			// codigoLabel
+			// 
+			codigoLabel.AutoSize = true;
+			codigoLabel.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			codigoLabel.Location = new System.Drawing.Point(12, 73);
+			codigoLabel.Name = "codigoLabel";
+			codigoLabel.Size = new System.Drawing.Size(52, 16);
+			codigoLabel.TabIndex = 4;
+			codigoLabel.Text = "Código:";
+			// 
+			// nombreAlumnoLabel
+			// 
+			nombreAlumnoLabel.AutoSize = true;
+			nombreAlumnoLabel.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			nombreAlumnoLabel.Location = new System.Drawing.Point(153, 75);
+			nombreAlumnoLabel.Name = "nombreAlumnoLabel";
+			nombreAlumnoLabel.Size = new System.Drawing.Size(56, 16);
+			nombreAlumnoLabel.TabIndex = 6;
+			nombreAlumnoLabel.Text = "Alumno:";
+			// 
+			// fechaMatriculaLabel
+			// 
+			fechaMatriculaLabel.AutoSize = true;
+			fechaMatriculaLabel.Location = new System.Drawing.Point(365, 27);
+			fechaMatriculaLabel.Name = "fechaMatriculaLabel";
+			fechaMatriculaLabel.Size = new System.Drawing.Size(101, 13);
+			fechaMatriculaLabel.TabIndex = 20;
+			fechaMatriculaLabel.Text = "Fecha de Matricula:";
+			// 
 			// baseEscuelaDataSet
 			// 
 			this.baseEscuelaDataSet.DataSetName = "BaseEscuelaDataSet";
@@ -99,32 +137,13 @@
 			this.tableAdapterManager.TrimestresTableAdapter = null;
 			this.tableAdapterManager.UpdateOrder = Conversor_A.BaseEscuelaDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
 			// 
-			// idMatriculaLabel
-			// 
-			idMatriculaLabel.AutoSize = true;
-			idMatriculaLabel.Location = new System.Drawing.Point(36, 30);
-			idMatriculaLabel.Name = "idMatriculaLabel";
-			idMatriculaLabel.Size = new System.Drawing.Size(67, 13);
-			idMatriculaLabel.TabIndex = 0;
-			idMatriculaLabel.Text = "ID Matricula:";
-			// 
 			// idMatriculaLabel1
 			// 
 			this.idMatriculaLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dMatriculasBindingSource, "idMatricula", true));
-			this.idMatriculaLabel1.Location = new System.Drawing.Point(106, 30);
+			this.idMatriculaLabel1.Location = new System.Drawing.Point(106, 24);
 			this.idMatriculaLabel1.Name = "idMatriculaLabel1";
-			this.idMatriculaLabel1.Size = new System.Drawing.Size(200, 23);
+			this.idMatriculaLabel1.Size = new System.Drawing.Size(86, 23);
 			this.idMatriculaLabel1.TabIndex = 1;
-			// 
-			// codigoLabel
-			// 
-			codigoLabel.AutoSize = true;
-			codigoLabel.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			codigoLabel.Location = new System.Drawing.Point(12, 73);
-			codigoLabel.Name = "codigoLabel";
-			codigoLabel.Size = new System.Drawing.Size(52, 16);
-			codigoLabel.TabIndex = 4;
-			codigoLabel.Text = "Código:";
 			// 
 			// codigoTextBox
 			// 
@@ -133,16 +152,6 @@
 			this.codigoTextBox.Name = "codigoTextBox";
 			this.codigoTextBox.Size = new System.Drawing.Size(77, 20);
 			this.codigoTextBox.TabIndex = 5;
-			// 
-			// nombreAlumnoLabel
-			// 
-			nombreAlumnoLabel.AutoSize = true;
-			nombreAlumnoLabel.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			nombreAlumnoLabel.Location = new System.Drawing.Point(153, 75);
-			nombreAlumnoLabel.Name = "nombreAlumnoLabel";
-			nombreAlumnoLabel.Size = new System.Drawing.Size(56, 16);
-			nombreAlumnoLabel.TabIndex = 6;
-			nombreAlumnoLabel.Text = "Alumno:";
 			// 
 			// nombreAlumnoComboBox
 			// 
@@ -157,15 +166,6 @@
 			this.nombreAlumnoComboBox.TabIndex = 7;
 			this.nombreAlumnoComboBox.ValueMember = "idAlumno";
 			// 
-			// fechaMatriculaLabel
-			// 
-			fechaMatriculaLabel.AutoSize = true;
-			fechaMatriculaLabel.Location = new System.Drawing.Point(365, 27);
-			fechaMatriculaLabel.Name = "fechaMatriculaLabel";
-			fechaMatriculaLabel.Size = new System.Drawing.Size(101, 13);
-			fechaMatriculaLabel.TabIndex = 20;
-			fechaMatriculaLabel.Text = "Fecha de Matricula:";
-			// 
 			// fechaMatriculaDateTimePicker
 			// 
 			this.fechaMatriculaDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.dMatriculasBindingSource, "fechaMatricula", true));
@@ -177,6 +177,7 @@
 			// dMatriculasDataGridView
 			// 
 			this.dMatriculasDataGridView.AutoGenerateColumns = false;
+			this.dMatriculasDataGridView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
 			this.dMatriculasDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.dMatriculasDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
@@ -294,6 +295,7 @@
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.BackgroundImage = global::Conversor_A.Properties.Resources.fondo_del_aqua_7733781;
 			this.ClientSize = new System.Drawing.Size(800, 460);
 			this.Controls.Add(this.dMatriculasDataGridView);
 			this.Controls.Add(idMatriculaLabel);

@@ -55,7 +55,7 @@
 			this.grbEdiciondeAulas.Controls.Add(this.btnEliminar);
 			this.grbEdiciondeAulas.Controls.Add(this.btnModificar);
 			this.grbEdiciondeAulas.Controls.Add(this.btnNuevo);
-			this.grbEdiciondeAulas.ForeColor = System.Drawing.SystemColors.ButtonFace;
+			this.grbEdiciondeAulas.ForeColor = System.Drawing.Color.Black;
 			this.grbEdiciondeAulas.Location = new System.Drawing.Point(334, 12);
 			this.grbEdiciondeAulas.Name = "grbEdiciondeAulas";
 			this.grbEdiciondeAulas.Size = new System.Drawing.Size(71, 144);
@@ -119,7 +119,7 @@
 			this.grbNavegacion.Controls.Add(this.btnSiguiente);
 			this.grbNavegacion.Controls.Add(this.btnAnterior);
 			this.grbNavegacion.Controls.Add(this.btnPrimero);
-			this.grbNavegacion.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+			this.grbNavegacion.ForeColor = System.Drawing.Color.Black;
 			this.grbNavegacion.Location = new System.Drawing.Point(12, 93);
 			this.grbNavegacion.Name = "grbNavegacion";
 			this.grbNavegacion.Size = new System.Drawing.Size(316, 63);
@@ -186,7 +186,7 @@
 			this.grbAula.Controls.Add(this.txtAula);
 			this.grbAula.Controls.Add(this.lblidAula);
 			this.grbAula.Enabled = false;
-			this.grbAula.ForeColor = System.Drawing.SystemColors.ButtonFace;
+			this.grbAula.ForeColor = System.Drawing.Color.Black;
 			this.grbAula.Location = new System.Drawing.Point(12, 12);
 			this.grbAula.Name = "grbAula";
 			this.grbAula.Size = new System.Drawing.Size(316, 81);
@@ -224,6 +224,7 @@
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.Black;
+			this.BackgroundImage = global::Conversor_A.Properties.Resources.lineas_abstractas_curvas_fondo_azul_sombra_23_2148273610;
 			this.ClientSize = new System.Drawing.Size(420, 170);
 			this.Controls.Add(this.grbEdiciondeAulas);
 			this.Controls.Add(this.grbNavegacion);

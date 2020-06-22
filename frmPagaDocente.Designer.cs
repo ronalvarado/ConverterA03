@@ -40,6 +40,13 @@
 			this.btnAnterior = new System.Windows.Forms.Button();
 			this.btnPrimero = new System.Windows.Forms.Button();
 			this.grbpagaDocente = new System.Windows.Forms.GroupBox();
+			this.btnHacer = new System.Windows.Forms.Button();
+			this.lbltotalPagar = new System.Windows.Forms.Label();
+			this.txtpagar = new System.Windows.Forms.TextBox();
+			this.label1 = new System.Windows.Forms.Label();
+			this.txtrenta = new System.Windows.Forms.TextBox();
+			this.txtafp = new System.Windows.Forms.TextBox();
+			this.lblafp = new System.Windows.Forms.Label();
 			this.lblisss = new System.Windows.Forms.Label();
 			this.txtisss = new System.Windows.Forms.TextBox();
 			this.cboMes = new System.Windows.Forms.ComboBox();
@@ -49,13 +56,6 @@
 			this.lblIdMes = new System.Windows.Forms.Label();
 			this.lblidPago = new System.Windows.Forms.Label();
 			this.lblidDocente = new System.Windows.Forms.Label();
-			this.label1 = new System.Windows.Forms.Label();
-			this.txtrenta = new System.Windows.Forms.TextBox();
-			this.txtafp = new System.Windows.Forms.TextBox();
-			this.lblafp = new System.Windows.Forms.Label();
-			this.lbltotalPagar = new System.Windows.Forms.Label();
-			this.txtpagar = new System.Windows.Forms.TextBox();
-			this.btnHacer = new System.Windows.Forms.Button();
 			this.grbEdiciondepagoDocente.SuspendLayout();
 			this.grbNavegacion.SuspendLayout();
 			this.grbpagaDocente.SuspendLayout();
@@ -68,7 +68,7 @@
 			this.grbEdiciondepagoDocente.Controls.Add(this.btnEliminar);
 			this.grbEdiciondepagoDocente.Controls.Add(this.btnModificar);
 			this.grbEdiciondepagoDocente.Controls.Add(this.btnNuevo);
-			this.grbEdiciondepagoDocente.ForeColor = System.Drawing.SystemColors.ButtonFace;
+			this.grbEdiciondepagoDocente.ForeColor = System.Drawing.Color.White;
 			this.grbEdiciondepagoDocente.Location = new System.Drawing.Point(507, 12);
 			this.grbEdiciondepagoDocente.Name = "grbEdiciondepagoDocente";
 			this.grbEdiciondepagoDocente.Size = new System.Drawing.Size(74, 321);
@@ -132,7 +132,7 @@
 			this.grbNavegacion.Controls.Add(this.btnSiguiente);
 			this.grbNavegacion.Controls.Add(this.btnAnterior);
 			this.grbNavegacion.Controls.Add(this.btnPrimero);
-			this.grbNavegacion.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+			this.grbNavegacion.ForeColor = System.Drawing.Color.White;
 			this.grbNavegacion.Location = new System.Drawing.Point(12, 280);
 			this.grbNavegacion.Name = "grbNavegacion";
 			this.grbNavegacion.Size = new System.Drawing.Size(489, 53);
@@ -212,13 +212,73 @@
 			this.grbpagaDocente.Controls.Add(this.lblidPago);
 			this.grbpagaDocente.Controls.Add(this.lblidDocente);
 			this.grbpagaDocente.Enabled = false;
-			this.grbpagaDocente.ForeColor = System.Drawing.SystemColors.ButtonFace;
+			this.grbpagaDocente.ForeColor = System.Drawing.Color.White;
 			this.grbpagaDocente.Location = new System.Drawing.Point(12, 12);
 			this.grbpagaDocente.Name = "grbpagaDocente";
 			this.grbpagaDocente.Size = new System.Drawing.Size(489, 262);
 			this.grbpagaDocente.TabIndex = 13;
 			this.grbpagaDocente.TabStop = false;
 			this.grbpagaDocente.Text = "Mantenimiento Pago a Docentes";
+			// 
+			// btnHacer
+			// 
+			this.btnHacer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+			this.btnHacer.ForeColor = System.Drawing.Color.Transparent;
+			this.btnHacer.Location = new System.Drawing.Point(289, 141);
+			this.btnHacer.Name = "btnHacer";
+			this.btnHacer.Size = new System.Drawing.Size(109, 23);
+			this.btnHacer.TabIndex = 18;
+			this.btnHacer.Text = "Hacer Descuento";
+			this.btnHacer.UseVisualStyleBackColor = false;
+			this.btnHacer.Click += new System.EventHandler(this.btnHacer_Click);
+			// 
+			// lbltotalPagar
+			// 
+			this.lbltotalPagar.AutoSize = true;
+			this.lbltotalPagar.Location = new System.Drawing.Point(63, 200);
+			this.lbltotalPagar.Name = "lbltotalPagar";
+			this.lbltotalPagar.Size = new System.Drawing.Size(70, 13);
+			this.lbltotalPagar.TabIndex = 17;
+			this.lbltotalPagar.Text = "Sueldo Total:";
+			// 
+			// txtpagar
+			// 
+			this.txtpagar.Location = new System.Drawing.Point(139, 197);
+			this.txtpagar.Name = "txtpagar";
+			this.txtpagar.Size = new System.Drawing.Size(93, 20);
+			this.txtpagar.TabIndex = 16;
+			// 
+			// label1
+			// 
+			this.label1.AutoSize = true;
+			this.label1.Location = new System.Drawing.Point(6, 174);
+			this.label1.Name = "label1";
+			this.label1.Size = new System.Drawing.Size(127, 13);
+			this.label1.TabIndex = 15;
+			this.label1.Text = "Impuesto Sobre la Renta:";
+			// 
+			// txtrenta
+			// 
+			this.txtrenta.Location = new System.Drawing.Point(139, 171);
+			this.txtrenta.Name = "txtrenta";
+			this.txtrenta.Size = new System.Drawing.Size(93, 20);
+			this.txtrenta.TabIndex = 14;
+			// 
+			// txtafp
+			// 
+			this.txtafp.Location = new System.Drawing.Point(139, 143);
+			this.txtafp.Name = "txtafp";
+			this.txtafp.Size = new System.Drawing.Size(93, 20);
+			this.txtafp.TabIndex = 13;
+			// 
+			// lblafp
+			// 
+			this.lblafp.AutoSize = true;
+			this.lblafp.Location = new System.Drawing.Point(71, 146);
+			this.lblafp.Name = "lblafp";
+			this.lblafp.Size = new System.Drawing.Size(62, 13);
+			this.lblafp.TabIndex = 12;
+			this.lblafp.Text = "AFP 7.25%:";
 			// 
 			// lblisss
 			// 
@@ -297,71 +357,12 @@
 			this.lblidDocente.TabIndex = 0;
 			this.lblidDocente.Text = "Docente:";
 			// 
-			// label1
-			// 
-			this.label1.AutoSize = true;
-			this.label1.Location = new System.Drawing.Point(6, 174);
-			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(127, 13);
-			this.label1.TabIndex = 15;
-			this.label1.Text = "Impuesto Sobre la Renta:";
-			// 
-			// txtrenta
-			// 
-			this.txtrenta.Location = new System.Drawing.Point(139, 171);
-			this.txtrenta.Name = "txtrenta";
-			this.txtrenta.Size = new System.Drawing.Size(93, 20);
-			this.txtrenta.TabIndex = 14;
-			// 
-			// txtafp
-			// 
-			this.txtafp.Location = new System.Drawing.Point(139, 143);
-			this.txtafp.Name = "txtafp";
-			this.txtafp.Size = new System.Drawing.Size(93, 20);
-			this.txtafp.TabIndex = 13;
-			// 
-			// lblafp
-			// 
-			this.lblafp.AutoSize = true;
-			this.lblafp.Location = new System.Drawing.Point(71, 146);
-			this.lblafp.Name = "lblafp";
-			this.lblafp.Size = new System.Drawing.Size(62, 13);
-			this.lblafp.TabIndex = 12;
-			this.lblafp.Text = "AFP 7.25%:";
-			// 
-			// lbltotalPagar
-			// 
-			this.lbltotalPagar.AutoSize = true;
-			this.lbltotalPagar.Location = new System.Drawing.Point(63, 200);
-			this.lbltotalPagar.Name = "lbltotalPagar";
-			this.lbltotalPagar.Size = new System.Drawing.Size(70, 13);
-			this.lbltotalPagar.TabIndex = 17;
-			this.lbltotalPagar.Text = "Sueldo Total:";
-			// 
-			// txtpagar
-			// 
-			this.txtpagar.Location = new System.Drawing.Point(139, 197);
-			this.txtpagar.Name = "txtpagar";
-			this.txtpagar.Size = new System.Drawing.Size(93, 20);
-			this.txtpagar.TabIndex = 16;
-			// 
-			// btnHacer
-			// 
-			this.btnHacer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-			this.btnHacer.ForeColor = System.Drawing.Color.Transparent;
-			this.btnHacer.Location = new System.Drawing.Point(289, 141);
-			this.btnHacer.Name = "btnHacer";
-			this.btnHacer.Size = new System.Drawing.Size(109, 23);
-			this.btnHacer.TabIndex = 18;
-			this.btnHacer.Text = "Hacer Descuento";
-			this.btnHacer.UseVisualStyleBackColor = false;
-			this.btnHacer.Click += new System.EventHandler(this.btnHacer_Click);
-			// 
 			// frmPagaDocente
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.Black;
+			this.BackgroundImage = global::Conversor_A.Properties.Resources.descarga;
 			this.ClientSize = new System.Drawing.Size(598, 344);
 			this.Controls.Add(this.grbEdiciondepagoDocente);
 			this.Controls.Add(this.grbNavegacion);

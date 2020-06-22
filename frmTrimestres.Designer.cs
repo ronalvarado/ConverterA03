@@ -55,7 +55,7 @@
 			this.grbEdiciondeTrimestres.Controls.Add(this.btnEliminar);
 			this.grbEdiciondeTrimestres.Controls.Add(this.btnModificar);
 			this.grbEdiciondeTrimestres.Controls.Add(this.btnNuevo);
-			this.grbEdiciondeTrimestres.ForeColor = System.Drawing.SystemColors.ButtonFace;
+			this.grbEdiciondeTrimestres.ForeColor = System.Drawing.Color.Black;
 			this.grbEdiciondeTrimestres.Location = new System.Drawing.Point(334, 12);
 			this.grbEdiciondeTrimestres.Name = "grbEdiciondeTrimestres";
 			this.grbEdiciondeTrimestres.Size = new System.Drawing.Size(71, 144);
@@ -119,7 +119,7 @@
 			this.grbNavegacion.Controls.Add(this.btnSiguiente);
 			this.grbNavegacion.Controls.Add(this.btnAnterior);
 			this.grbNavegacion.Controls.Add(this.btnPrimero);
-			this.grbNavegacion.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+			this.grbNavegacion.ForeColor = System.Drawing.Color.Black;
 			this.grbNavegacion.Location = new System.Drawing.Point(12, 93);
 			this.grbNavegacion.Name = "grbNavegacion";
 			this.grbNavegacion.Size = new System.Drawing.Size(316, 63);
@@ -186,7 +186,7 @@
 			this.grbTrimestres.Controls.Add(this.txtTrimestre);
 			this.grbTrimestres.Controls.Add(this.lblidTrimestre);
 			this.grbTrimestres.Enabled = false;
-			this.grbTrimestres.ForeColor = System.Drawing.SystemColors.ButtonFace;
+			this.grbTrimestres.ForeColor = System.Drawing.Color.Black;
 			this.grbTrimestres.Location = new System.Drawing.Point(12, 12);
 			this.grbTrimestres.Name = "grbTrimestres";
 			this.grbTrimestres.Size = new System.Drawing.Size(316, 81);
@@ -224,6 +224,7 @@
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.Black;
+			this.BackgroundImage = global::Conversor_A.Properties.Resources.lineas_abstractas_curvas_fondo_azul_sombra_23_2148273610;
 			this.ClientSize = new System.Drawing.Size(418, 167);
 			this.Controls.Add(this.grbEdiciondeTrimestres);
 			this.Controls.Add(this.grbNavegacion);

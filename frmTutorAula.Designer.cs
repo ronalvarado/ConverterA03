@@ -50,13 +50,13 @@
 			this.idTaulaLabel1 = new System.Windows.Forms.Label();
 			this.nombreDocenteComboBox = new System.Windows.Forms.ComboBox();
 			this.tutorAulaDataGridView = new System.Windows.Forms.DataGridView();
-			this.tutorAulaTableAdapter = new Conversor_A.BaseEscuelaDataSetTableAdapters.TutorAulaTableAdapter();
-			this.tableAdapterManager = new Conversor_A.BaseEscuelaDataSetTableAdapters.TableAdapterManager();
 			this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.tutorAulaTableAdapter = new Conversor_A.BaseEscuelaDataSetTableAdapters.TutorAulaTableAdapter();
+			this.tableAdapterManager = new Conversor_A.BaseEscuelaDataSetTableAdapters.TableAdapterManager();
 			idTaulaLabel = new System.Windows.Forms.Label();
 			nombreDocenteLabel = new System.Windows.Forms.Label();
 			((System.ComponentModel.ISupportInitialize)(this.tutorAulaBindingNavigator)).BeginInit();
@@ -111,7 +111,7 @@
 			this.tutorAulaBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
 			this.tutorAulaBindingNavigator.Name = "tutorAulaBindingNavigator";
 			this.tutorAulaBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-			this.tutorAulaBindingNavigator.Size = new System.Drawing.Size(546, 25);
+			this.tutorAulaBindingNavigator.Size = new System.Drawing.Size(529, 25);
 			this.tutorAulaBindingNavigator.TabIndex = 0;
 			this.tutorAulaBindingNavigator.Text = "bindingNavigator1";
 			// 
@@ -223,9 +223,9 @@
 			// idTaulaLabel1
 			// 
 			this.idTaulaLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tutorAulaBindingSource, "idTaula", true));
-			this.idTaulaLabel1.Location = new System.Drawing.Point(68, 47);
+			this.idTaulaLabel1.Location = new System.Drawing.Point(68, 44);
 			this.idTaulaLabel1.Name = "idTaulaLabel1";
-			this.idTaulaLabel1.Size = new System.Drawing.Size(121, 23);
+			this.idTaulaLabel1.Size = new System.Drawing.Size(51, 23);
 			this.idTaulaLabel1.TabIndex = 2;
 			// 
 			// nombreDocenteComboBox
@@ -258,31 +258,6 @@
 			this.tutorAulaDataGridView.Name = "tutorAulaDataGridView";
 			this.tutorAulaDataGridView.Size = new System.Drawing.Size(450, 254);
 			this.tutorAulaDataGridView.TabIndex = 18;
-			// 
-			// tutorAulaTableAdapter
-			// 
-			this.tutorAulaTableAdapter.ClearBeforeFill = true;
-			// 
-			// tableAdapterManager
-			// 
-			this.tableAdapterManager.AlumnosTableAdapter = null;
-			this.tableAdapterManager.AsistenciasTableAdapter = null;
-			this.tableAdapterManager.AulasTableAdapter = null;
-			this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-			this.tableAdapterManager.Connection = null;
-			this.tableAdapterManager.dNotasTableAdapter = null;
-			this.tableAdapterManager.DocentesTableAdapter = null;
-			this.tableAdapterManager.GradosTableAdapter = null;
-			this.tableAdapterManager.MateriasTableAdapter = null;
-			this.tableAdapterManager.MatriculasTableAdapter = null;
-			this.tableAdapterManager.MesesTableAdapter = null;
-			this.tableAdapterManager.NotasTableAdapter = null;
-			this.tableAdapterManager.pagaDocenteTableAdapter = null;
-			this.tableAdapterManager.ResponsablesTableAdapter = null;
-			this.tableAdapterManager.SeccionesTableAdapter = null;
-			this.tableAdapterManager.TAulaTableAdapter = null;
-			this.tableAdapterManager.TrimestresTableAdapter = null;
-			this.tableAdapterManager.UpdateOrder = Conversor_A.BaseEscuelaDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
 			// 
 			// dataGridViewTextBoxColumn1
 			// 
@@ -317,11 +292,37 @@
 			this.dataGridViewTextBoxColumn9.HeaderText = "Sección";
 			this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
 			// 
+			// tutorAulaTableAdapter
+			// 
+			this.tutorAulaTableAdapter.ClearBeforeFill = true;
+			// 
+			// tableAdapterManager
+			// 
+			this.tableAdapterManager.AlumnosTableAdapter = null;
+			this.tableAdapterManager.AsistenciasTableAdapter = null;
+			this.tableAdapterManager.AulasTableAdapter = null;
+			this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+			this.tableAdapterManager.Connection = null;
+			this.tableAdapterManager.dNotasTableAdapter = null;
+			this.tableAdapterManager.DocentesTableAdapter = null;
+			this.tableAdapterManager.GradosTableAdapter = null;
+			this.tableAdapterManager.MateriasTableAdapter = null;
+			this.tableAdapterManager.MatriculasTableAdapter = null;
+			this.tableAdapterManager.MesesTableAdapter = null;
+			this.tableAdapterManager.NotasTableAdapter = null;
+			this.tableAdapterManager.pagaDocenteTableAdapter = null;
+			this.tableAdapterManager.ResponsablesTableAdapter = null;
+			this.tableAdapterManager.SeccionesTableAdapter = null;
+			this.tableAdapterManager.TAulaTableAdapter = null;
+			this.tableAdapterManager.TrimestresTableAdapter = null;
+			this.tableAdapterManager.UpdateOrder = Conversor_A.BaseEscuelaDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+			// 
 			// frmTutorAula
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(546, 461);
+			this.BackgroundImage = global::Conversor_A.Properties.Resources.fondo_del_aqua_7733781;
+			this.ClientSize = new System.Drawing.Size(529, 394);
 			this.Controls.Add(this.tutorAulaDataGridView);
 			this.Controls.Add(idTaulaLabel);
 			this.Controls.Add(this.idTaulaLabel1);

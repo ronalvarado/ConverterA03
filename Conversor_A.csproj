@@ -74,6 +74,12 @@
     <Compile Include="frmAlumnos.Designer.cs">
       <DependentUpon>frmAlumnos.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmANotas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmANotas.Designer.cs">
+      <DependentUpon>frmANotas.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmAsistencias.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -91,6 +97,12 @@
     </Compile>
     <Compile Include="frmDocentes.Designer.cs">
       <DependentUpon>frmDocentes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmeNots.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmeNots.Designer.cs">
+      <DependentUpon>frmeNots.cs</DependentUpon>
     </Compile>
     <Compile Include="frmGrados.cs">
       <SubType>Form</SubType>
@@ -140,16 +152,19 @@
     <Compile Include="Matriculas_.Designer.cs">
       <DependentUpon>Matriculas_.cs</DependentUpon>
     </Compile>
-    <Compile Include="Menú.cs">
+    <Compile Include="Mensu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Menú.Designer.cs">
-      <DependentUpon>Menú.cs</DependentUpon>
+    <Compile Include="Mensu.Designer.cs">
+      <DependentUpon>Mensu.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmAlumnos.resx">
       <DependentUpon>frmAlumnos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmANotas.resx">
+      <DependentUpon>frmANotas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmAsistencias.resx">
       <DependentUpon>frmAsistencias.cs</DependentUpon>
@@ -159,6 +174,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmDocentes.resx">
       <DependentUpon>frmDocentes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmeNots.resx">
+      <DependentUpon>frmeNots.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmGrados.resx">
       <DependentUpon>frmGrados.cs</DependentUpon>
@@ -184,8 +202,8 @@
     <EmbeddedResource Include="Matriculas_.resx">
       <DependentUpon>Matriculas_.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Menú.resx">
-      <DependentUpon>Menú.cs</DependentUpon>
+    <EmbeddedResource Include="Mensu.resx">
+      <DependentUpon>Mensu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -241,6 +259,12 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>BaseEscuela.mdf</DependentUpon>
     </Content>
+    <None Include="bin\Debug\descarga.jpg" />
+    <None Include="bin\Debug\1 %281%29.jpg" />
+    <None Include="bin\Debug\fondo-del-aqua-7733781.jpg" />
+    <None Include="bin\Debug\fondo-abstracto-celeste_1077-3.jpg" />
+    <None Include="bin\Debug\lineas-abstractas-curvas-fondo-azul-sombra_23-2148273610.jpg" />
+    <None Include="bin\Debug\1.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -55,7 +55,7 @@
 			this.grbEdiciondeSecciones.Controls.Add(this.btnEliminar);
 			this.grbEdiciondeSecciones.Controls.Add(this.btnModificar);
 			this.grbEdiciondeSecciones.Controls.Add(this.btnNuevo);
-			this.grbEdiciondeSecciones.ForeColor = System.Drawing.SystemColors.ButtonFace;
+			this.grbEdiciondeSecciones.ForeColor = System.Drawing.Color.Black;
 			this.grbEdiciondeSecciones.Location = new System.Drawing.Point(334, 12);
 			this.grbEdiciondeSecciones.Name = "grbEdiciondeSecciones";
 			this.grbEdiciondeSecciones.Size = new System.Drawing.Size(71, 144);
@@ -119,7 +119,7 @@
 			this.grbNavegacion.Controls.Add(this.btnSiguiente);
 			this.grbNavegacion.Controls.Add(this.btnAnterior);
 			this.grbNavegacion.Controls.Add(this.btnPrimero);
-			this.grbNavegacion.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+			this.grbNavegacion.ForeColor = System.Drawing.Color.Black;
 			this.grbNavegacion.Location = new System.Drawing.Point(12, 93);
 			this.grbNavegacion.Name = "grbNavegacion";
 			this.grbNavegacion.Size = new System.Drawing.Size(316, 63);
@@ -186,7 +186,7 @@
 			this.grbSecciones.Controls.Add(this.txtSeccion);
 			this.grbSecciones.Controls.Add(this.lblidSeccion);
 			this.grbSecciones.Enabled = false;
-			this.grbSecciones.ForeColor = System.Drawing.SystemColors.ButtonFace;
+			this.grbSecciones.ForeColor = System.Drawing.Color.Black;
 			this.grbSecciones.Location = new System.Drawing.Point(12, 12);
 			this.grbSecciones.Name = "grbSecciones";
 			this.grbSecciones.Size = new System.Drawing.Size(316, 81);
@@ -224,6 +224,7 @@
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.Black;
+			this.BackgroundImage = global::Conversor_A.Properties.Resources.lineas_abstractas_curvas_fondo_azul_sombra_23_2148273610;
 			this.ClientSize = new System.Drawing.Size(417, 172);
 			this.Controls.Add(this.grbEdiciondeSecciones);
 			this.Controls.Add(this.grbNavegacion);

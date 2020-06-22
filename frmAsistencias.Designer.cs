@@ -30,11 +30,8 @@
 		{
 			this.lblIdAlumno = new System.Windows.Forms.Label();
 			this.lblidAsistencia = new System.Windows.Forms.Label();
-			this.lblIdMes = new System.Windows.Forms.Label();
 			this.lblfecha = new System.Windows.Forms.Label();
-			this.txtfecha = new System.Windows.Forms.TextBox();
 			this.cboAlumno = new System.Windows.Forms.ComboBox();
-			this.cboMeses = new System.Windows.Forms.ComboBox();
 			this.txtasistio = new System.Windows.Forms.TextBox();
 			this.lblasistio = new System.Windows.Forms.Label();
 			this.grbAsistencia = new System.Windows.Forms.GroupBox();
@@ -49,6 +46,9 @@
 			this.btnEliminar = new System.Windows.Forms.Button();
 			this.btnBuscar = new System.Windows.Forms.Button();
 			this.grbEdiciondeAsistencias = new System.Windows.Forms.GroupBox();
+			this.lblIdMes = new System.Windows.Forms.Label();
+			this.cboMeses = new System.Windows.Forms.ComboBox();
+			this.txtfecha = new System.Windows.Forms.TextBox();
 			this.grbAsistencia.SuspendLayout();
 			this.grbNavegacion.SuspendLayout();
 			this.grbEdiciondeAsistencias.SuspendLayout();
@@ -72,15 +72,6 @@
 			this.lblidAsistencia.TabIndex = 1;
 			this.lblidAsistencia.Text = "ID:";
 			// 
-			// lblIdMes
-			// 
-			this.lblIdMes.AutoSize = true;
-			this.lblIdMes.Location = new System.Drawing.Point(35, 65);
-			this.lblIdMes.Name = "lblIdMes";
-			this.lblIdMes.Size = new System.Drawing.Size(30, 13);
-			this.lblIdMes.TabIndex = 3;
-			this.lblIdMes.Text = "Mes:";
-			// 
 			// lblfecha
 			// 
 			this.lblfecha.AutoSize = true;
@@ -90,13 +81,6 @@
 			this.lblfecha.TabIndex = 5;
 			this.lblfecha.Text = "fecha:";
 			// 
-			// txtfecha
-			// 
-			this.txtfecha.Location = new System.Drawing.Point(98, 93);
-			this.txtfecha.Name = "txtfecha";
-			this.txtfecha.Size = new System.Drawing.Size(170, 20);
-			this.txtfecha.TabIndex = 6;
-			// 
 			// cboAlumno
 			// 
 			this.cboAlumno.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -105,15 +89,6 @@
 			this.cboAlumno.Name = "cboAlumno";
 			this.cboAlumno.Size = new System.Drawing.Size(298, 21);
 			this.cboAlumno.TabIndex = 7;
-			// 
-			// cboMeses
-			// 
-			this.cboMeses.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-			this.cboMeses.FormattingEnabled = true;
-			this.cboMeses.Location = new System.Drawing.Point(98, 62);
-			this.cboMeses.Name = "cboMeses";
-			this.cboMeses.Size = new System.Drawing.Size(298, 21);
-			this.cboMeses.TabIndex = 8;
 			// 
 			// txtasistio
 			// 
@@ -144,7 +119,7 @@
 			this.grbAsistencia.Controls.Add(this.lblidAsistencia);
 			this.grbAsistencia.Controls.Add(this.lblIdAlumno);
 			this.grbAsistencia.Enabled = false;
-			this.grbAsistencia.ForeColor = System.Drawing.SystemColors.ButtonFace;
+			this.grbAsistencia.ForeColor = System.Drawing.Color.White;
 			this.grbAsistencia.Location = new System.Drawing.Point(12, 12);
 			this.grbAsistencia.Name = "grbAsistencia";
 			this.grbAsistencia.Size = new System.Drawing.Size(489, 180);
@@ -212,7 +187,7 @@
 			this.grbNavegacion.Controls.Add(this.btnSiguiente);
 			this.grbNavegacion.Controls.Add(this.btnAnterior);
 			this.grbNavegacion.Controls.Add(this.btnPrimero);
-			this.grbNavegacion.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+			this.grbNavegacion.ForeColor = System.Drawing.Color.White;
 			this.grbNavegacion.Location = new System.Drawing.Point(12, 198);
 			this.grbNavegacion.Name = "grbNavegacion";
 			this.grbNavegacion.Size = new System.Drawing.Size(489, 53);
@@ -275,7 +250,7 @@
 			this.grbEdiciondeAsistencias.Controls.Add(this.btnEliminar);
 			this.grbEdiciondeAsistencias.Controls.Add(this.btnModificar);
 			this.grbEdiciondeAsistencias.Controls.Add(this.btnNuevo);
-			this.grbEdiciondeAsistencias.ForeColor = System.Drawing.SystemColors.ButtonFace;
+			this.grbEdiciondeAsistencias.ForeColor = System.Drawing.Color.White;
 			this.grbEdiciondeAsistencias.Location = new System.Drawing.Point(507, 12);
 			this.grbEdiciondeAsistencias.Name = "grbEdiciondeAsistencias";
 			this.grbEdiciondeAsistencias.Size = new System.Drawing.Size(74, 238);
@@ -283,15 +258,42 @@
 			this.grbEdiciondeAsistencias.TabStop = false;
 			this.grbEdiciondeAsistencias.Text = "Edición de Asistencias";
 			// 
+			// lblIdMes
+			// 
+			this.lblIdMes.AutoSize = true;
+			this.lblIdMes.Location = new System.Drawing.Point(35, 65);
+			this.lblIdMes.Name = "lblIdMes";
+			this.lblIdMes.Size = new System.Drawing.Size(30, 13);
+			this.lblIdMes.TabIndex = 3;
+			this.lblIdMes.Text = "Mes:";
+			// 
+			// cboMeses
+			// 
+			this.cboMeses.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.cboMeses.FormattingEnabled = true;
+			this.cboMeses.Location = new System.Drawing.Point(98, 62);
+			this.cboMeses.Name = "cboMeses";
+			this.cboMeses.Size = new System.Drawing.Size(298, 21);
+			this.cboMeses.TabIndex = 8;
+			// 
+			// txtfecha
+			// 
+			this.txtfecha.Location = new System.Drawing.Point(98, 93);
+			this.txtfecha.Name = "txtfecha";
+			this.txtfecha.Size = new System.Drawing.Size(170, 20);
+			this.txtfecha.TabIndex = 6;
+			// 
 			// frmAsistencias
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.Black;
+			this.BackgroundImage = global::Conversor_A.Properties.Resources.descarga;
 			this.ClientSize = new System.Drawing.Size(593, 264);
 			this.Controls.Add(this.grbEdiciondeAsistencias);
 			this.Controls.Add(this.grbNavegacion);
 			this.Controls.Add(this.grbAsistencia);
+			this.ForeColor = System.Drawing.Color.Black;
 			this.Name = "frmAsistencias";
 			this.Text = "frmAsistencias";
 			this.Load += new System.EventHandler(this.frmAsistencias_Load);
@@ -308,11 +310,8 @@
 
 		private System.Windows.Forms.Label lblIdAlumno;
 		private System.Windows.Forms.Label lblidAsistencia;
-		private System.Windows.Forms.Label lblIdMes;
 		private System.Windows.Forms.Label lblfecha;
-		private System.Windows.Forms.TextBox txtfecha;
 		private System.Windows.Forms.ComboBox cboAlumno;
-		private System.Windows.Forms.ComboBox cboMeses;
 		private System.Windows.Forms.TextBox txtasistio;
 		private System.Windows.Forms.Label lblasistio;
 		private System.Windows.Forms.GroupBox grbAsistencia;
@@ -327,5 +326,8 @@
 		private System.Windows.Forms.Button btnEliminar;
 		private System.Windows.Forms.Button btnBuscar;
 		private System.Windows.Forms.GroupBox grbEdiciondeAsistencias;
+		private System.Windows.Forms.ComboBox cboMeses;
+		private System.Windows.Forms.TextBox txtfecha;
+		private System.Windows.Forms.Label lblIdMes;
 	}
 }

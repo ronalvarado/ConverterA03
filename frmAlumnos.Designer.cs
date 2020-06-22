@@ -63,7 +63,7 @@
 			this.grbEdiciondealumnos.Controls.Add(this.btnEliminar);
 			this.grbEdiciondealumnos.Controls.Add(this.btnModificar);
 			this.grbEdiciondealumnos.Controls.Add(this.btnNuevo);
-			this.grbEdiciondealumnos.ForeColor = System.Drawing.Color.White;
+			this.grbEdiciondealumnos.ForeColor = System.Drawing.Color.Black;
 			this.grbEdiciondealumnos.Location = new System.Drawing.Point(571, 12);
 			this.grbEdiciondealumnos.Name = "grbEdiciondealumnos";
 			this.grbEdiciondealumnos.Size = new System.Drawing.Size(94, 239);
@@ -123,7 +123,7 @@
 			this.grbNavegacion.Controls.Add(this.btnSiguiente);
 			this.grbNavegacion.Controls.Add(this.btnAnterior);
 			this.grbNavegacion.Controls.Add(this.btnPrimero);
-			this.grbNavegacion.ForeColor = System.Drawing.Color.White;
+			this.grbNavegacion.ForeColor = System.Drawing.Color.Black;
 			this.grbNavegacion.Location = new System.Drawing.Point(12, 257);
 			this.grbNavegacion.Name = "grbNavegacion";
 			this.grbNavegacion.Size = new System.Drawing.Size(653, 53);
@@ -198,7 +198,7 @@
 			this.grbAlumnos.Controls.Add(this.lblIdAlumno);
 			this.grbAlumnos.Controls.Add(this.lblCódigo);
 			this.grbAlumnos.Enabled = false;
-			this.grbAlumnos.ForeColor = System.Drawing.Color.White;
+			this.grbAlumnos.ForeColor = System.Drawing.Color.Black;
 			this.grbAlumnos.Location = new System.Drawing.Point(12, 12);
 			this.grbAlumnos.Name = "grbAlumnos";
 			this.grbAlumnos.Size = new System.Drawing.Size(553, 239);
@@ -300,6 +300,7 @@
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.Black;
+			this.BackgroundImage = global::Conversor_A.Properties.Resources.lineas_abstractas_curvas_fondo_azul_sombra_23_2148273610;
 			this.ClientSize = new System.Drawing.Size(678, 325);
 			this.Controls.Add(this.grbEdiciondealumnos);
 			this.Controls.Add(this.grbNavegacion);
